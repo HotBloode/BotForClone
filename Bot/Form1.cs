@@ -136,8 +136,7 @@ namespace Bot
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-                      //up123 234
+        {           
             checkBox4.Enabled = checkBox3.Checked;            
             checkBox5.Enabled = checkBox3.Checked;           
             checkBox6.Enabled = checkBox3.Checked;            
