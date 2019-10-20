@@ -32,6 +32,7 @@
             this.buttonSer = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.SelectImg = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
             this.pic7 = new System.Windows.Forms.PictureBox();
             this.pic6 = new System.Windows.Forms.PictureBox();
@@ -120,6 +121,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.SelectImg);
             this.tabPage1.Controls.Add(this.panel);
             this.tabPage1.Controls.Add(this.buttonAdd);
             this.tabPage1.Controls.Add(this.comboBoxColor);
@@ -161,6 +163,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Добавить";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // SelectImg
+            // 
+            this.SelectImg.Location = new System.Drawing.Point(270, 58);
+            this.SelectImg.Name = "SelectImg";
+            this.SelectImg.Size = new System.Drawing.Size(154, 23);
+            this.SelectImg.TabIndex = 39;
+            this.SelectImg.Text = "Выбрать картинку";
+            this.SelectImg.UseVisualStyleBackColor = true;
+            this.SelectImg.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel
             // 
@@ -647,6 +659,7 @@
         private System.Windows.Forms.PictureBox pic7;
         private System.Windows.Forms.PictureBox pic6;
         private System.Windows.Forms.PictureBox pic5;
+        private System.Windows.Forms.Button SelectImg;
     }
 }
 

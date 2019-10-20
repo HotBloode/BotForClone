@@ -50,13 +50,13 @@ namespace Bot
         private void Form1_Load(object sender, EventArgs e)
         {
             //Подгружаем базу
-            if (!File.Exists("redList.jso") || !File.Exists("baseBlue.json") || !File.Exists("baseGold.json") || !File.Exists("basePink.jso"))
+            if (!File.Exists("baseRed.json") || !File.Exists("baseBlue.json") || !File.Exists("baseGold.json") || !File.Exists("basePink.json"))
             {
-                MessageBox.Show("Обид из файлов базы не найден!");
+                MessageBox.Show("Один из файлов базы не найден!");
             }
             else
             {
-                redList = JsonConvert.DeserializeObject<List<RedCharacter>>(File.ReadAllText("redList.json"));
+                redList = JsonConvert.DeserializeObject<List<RedCharacter>>(File.ReadAllText("baseRed.json"));
                 blueList = JsonConvert.DeserializeObject<List<BlueCharacter>>(File.ReadAllText("baseBlue.json"));
                 goldList = JsonConvert.DeserializeObject<List<GoldCharacter>>(File.ReadAllText("baseGold.json"));
                 pinkList = JsonConvert.DeserializeObject<List<PinkCharacter>>(File.ReadAllText("basePink.json"));
@@ -515,6 +515,28 @@ namespace Bot
         private void comboBoxColor_SelectedValueChanged(object sender, EventArgs e)
         {
             ClearPb();
+        }
+
+        //Выбираем картинку из папки, обрезаем ее адрес, пихаем в бокс и отображаем
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open_dialog = new OpenFileDialog(); 
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*"; 
+            open_dialog.InitialDirectory = "img\\";
+            if (open_dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {                    
+                    textUrl.Text = Path.GetFileName(open_dialog.FileName);
+                    ChekImg();
+
+                }
+                catch
+                {
+                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
