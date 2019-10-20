@@ -12,3 +12,17 @@ C:\Users\Andrey\source\repos\Bot\Bot\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andrey\source\repos\Bot\Bot\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Andrey\source\repos\Bot\Bot\obj\Debug\Bot.csproj.CopyComplete
 C:\Users\Andrey\source\repos\Bot\Bot\obj\Debug\Bot.Form2.resources
+C:\Users\Andrey\source\repos\BotForClone\Bot\bin\Debug\Bot.exe.config
+C:\Users\Andrey\source\repos\BotForClone\Bot\bin\Debug\Bot.exe
+C:\Users\Andrey\source\repos\BotForClone\Bot\bin\Debug\Bot.pdb
+C:\Users\Andrey\source\repos\BotForClone\Bot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Andrey\source\repos\BotForClone\Bot\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.csprojAssemblyReference.cache
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.Form1.resources
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.Form2.resources
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.Properties.Resources.resources
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.csproj.GenerateResource.cache
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.csproj.CoreCompileInputs.cache
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.csproj.CopyComplete
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.exe
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.pdb

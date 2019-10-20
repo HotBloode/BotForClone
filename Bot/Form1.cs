@@ -19,11 +19,12 @@ namespace Bot
         //Создаём форму для выбора перса    
         private Form2 newForm = new Form2();
         public List<PictureBox> picCraft = new List<PictureBox>();
+
         public Form1()
         {
             InitializeComponent();
-            newForm.mainForm = this;
-            //picCraft = new List<PictureBox>(pic1, pic2, pic3, pic4, pic5, pic6, pic7);
+            //Список с боксов с картинками
+            newForm.mainForm = this;            
             picCraft.Add(pic1);
             picCraft.Add(pic2);
             picCraft.Add(pic3);
@@ -38,64 +39,37 @@ namespace Bot
         {
 
         }
+        //Списки персов
         public List<RedCharacter> redList;
         public List<GoldCharacter> goldList;
         public List<PinkCharacter> pinkList;
         public List<BlueCharacter> blueList;
-        //pic1, pic2, pic3, pic4, pic5, pic6, pic7
+        
         
       
         private void Form1_Load(object sender, EventArgs e)
         {
-            //BlueCharacter a = new BlueCharacter();
-            //a.Name = "Любой Вода";
-            //a.Count = 5;
-            //a.Id = 0;
-            //a.ImgUrl = "img\\1b.jpg";
-            //a.Element = 3;
-            //a.Search.Add("Любой Вода");
-
-            //BlueCharacter b = new BlueCharacter();
-            //b.Name = "Любой Свет";
-            //b.Count = 5;
-            //b.Id = 1;
-            //b.ImgUrl = "img\\2b.jpg";
-            //b.Element = 3;
-            //b.Search.Add("Любой Свет");
-
-            //List<BlueCharacter> list = new List<BlueCharacter>() { a, b };
-            //File.WriteAllText("baseBlue.json", JsonConvert.SerializeObject(list));
-            //RedCharacter a = new RedCharacter();
-            //a.Count = 5;
-            //a.Name = "First";
-            //a.Id = 1;
-            //a.ImgUrl = "img\\1.jpg";
-            //a.Element = 0;
-
-            //RedCharacter b = new RedCharacter();
-            //b.Count = 16;
-            //b.Name = "Second";
-            //b.Id = 2;
-            //b.ImgUrl = "img\\2.jpg";
-            //b.Element = 1;
-
-            //List<RedCharacter> list = new List<RedCharacter>() { a, b };
-            //File.WriteAllText("123.json", JsonConvert.SerializeObject(list));
-
-            if (!File.Exists("123.json"))
+            //Подгружаем базу
+            if (!File.Exists("redList.jso") || !File.Exists("baseBlue.json") || !File.Exists("baseGold.json") || !File.Exists("basePink.jso"))
             {
-                MessageBox.Show("Файл базы не найден!");
+                MessageBox.Show("Обид из файлов базы не найден!");
             }
             else
-            {            
-                redList = JsonConvert.DeserializeObject<List<RedCharacter>>(File.ReadAllText("123.json"));   
+            {
+                redList = JsonConvert.DeserializeObject<List<RedCharacter>>(File.ReadAllText("redList.json"));
                 blueList = JsonConvert.DeserializeObject<List<BlueCharacter>>(File.ReadAllText("baseBlue.json"));
-            }     
+                goldList = JsonConvert.DeserializeObject<List<GoldCharacter>>(File.ReadAllText("baseGold.json"));
+                pinkList = JsonConvert.DeserializeObject<List<PinkCharacter>>(File.ReadAllText("basePink.json"));
+            }
         }
 
+        //Выгружаем
         private void buttonDes_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("123.json", JsonConvert.SerializeObject(redList));
+            File.WriteAllText("baseBlue.json", JsonConvert.SerializeObject(blueList));
+            File.WriteAllText("basePink.json", JsonConvert.SerializeObject(pinkList));
+            File.WriteAllText("baseGold.json", JsonConvert.SerializeObject(goldList));
+            File.WriteAllText("baseRed.json", JsonConvert.SerializeObject(redList));
         }
 
         private void labelElement_Click(object sender, EventArgs e)
@@ -103,8 +77,9 @@ namespace Bot
             
         }
 
+        //Проверяем существование картнки
         private bool ChekImg()
-        {
+        {            
             try
             {
                 pictureBox1.Image = null;
@@ -135,6 +110,7 @@ namespace Bot
             
         }
 
+        //Взаимоисключающие чекБоксы
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {           
             checkBox4.Enabled = checkBox3.Checked;            
@@ -185,7 +161,7 @@ namespace Bot
         //Проверка активности чекБоксов и заполнености текстБоксов
         private bool checkedBox()
         {
-            if( checkBox1.Checked == true && textBox1.Text=="" ||
+            if( checkBox4.Checked == true && textBox1.Text=="" ||
                 checkBox5.Checked == true && textBox2.Text == "" ||
                 checkBox6.Checked == true && textBox3.Text == "" ||
                 checkBox7.Checked == true && textBox4.Text == "")
@@ -218,6 +194,8 @@ namespace Bot
             newForm.SelectChamp();          
         }
 
+
+        //Избыточно, но работает. Позже заюзать апкаст или шаблон
         private void AddBlueToList()
         {            
                 BlueCharacter tmpBlue = new BlueCharacter();
@@ -255,8 +233,7 @@ namespace Bot
                 if (checkBox7.Checked == true)
                 {
                     tmpBlue.Search.Add("Кампания эпический: "+textBox4.Text);   
-                }
-
+                }           
             blueList.Add(tmpBlue);
         }
         private void AddGoldToList()
@@ -504,7 +481,14 @@ namespace Bot
                                         }
                                         else
                                         {
-                                            
+                                            if (comboBoxColor.SelectedIndex == 0)
+                                            {
+                                                AddRedToList();
+                                            }
+                                            else
+                                            {
+                                                AddPinkToList();
+                                            }
                                         }
                                     }
                                 }

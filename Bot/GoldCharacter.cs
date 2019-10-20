@@ -11,7 +11,7 @@ namespace Bot
         public int[] SсhemeCraft { get; set; }
         public GoldCharacter()
         {
-            SсhemeCraft = new int[6];
+            SсhemeCraft = new int[7];
         }
 
     }
