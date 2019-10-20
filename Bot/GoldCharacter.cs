@@ -9,9 +9,9 @@ namespace Bot
     public class GoldCharacter :BaseCharacter, ICharacter
     {
         public int[] SсhemeCraft { get; set; }
-        GoldCharacter()
+        public GoldCharacter()
         {
-            SсhemeCraft = new int[7];
+            SсhemeCraft = new int[6];
         }
 
     }
