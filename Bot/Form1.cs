@@ -256,6 +256,8 @@ namespace Bot
                 {
                     tmpBlue.Search.Add("Кампания эпический: "+textBox4.Text);   
                 }
+
+            blueList.Add(tmpBlue);
         }
         private void AddGoldToList()
         {
@@ -303,11 +305,103 @@ namespace Bot
             tmpGold.SсhemeCraft[5] = Convert.ToInt32(pic6.Name);
             tmpGold.SсhemeCraft[6] = Convert.ToInt32(pic7.Name);
 
-
-
+            goldList.Add(tmpGold);
 
         }
-      
+        private void AddPinkToList()
+        {
+            PinkCharacter tmpPink = new PinkCharacter();
+            tmpPink.Name = textBoxName.Text;
+            tmpPink.ImgUrl = "img\\" + textUrl.Text;
+            tmpPink.Count = Convert.ToInt32(textCount.Text);
+            tmpPink.Element = comboElement.SelectedIndex;
+            tmpPink.Id = blueList.Count + 1;
+
+            if (checkBoxShop1.Checked == true)
+            {
+                tmpPink.Search.Add("Магазин арены");
+            }
+            if (checkBox1.Checked == true)
+            {
+                tmpPink.Search.Add("Магазин таверны");
+            }
+            if (checkBox2.Checked == true)
+            {
+                tmpPink.Search.Add("Магазин экспедиции: ");
+            }
+            if (checkBox4.Checked == true)
+            {
+                tmpPink.Search.Add("Кампания общий: " + textBox1.Text);
+            }
+            if (checkBox5.Checked == true)
+            {
+                tmpPink.Search.Add("Кампания элитный: " + textBox2.Text);
+            }
+            if (checkBox6.Checked == true)
+            {
+                tmpPink.Search.Add("Кампания легендарный: " + textBox3.Text);
+            }
+            if (checkBox7.Checked == true)
+            {
+                tmpPink.Search.Add("Кампания эпический: " + textBox4.Text);
+            }
+
+            tmpPink.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
+            tmpPink.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
+            tmpPink.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
+            tmpPink.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);            
+
+            pinkList.Add(tmpPink);
+
+        }
+        private void AddRedToList()
+        {
+            RedCharacter tmpRed = new RedCharacter();
+            tmpRed.Name = textBoxName.Text;
+            tmpRed.ImgUrl = "img\\" + textUrl.Text;
+            tmpRed.Count = Convert.ToInt32(textCount.Text);
+            tmpRed.Element = comboElement.SelectedIndex;
+            tmpRed.Id = blueList.Count + 1;
+
+            if (checkBoxShop1.Checked == true)
+            {
+                tmpRed.Search.Add("Магазин арены");
+            }
+            if (checkBox1.Checked == true)
+            {
+                tmpRed.Search.Add("Магазин таверны");
+            }
+            if (checkBox2.Checked == true)
+            {
+                tmpRed.Search.Add("Магазин экспедиции: ");
+            }
+            if (checkBox4.Checked == true)
+            {
+                tmpRed.Search.Add("Кампания общий: " + textBox1.Text);
+            }
+            if (checkBox5.Checked == true)
+            {
+                tmpRed.Search.Add("Кампания элитный: " + textBox2.Text);
+            }
+            if (checkBox6.Checked == true)
+            {
+                tmpRed.Search.Add("Кампания легендарный: " + textBox3.Text);
+            }
+            if (checkBox7.Checked == true)
+            {
+                tmpRed.Search.Add("Кампания эпический: " + textBox4.Text);
+            }
+
+            tmpRed.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
+            tmpRed.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
+            tmpRed.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
+            tmpRed.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
+
+            redList.Add(tmpRed);
+
+        }
+
+
         public void ClearPb()
         {
             foreach(PictureBox tmp in picCraft)
@@ -392,7 +486,7 @@ namespace Bot
                                         }
                                         else
                                         {
-
+                                            AddGoldToList();
                                         }                                        
                                     }
                                 }
