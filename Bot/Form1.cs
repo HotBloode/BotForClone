@@ -538,5 +538,91 @@ namespace Bot
                 }
             }
         }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void QWER<T>(FlowLayoutPanel panel, List<T> list) where T:BaseCharacter
+        {
+            List<PictureBox> pictureboxList = new List<PictureBox>();
+            int y = 10;
+            foreach (var file in list)
+            {
+                var pb = new PictureBox();
+
+                pb.Location = new Point(pictureboxList.Count * 120 + 20, y);
+                pb.Size = new Size(65, 75);
+                try
+                {
+                    pb.Image = Image.FromFile(file.ImgUrl);
+                    pb.Name = file.Id.ToString();
+                }
+                catch (OutOfMemoryException) { continue; }
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                if ()
+                {
+
+                }
+                else if ()
+                {
+
+                }
+                else if ()
+                {
+
+                }
+                else if()
+                {
+
+                }
+
+                //Создаём новое событие для нажатия
+                //pb.Click += new System.EventHandler(ClickPb);
+                //Добавляем Pb на панель
+                panel.Controls.Add(pb);
+                //Добавляем Pb в список
+                //pictureboxList.Add(pb);
+            }
+        }
+        private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = ((TabControl)sender).SelectedIndex;
+            if(index ==0)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                QWER(flowLayoutPanel1, blueList);
+            }
+            else if(index ==1)
+            {
+                flowLayoutPanel2.Controls.Clear();
+                QWER(flowLayoutPanel2, pinkList);
+            }
+            else if (index == 2)
+            {
+                flowLayoutPanel3.Controls.Clear();
+                QWER(flowLayoutPanel3, goldList);
+            }
+            else if (index == 3)
+            {
+                flowLayoutPanel4.Controls.Clear();
+                QWER(flowLayoutPanel4, redList);
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = ((TabControl)sender).SelectedIndex;
+            if (index == 1)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                QWER(flowLayoutPanel1, blueList);
+            }
+        }
     }
 }

@@ -81,7 +81,7 @@ namespace Bot
                 //Добавляем Pb на панель
                 flowLayoutPanel1.Controls.Add(pb);
                 //Добавляем Pb в список
-                pictureboxList.Add(pb);
+                //pictureboxList.Add(pb);
             }
             Show();
         }
