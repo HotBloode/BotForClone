@@ -565,22 +565,22 @@ namespace Bot
                 }
                 catch (OutOfMemoryException) { continue; }
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                if ()
-                {
+                //if ()
+                //{
 
-                }
-                else if ()
-                {
+                //}
+                //else if ()
+                //{
 
-                }
-                else if ()
-                {
+                //}
+                //else if ()
+                //{
 
-                }
-                else if()
-                {
+                //}
+                //else if()
+                //{
 
-                }
+                //}
 
                 //Создаём новое событие для нажатия
                 //pb.Click += new System.EventHandler(ClickPb);
