@@ -85,6 +85,7 @@ namespace Bot
             }
             Show();
         }
+
         private void ClickPb(object sender, EventArgs e)
         {
             PictureBox pb = sender as PictureBox;

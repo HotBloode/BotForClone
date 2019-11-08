@@ -186,7 +186,7 @@ namespace Bot
         //}
 
 
-        //Открываем 2ю форму со списков персов
+        //Открываем 2ю форму со списком персов
         private void pictureBoxChek(object sender, EventArgs e)
         {
             //Шлём 2ой рабочий бокс
@@ -529,7 +529,6 @@ namespace Bot
                 {                    
                     textUrl.Text = Path.GetFileName(open_dialog.FileName);
                     ChekImg();
-
                 }
                 catch
                 {
@@ -548,7 +547,7 @@ namespace Bot
         {
 
         }
-        private void QWER<T>(FlowLayoutPanel panel, List<T> list) where T:BaseCharacter
+        private void EditPanel<T>(FlowLayoutPanel panel, List<T> list) where T:BaseCharacter
         {
             List<PictureBox> pictureboxList = new List<PictureBox>();
             int y = 10;
@@ -565,6 +564,7 @@ namespace Bot
                 }
                 catch (OutOfMemoryException) { continue; }
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.Click += new System.EventHandler(BaseClickPb);
                 //if ()
                 //{
 
@@ -590,28 +590,64 @@ namespace Bot
                 //pictureboxList.Add(pb);
             }
         }
+
+        //Событие для отображения всех видов персонажей
+        private void BaseClickPb(object sender, EventArgs e)
+        {
+
+            PictureBox pb = sender as PictureBox;
+            pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
+            //Отображаем картинку перса
+            pictureBox9.Image = pb.Image;
+
+            BaseCharacter curenChemp = null;           
+
+            if (tabControl2.SelectedIndex == 0)
+            {
+                curenChemp = blueList[Convert.ToInt32(pb.Name)];
+            }
+            else if (tabControl2.SelectedIndex == 1)
+            {
+                curenChemp = pinkList[Convert.ToInt32(pb.Name)];
+            }
+            else if (tabControl2.SelectedIndex == 2)
+            {
+                curenChemp = goldList[Convert.ToInt32(pb.Name)];
+            }
+            else if (tabControl2.SelectedIndex == 3)
+            {
+                curenChemp = redList[Convert.ToInt32(pb.Name)];
+            }
+            //Отображение: Имя, колличество, ссылка на файл
+            textBox11.Text = curenChemp.Name;
+            textBox10.Text = Convert.ToString(curenChemp.Count);
+            textBox9.Text = Path.GetFileName(curenChemp.ImgUrl);
+            comboBox2.SelectedIndex = curenChemp.Element;
+            comboBox1.SelectedIndex = 3 - tabControl2.SelectedIndex;
+
+        }
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = ((TabControl)sender).SelectedIndex;
             if(index ==0)
             {
                 flowLayoutPanel1.Controls.Clear();
-                QWER(flowLayoutPanel1, blueList);
+                EditPanel(flowLayoutPanel1, blueList);
             }
             else if(index ==1)
             {
                 flowLayoutPanel2.Controls.Clear();
-                QWER(flowLayoutPanel2, pinkList);
+                EditPanel(flowLayoutPanel2, pinkList);
             }
             else if (index == 2)
             {
                 flowLayoutPanel3.Controls.Clear();
-                QWER(flowLayoutPanel3, goldList);
+                EditPanel(flowLayoutPanel3, goldList);
             }
             else if (index == 3)
             {
                 flowLayoutPanel4.Controls.Clear();
-                QWER(flowLayoutPanel4, redList);
+                EditPanel(flowLayoutPanel4, redList);
             }
         }
 
@@ -621,8 +657,23 @@ namespace Bot
             if (index == 1)
             {
                 flowLayoutPanel1.Controls.Clear();
-                QWER(flowLayoutPanel1, blueList);
+                EditPanel(flowLayoutPanel1, blueList);
             }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
