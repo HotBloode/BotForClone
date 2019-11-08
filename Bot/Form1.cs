@@ -19,7 +19,7 @@ namespace Bot
         //Создаём форму для выбора перса    
         private Form2 newForm = new Form2();
         public List<PictureBox> picCraft = new List<PictureBox>();
-
+        public int idChnge;
         public Form1()
         {
             InitializeComponent();
@@ -204,7 +204,7 @@ namespace Bot
                 tmpBlue.ImgUrl = "img\\" + textUrl.Text;
                 tmpBlue.Count = Convert.ToInt32(textCount.Text);
                 tmpBlue.Element = comboElement.SelectedIndex;
-                tmpBlue.Id = blueList.Count + 1;
+                tmpBlue.Id = blueList.Count;
 
                 if(checkBoxShop1.Checked==true)
                 {
@@ -243,7 +243,7 @@ namespace Bot
             tmpGold.ImgUrl = "img\\" + textUrl.Text;
             tmpGold.Count = Convert.ToInt32(textCount.Text);
             tmpGold.Element = comboElement.SelectedIndex;
-            tmpGold.Id = blueList.Count + 1;
+            tmpGold.Id = blueList.Count;
 
             if (checkBoxShop1.Checked == true)
             {
@@ -255,7 +255,7 @@ namespace Bot
             }
             if (checkBox2.Checked == true)
             {
-                tmpGold.Search.Add("Магазин экспедиции: ");
+                tmpGold.Search.Add("Магазин экспедиции");
             }
             if (checkBox4.Checked == true)
             {
@@ -292,7 +292,7 @@ namespace Bot
             tmpPink.ImgUrl = "img\\" + textUrl.Text;
             tmpPink.Count = Convert.ToInt32(textCount.Text);
             tmpPink.Element = comboElement.SelectedIndex;
-            tmpPink.Id = blueList.Count + 1;
+            tmpPink.Id = blueList.Count ;
 
             if (checkBoxShop1.Checked == true)
             {
@@ -338,7 +338,7 @@ namespace Bot
             tmpRed.ImgUrl = "img\\" + textUrl.Text;
             tmpRed.Count = Convert.ToInt32(textCount.Text);
             tmpRed.Element = comboElement.SelectedIndex;
-            tmpRed.Id = blueList.Count + 1;
+            tmpRed.Id = blueList.Count;
 
             if (checkBoxShop1.Checked == true)
             {
@@ -601,26 +601,28 @@ namespace Bot
 
             PictureBox pb = sender as PictureBox;
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
-            //Отображаем картинку перса
+            //Отображаем картинку перса           
             pictureBox9.Image = pb.Image;
+            int idChange = Convert.ToInt32(pb.Name);
+            
 
             BaseCharacter curenChemp = null;           
 
             if (tabControl2.SelectedIndex == 0)
             {
-                curenChemp = blueList[Convert.ToInt32(pb.Name)];
+                curenChemp = blueList[Convert.ToInt32(pb.Name)-1];
             }
             else if (tabControl2.SelectedIndex == 1)
             {
-                curenChemp = pinkList[Convert.ToInt32(pb.Name)];
+                curenChemp = pinkList[Convert.ToInt32(pb.Name)-1];
             }
             else if (tabControl2.SelectedIndex == 2)
             {
-                curenChemp = goldList[Convert.ToInt32(pb.Name)];
+                curenChemp = goldList[Convert.ToInt32(pb.Name)-1];
             }
             else if (tabControl2.SelectedIndex == 3)
             {
-                curenChemp = redList[Convert.ToInt32(pb.Name)];
+                curenChemp = redList[Convert.ToInt32(pb.Name)-1];
             }
             //Отображение: Имя, колличество, ссылка на файл, стихии и качества
             textBox11.Text = curenChemp.Name;
@@ -629,7 +631,22 @@ namespace Bot
             comboBox2.SelectedIndex = curenChemp.Element;
             comboBox1.SelectedIndex = 3 - tabControl2.SelectedIndex;
 
+            if (curenChemp.Search.Contains("Магазин арены"))
+            {                
+                checkBox15.Checked = true;
+            }
+            if (curenChemp.Search.Contains("Магазин таверны"))
+            {
+                checkBox14.Checked = true;
+            }
+            if (curenChemp.Search.Contains("Магазин экспедиции"))
+            {
+                checkBox13.Checked = true;
+            }
+
+
         }
+        //Очистка панелей отображающих списки и очитка полей с данніми о персе
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = ((TabControl)sender).SelectedIndex;
@@ -653,6 +670,7 @@ namespace Bot
                 flowLayoutPanel4.Controls.Clear();
                 EditPanel(flowLayoutPanel4, redList);
             }
+
             textBox9.Clear();
             textBox10.Clear();
             textBox11.Clear();
@@ -695,6 +713,11 @@ namespace Bot
         private void button4_Click(object sender, EventArgs e)
         {
             ChekImg(pictureBox9, textBox9);
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
