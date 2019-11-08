@@ -610,19 +610,19 @@ namespace Bot
 
             if (tabControl2.SelectedIndex == 0)
             {
-                curenChemp = blueList[Convert.ToInt32(pb.Name)-1];
+                curenChemp = blueList[idChange];
             }
             else if (tabControl2.SelectedIndex == 1)
             {
-                curenChemp = pinkList[Convert.ToInt32(pb.Name)-1];
+                curenChemp = pinkList[idChange];
             }
             else if (tabControl2.SelectedIndex == 2)
             {
-                curenChemp = goldList[Convert.ToInt32(pb.Name)-1];
+                curenChemp = goldList[idChange];
             }
             else if (tabControl2.SelectedIndex == 3)
             {
-                curenChemp = redList[Convert.ToInt32(pb.Name)-1];
+                curenChemp = redList[idChange];
             }
             //Отображение: Имя, колличество, ссылка на файл, стихии и качества
             textBox11.Text = curenChemp.Name;
@@ -643,6 +643,14 @@ namespace Bot
             {
                 checkBox13.Checked = true;
             }
+
+            string username = curenChemp.Search.Find((x) => x.StartsWith("Кампания общий:"));
+            username = username.Split(new char[] { ':' })[1].ToString();
+            username = username.Trim();
+            //username = username.SkipWhile(x => x != ':').Skip(1).TakeWhile(x =>x != 5).ToString ();
+            string username1 = curenChemp.Search.Find((x) => x.StartsWith("Кампания элитный:"));
+            string username2 = curenChemp.Search.Find((x) => x.StartsWith("Кампания легендарный:"));
+            string username3 = curenChemp.Search.Find((x) => x.StartsWith("Кампания эпический:"));
 
 
         }
