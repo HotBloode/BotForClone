@@ -781,6 +781,7 @@
             this.button2.TabIndex = 74;
             this.button2.Text = "Выбрать картинку";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // panel1
             // 
@@ -1091,6 +1092,7 @@
             this.button4.TabIndex = 48;
             this.button4.Text = "Проверить каритнку";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox2
             // 

@@ -78,13 +78,13 @@ namespace Bot
         }
 
         //Проверяем существование картнки
-        private bool ChekImg()
+        private bool ChekImg(PictureBox pic, TextBox text)
         {            
             try
             {
-                pictureBox1.Image = null;
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox1.Load("img\\" + textUrl.Text);
+                pic.Image = null;
+                pic.SizeMode = PictureBoxSizeMode.StretchImage;
+                pic.Load("img\\" + text.Text);
                 return true;
             }
             catch
@@ -97,7 +97,7 @@ namespace Bot
 
         private void buttonChekImg_Click(object sender, EventArgs e)
         {
-            ChekImg();
+            ChekImg(pictureBox1, textUrl);
         }
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -424,7 +424,7 @@ namespace Bot
             }
             else
             {
-                if(!ChekImg())
+                if(!ChekImg(pictureBox1, textUrl))
                 {
                     //МСБ с ошибкой
                 }
@@ -520,15 +520,20 @@ namespace Bot
         //Выбираем картинку из папки, обрезаем ее адрес, пихаем в бокс и отображаем
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open_dialog = new OpenFileDialog(); 
-            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*"; 
+            ImgButChek(pictureBox1, textUrl);
+        }
+
+        void ImgButChek(PictureBox pic, TextBox text)
+        {
+            OpenFileDialog open_dialog = new OpenFileDialog();
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             open_dialog.InitialDirectory = "img\\";
             if (open_dialog.ShowDialog() == DialogResult.OK)
             {
                 try
-                {                    
-                    textUrl.Text = Path.GetFileName(open_dialog.FileName);
-                    ChekImg();
+                {
+                    text.Text = Path.GetFileName(open_dialog.FileName);
+                    ChekImg(pic, text);
                 }
                 catch
                 {
@@ -537,7 +542,6 @@ namespace Bot
                 }
             }
         }
-
         private void tabPage3_Click(object sender, EventArgs e)
         {
 
@@ -618,7 +622,7 @@ namespace Bot
             {
                 curenChemp = redList[Convert.ToInt32(pb.Name)];
             }
-            //Отображение: Имя, колличество, ссылка на файл
+            //Отображение: Имя, колличество, ссылка на файл, стихии и качества
             textBox11.Text = curenChemp.Name;
             textBox10.Text = Convert.ToString(curenChemp.Count);
             textBox9.Text = Path.GetFileName(curenChemp.ImgUrl);
@@ -649,6 +653,12 @@ namespace Bot
                 flowLayoutPanel4.Controls.Clear();
                 EditPanel(flowLayoutPanel4, redList);
             }
+            textBox9.Clear();
+            textBox10.Clear();
+            textBox11.Clear();
+            pictureBox9.Image = null;
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -674,6 +684,17 @@ namespace Bot
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+        //Выбор картинки через диалог, подгрузка имени файла и проверка картинки
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ImgButChek(pictureBox9, textBox9);
+        }
+
+        //Поверка наличия картинки по url
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ChekImg(pictureBox9, textBox9);
         }
     }
 }
