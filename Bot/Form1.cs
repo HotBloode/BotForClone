@@ -66,10 +66,10 @@ namespace Bot
         //Выгружаем
         private void buttonDes_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("baseBlue.json", JsonConvert.SerializeObject(blueList));
-            File.WriteAllText("basePink.json", JsonConvert.SerializeObject(pinkList));
-            File.WriteAllText("baseGold.json", JsonConvert.SerializeObject(goldList));
-            File.WriteAllText("baseRed.json", JsonConvert.SerializeObject(redList));
+            File.WriteAllText("baseBlue.json", JsonConvert.SerializeObject(blueList, Formatting.Indented));
+            File.WriteAllText("basePink.json", JsonConvert.SerializeObject(pinkList, Formatting.Indented));
+            File.WriteAllText("baseGold.json", JsonConvert.SerializeObject(goldList, Formatting.Indented));
+            File.WriteAllText("baseRed.json", JsonConvert.SerializeObject(redList, Formatting.Indented));
         }
 
         private void labelElement_Click(object sender, EventArgs e)
@@ -312,7 +312,8 @@ namespace Bot
             tmpPink.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpPink.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
             tmpPink.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
-            tmpPink.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);            
+            tmpPink.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
+            tmpPink.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
 
             pinkList.Add(tmpPink);
 
@@ -332,7 +333,7 @@ namespace Bot
             tmpRed.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
             tmpRed.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
             tmpRed.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
-
+            tmpRed.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
             redList.Add(tmpRed);
 
         }
