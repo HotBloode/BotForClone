@@ -194,6 +194,72 @@ namespace Bot
             newForm.SelectChamp();          
         }
 
+        #region addToList
+        void AddSearch(BaseCharacter character)
+        {
+            if (checkBoxShop1.Checked == true)
+            {
+                character.Search.Add("1");
+            }
+            else
+            {
+                character.Search.Add(null);
+            }
+
+            if (checkBox1.Checked == true)
+            {
+                character.Search.Add("1");
+            }
+            else
+            {
+                character.Search.Add(null);
+            }
+
+            if (checkBox2.Checked == true)
+            {
+                character.Search.Add("1");
+            }
+            else
+            {
+                character.Search.Add(null);
+            }
+
+            if (checkBox4.Checked == true)
+            {
+                character.Search.Add(textBox1.Text);
+            }
+            else
+            {
+                character.Search.Add(null);
+            }
+
+            if (checkBox5.Checked == true)
+            {
+                character.Search.Add(textBox2.Text);
+            }
+            else
+            {
+                character.Search.Add(null);
+            }
+
+            if (checkBox6.Checked == true)
+            {
+                character.Search.Add(textBox3.Text);
+            }
+            else
+            {
+                character.Search.Add(null);
+            }
+
+            if (checkBox7.Checked == true)
+            {
+                character.Search.Add(textBox4.Text);
+            }
+            else
+            {
+                character.Search.Add(null);
+            }
+        }
 
         //Избыточно, но работает. Позже заюзать апкаст или шаблон
         private void AddBlueToList()
@@ -206,34 +272,8 @@ namespace Bot
                 tmpBlue.Element = comboElement.SelectedIndex;
                 tmpBlue.Id = blueList.Count;
 
-                if(checkBoxShop1.Checked==true)
-                {
-                    tmpBlue.Search.Add("Магазин арены");
-                }
-                if(checkBox1.Checked == true)
-                {
-                    tmpBlue.Search.Add("Магазин таверны");
-                }
-                if (checkBox2.Checked == true)
-                {
-                    tmpBlue.Search.Add("Магазин экспедиции: ");
-                }                
-                if (checkBox4.Checked == true)
-                {
-                    tmpBlue.Search.Add("Кампания общий: "+textBox1.Text);
-                }
-                if (checkBox5.Checked == true)
-                {
-                    tmpBlue.Search.Add("Кампания элитный: " + textBox2.Text);
-                }
-                if (checkBox6.Checked == true)
-                {
-                    tmpBlue.Search.Add("Кампания легендарный: " + textBox3.Text);
-                }
-                if (checkBox7.Checked == true)
-                {
-                    tmpBlue.Search.Add("Кампания эпический: "+textBox4.Text);   
-                }           
+            AddSearch(tmpBlue);
+            
             blueList.Add(tmpBlue);
         }
         private void AddGoldToList()
@@ -245,34 +285,7 @@ namespace Bot
             tmpGold.Element = comboElement.SelectedIndex;
             tmpGold.Id = blueList.Count;
 
-            if (checkBoxShop1.Checked == true)
-            {
-                tmpGold.Search.Add("Магазин арены");
-            }
-            if (checkBox1.Checked == true)
-            {
-                tmpGold.Search.Add("Магазин таверны");
-            }
-            if (checkBox2.Checked == true)
-            {
-                tmpGold.Search.Add("Магазин экспедиции");
-            }
-            if (checkBox4.Checked == true)
-            {
-                tmpGold.Search.Add("Кампания общий: " + textBox1.Text);
-            }
-            if (checkBox5.Checked == true)
-            {
-                tmpGold.Search.Add("Кампания элитный: " + textBox2.Text);
-            }
-            if (checkBox6.Checked == true)
-            {
-                tmpGold.Search.Add("Кампания легендарный: " + textBox3.Text);
-            }
-            if (checkBox7.Checked == true)
-            {
-                tmpGold.Search.Add("Кампания эпический: " + textBox4.Text);
-            }
+            AddSearch(tmpGold);
 
             tmpGold.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpGold.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
@@ -294,34 +307,7 @@ namespace Bot
             tmpPink.Element = comboElement.SelectedIndex;
             tmpPink.Id = blueList.Count ;
 
-            if (checkBoxShop1.Checked == true)
-            {
-                tmpPink.Search.Add("Магазин арены");
-            }
-            if (checkBox1.Checked == true)
-            {
-                tmpPink.Search.Add("Магазин таверны");
-            }
-            if (checkBox2.Checked == true)
-            {
-                tmpPink.Search.Add("Магазин экспедиции: ");
-            }
-            if (checkBox4.Checked == true)
-            {
-                tmpPink.Search.Add("Кампания общий: " + textBox1.Text);
-            }
-            if (checkBox5.Checked == true)
-            {
-                tmpPink.Search.Add("Кампания элитный: " + textBox2.Text);
-            }
-            if (checkBox6.Checked == true)
-            {
-                tmpPink.Search.Add("Кампания легендарный: " + textBox3.Text);
-            }
-            if (checkBox7.Checked == true)
-            {
-                tmpPink.Search.Add("Кампания эпический: " + textBox4.Text);
-            }
+            AddSearch(tmpPink);
 
             tmpPink.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpPink.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
@@ -340,34 +326,7 @@ namespace Bot
             tmpRed.Element = comboElement.SelectedIndex;
             tmpRed.Id = blueList.Count;
 
-            if (checkBoxShop1.Checked == true)
-            {
-                tmpRed.Search.Add("Магазин арены");
-            }
-            if (checkBox1.Checked == true)
-            {
-                tmpRed.Search.Add("Магазин таверны");
-            }
-            if (checkBox2.Checked == true)
-            {
-                tmpRed.Search.Add("Магазин экспедиции: ");
-            }
-            if (checkBox4.Checked == true)
-            {
-                tmpRed.Search.Add("Кампания общий: " + textBox1.Text);
-            }
-            if (checkBox5.Checked == true)
-            {
-                tmpRed.Search.Add("Кампания элитный: " + textBox2.Text);
-            }
-            if (checkBox6.Checked == true)
-            {
-                tmpRed.Search.Add("Кампания легендарный: " + textBox3.Text);
-            }
-            if (checkBox7.Checked == true)
-            {
-                tmpRed.Search.Add("Кампания эпический: " + textBox4.Text);
-            }
+            AddSearch(tmpRed);
 
             tmpRed.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpRed.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
@@ -378,6 +337,7 @@ namespace Bot
 
         }
 
+        #endregion addToList
 
         public void ClearPb()
         {
@@ -598,7 +558,7 @@ namespace Bot
         //Событие для отображения всех видов персонажей
         private void BaseClickPb(object sender, EventArgs e)
         {
-
+            ClearEditPanel();
             PictureBox pb = sender as PictureBox;
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             //Отображаем картинку перса           
@@ -624,6 +584,7 @@ namespace Bot
             {
                 curenChemp = redList[idChange];
             }
+
             //Отображение: Имя, колличество, ссылка на файл, стихии и качества
             textBox11.Text = curenChemp.Name;
             textBox10.Text = Convert.ToString(curenChemp.Count);
@@ -631,29 +592,80 @@ namespace Bot
             comboBox2.SelectedIndex = curenChemp.Element;
             comboBox1.SelectedIndex = 3 - tabControl2.SelectedIndex;
 
-            if (curenChemp.Search.Contains("Магазин арены"))
+            if (curenChemp.Search[0]!=null)
             {                
                 checkBox15.Checked = true;
             }
-            if (curenChemp.Search.Contains("Магазин таверны"))
+            if (curenChemp.Search[1]!= null)
             {
                 checkBox14.Checked = true;
             }
-            if (curenChemp.Search.Contains("Магазин экспедиции"))
+            if (curenChemp.Search[2] != null)
             {
                 checkBox13.Checked = true;
             }
+            if (curenChemp.Search[3] != null)
+            {
+                textBox8.Text = curenChemp.Search[3];
+            }
+            if (curenChemp.Search[4] != null)
+            {
+                textBox7.Text = curenChemp.Search[4];
+            }
+            if (curenChemp.Search[5] != null)
+            {
+                textBox6.Text = curenChemp.Search[5];
+            }
+            if (curenChemp.Search[6] != null)
+            {
+                textBox5.Text = curenChemp.Search[6];
+            }
 
-            string username = curenChemp.Search.Find((x) => x.StartsWith("Кампания общий:"));
-            username = username.Split(new char[] { ':' })[1].ToString();
-            username = username.Trim();
-            //username = username.SkipWhile(x => x != ':').Skip(1).TakeWhile(x =>x != 5).ToString ();
-            string username1 = curenChemp.Search.Find((x) => x.StartsWith("Кампания элитный:"));
-            string username2 = curenChemp.Search.Find((x) => x.StartsWith("Кампания легендарный:"));
-            string username3 = curenChemp.Search.Find((x) => x.StartsWith("Кампания эпический:"));
+
+
+
+
+
+            //string username = curenChemp.Search.Find((x) => x.StartsWith("Кампания общий:"));
+            //username = username.Split(new char[] { ':' })[1].ToString();
+            //username = username.Trim();
+            ////username = username.SkipWhile(x => x != ':').Skip(1).TakeWhile(x =>x != 5).ToString ();
+            //string username1 = curenChemp.Search.Find((x) => x.StartsWith("Кампания элитный:"));
+            //string username2 = curenChemp.Search.Find((x) => x.StartsWith("Кампания легендарный:"));
+            //string username3 = curenChemp.Search.Find((x) => x.StartsWith("Кампания эпический:"));
 
 
         }
+
+
+
+        void ClearEditPanel()
+        {
+            //Чистим базовые элементы
+            textBox9.Clear();
+            textBox10.Clear();
+            textBox11.Clear();
+            pictureBox9.Image = null;
+            comboBox1.SelectedIndex = -1;
+            comboBox2.SelectedIndex = -1;
+
+            //Чистим чек боксы
+            checkBox15.Checked = false;
+            checkBox14.Checked = false;
+            checkBox13.Checked = false;
+            checkBox12.Checked = false;
+            checkBox10.Checked = false;
+            checkBox9.Checked = false;
+            checkBox8.Checked = false;
+
+            //Чистим текст боксы
+            textBox8.Text = null;
+            textBox7.Text = null;
+            textBox6.Text = null;
+            textBox5.Text = null;
+
+        }
+
         //Очистка панелей отображающих списки и очитка полей с данніми о персе
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -679,12 +691,8 @@ namespace Bot
                 EditPanel(flowLayoutPanel4, redList);
             }
 
-            textBox9.Clear();
-            textBox10.Clear();
-            textBox11.Clear();
-            pictureBox9.Image = null;
-            comboBox1.SelectedIndex = -1;
-            comboBox2.SelectedIndex = -1;
+            ClearEditPanel();
+
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
