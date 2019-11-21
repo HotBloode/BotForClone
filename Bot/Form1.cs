@@ -44,12 +44,12 @@ namespace Bot
         public List<GoldCharacter> goldList;
         public List<PinkCharacter> pinkList;
         public List<BlueCharacter> blueList;
-        
-        
-      
+
+
+        //Подгружаем базу
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Подгружаем базу
+            
             if (!File.Exists("baseRed.json") || !File.Exists("baseBlue.json") || !File.Exists("baseGold.json") || !File.Exists("basePink.json"))
             {
                 MessageBox.Show("Один из файлов базы не найден!");
@@ -604,7 +604,7 @@ namespace Bot
             {
                 checkBox13.Checked = true;
             }
-
+            //Если в поисковом списке есть поиск хотя бы в 1 уровне кампании, то активировать чек бокс кампании
             if(curenChemp.Search[3]!=null|| curenChemp.Search[4] != null || curenChemp.Search[5] != null || curenChemp.Search[6] != null)
             {
                 checkBox12.Checked = Enabled;
@@ -633,22 +633,7 @@ namespace Bot
                 textBox5.Text = curenChemp.Search[6].Trim();
                 checkBox8.Checked = Enabled;
                 textBox5.Enabled = true;
-            }
-
-
-
-
-
-
-            //string username = curenChemp.Search.Find((x) => x.StartsWith("Кампания общий:"));
-            //username = username.Split(new char[] { ':' })[1].ToString();
-            //username = username.Trim();
-            ////username = username.SkipWhile(x => x != ':').Skip(1).TakeWhile(x =>x != 5).ToString ();
-            //string username1 = curenChemp.Search.Find((x) => x.StartsWith("Кампания элитный:"));
-            //string username2 = curenChemp.Search.Find((x) => x.StartsWith("Кампания легендарный:"));
-            //string username3 = curenChemp.Search.Find((x) => x.StartsWith("Кампания эпический:"));
-
-
+            }            
         }
 
 
@@ -749,7 +734,7 @@ namespace Bot
         {
 
         }
-
+        #region checkBoxes EditPanel
         private void checkBox12_CheckedChanged(object sender, EventArgs e)
         {
             checkBox11.Enabled = checkBox12.Checked;
@@ -777,5 +762,21 @@ namespace Bot
         {            
             textBox8.Enabled = checkBox11.Checked;
         }
+
+        private void checkBox10_CheckStateChanged(object sender, EventArgs e)
+        {
+            textBox7.Enabled = checkBox10.Checked;
+        }
+
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox6.Enabled = checkBox9.Checked; 
+        }
+
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox5.Enabled = checkBox8.Checked;
+        }
+        #endregion checkBoxes EditPanel
     }
 }
