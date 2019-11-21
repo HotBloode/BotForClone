@@ -19,6 +19,7 @@ namespace Bot
         //Создаём форму для выбора перса    
         private Form2 newForm = new Form2();
         public List<PictureBox> picCraft = new List<PictureBox>();
+        public List<PictureBox> picEdit = new List<PictureBox>();
         public int idChnge;
         public Form1()
         {
@@ -32,6 +33,14 @@ namespace Bot
             picCraft.Add(pic5);
             picCraft.Add(pic6);
             picCraft.Add(pic7);
+
+            picEdit.Add(pic11);
+            picEdit.Add(pic22);
+            picEdit.Add(pic33);
+            picEdit.Add(pic44);
+            picEdit.Add(pic55);
+            picEdit.Add(pic66);
+            picEdit.Add(pic77);
         }
 
 
@@ -340,11 +349,21 @@ namespace Bot
 
         #endregion addToList
 
-        public void ClearPb()
+        public void ClearPb(bool flagPanel)
         {
-            foreach(PictureBox tmp in picCraft)
+            if (flagPanel)
             {
-                tmp.Image = null;
+                foreach (PictureBox tmp in picCraft)
+                {
+                    tmp.Image = null;
+                }
+            }
+            else
+            {
+                foreach (PictureBox tmp in picEdit)
+                {
+                    tmp.Image = null;
+                }
             }
         }
 
@@ -359,11 +378,15 @@ namespace Bot
             }            
             else if (comboBoxColor.SelectedIndex == 2)
             {
+                picCraft[5].Hide();
+                picCraft[6].Hide();                
                 panel.Visible = true;               
                 //Розовые
             }
             else if (comboBoxColor.SelectedIndex == 1)
             {
+                picCraft[5].Visible = true;
+                picCraft[6].Visible = true;
                 panel.Visible = true;
                
                 //Золотые
@@ -371,8 +394,9 @@ namespace Bot
             }
             else if (comboBoxColor.SelectedIndex == 0)
             {
-                panel.Visible = true;
-                
+                picCraft[5].Hide();
+                picCraft[6].Hide();
+                panel.Visible = true;                
                 //Красные
             }
         }
@@ -475,7 +499,7 @@ namespace Bot
 
         private void comboBoxColor_SelectedValueChanged(object sender, EventArgs e)
         {
-            ClearPb();
+            ClearPb(true);
         }
 
         //Выбираем картинку из папки, обрезаем ее адрес, пихаем в бокс и отображаем
@@ -591,7 +615,7 @@ namespace Bot
             textBox10.Text = Convert.ToString(curenChemp.Count);
             textBox9.Text = Path.GetFileName(curenChemp.ImgUrl);
             comboBox2.SelectedIndex = curenChemp.Element;
-            comboBox1.SelectedIndex = 3 - tabControl2.SelectedIndex;
+            
 
             if (curenChemp.Search[0]!=null)
             {                
@@ -634,7 +658,40 @@ namespace Bot
                 textBox5.Text = curenChemp.Search[6].Trim();
                 checkBox8.Checked = Enabled;
                 textBox5.Enabled = true;
-            }            
+            } 
+
+            
+            if(curenChemp is PinkCharacter)
+            {
+                ICharacter tmp = (ICharacter)curenChemp;
+                for(int i=0; i<tmp.SсhemeCraft.Length;i++)
+                {
+                    picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
+                    picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                    picEdit[i].Load(blueList[tmp.Id].ImgUrl);
+                }
+            }
+            else if (curenChemp is RedCharacter)
+            {
+                ICharacter tmp = (ICharacter)curenChemp;
+                for (int i = 0; i < tmp.SсhemeCraft.Length; i++)
+                {
+                    picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
+                    picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                    picEdit[i].Load(goldList[tmp.Id].ImgUrl);
+                }
+            }
+            else if (curenChemp is GoldCharacter)
+            {
+                ICharacter tmp = (ICharacter)curenChemp;
+                for (int i = 0; i < tmp.SсhemeCraft.Length; i++)
+                {
+                    picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
+                    picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                    picEdit[i].Load(pinkList[tmp.Id].ImgUrl);
+                }
+            }
+
         }
 
 
@@ -645,8 +702,7 @@ namespace Bot
             textBox9.Clear();
             textBox10.Clear();
             textBox11.Clear();
-            pictureBox9.Image = null;
-            comboBox1.SelectedIndex = -1;
+            pictureBox9.Image = null;            
             comboBox2.SelectedIndex = -1;
 
             //Чистим чек боксы
@@ -672,23 +728,37 @@ namespace Bot
             int index = ((TabControl)sender).SelectedIndex;
             if(index ==0)
             {
+                ClearPb(false);
                 flowLayoutPanel1.Controls.Clear();
                 EditPanel(flowLayoutPanel1, blueList);
+                panel1.Visible = false;
             }
             else if(index ==1)
             {
+                ClearPb(false);
                 flowLayoutPanel2.Controls.Clear();
                 EditPanel(flowLayoutPanel2, pinkList);
+                picEdit[5].Hide();
+                picEdit[6].Hide();
+                panel1.Visible = true;
             }
             else if (index == 2)
             {
+                ClearPb(false);
                 flowLayoutPanel3.Controls.Clear();
                 EditPanel(flowLayoutPanel3, goldList);
+                picEdit[5].Visible = true;
+                picEdit[6].Visible = true;
+                panel1.Visible = true;
             }
             else if (index == 3)
             {
+                ClearPb(false);
                 flowLayoutPanel4.Controls.Clear();
                 EditPanel(flowLayoutPanel4, redList);
+                picEdit[5].Hide();
+                picEdit[6].Hide();
+                panel1.Visible = true;
             }
 
             ClearEditPanel();
@@ -735,6 +805,7 @@ namespace Bot
         {
 
         }
+
         #region checkBoxes EditPanel
         private void checkBox12_CheckedChanged(object sender, EventArgs e)
         {
@@ -779,5 +850,20 @@ namespace Bot
             textBox5.Enabled = checkBox8.Checked;
         }
         #endregion checkBoxes EditPanel
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ClearPb(false);
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

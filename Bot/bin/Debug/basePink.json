@@ -1,1 +1,26 @@
-[{"SсhemeCraft":[4,4,4,4],"Id":0,"Name":"Любой Молния","ImgUrl":"img\\1p.jpg","Count":0,"FakeCount":0,"Element":3,"Search":[null,null,null,null,null,null,null]}]
+[
+  {
+    "SсhemeCraft": [
+      4,
+      4,
+      4,
+      4,
+	  4
+    ],
+    "Id": 0,
+    "Name": "Любой Молния",
+    "ImgUrl": "img\\1p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
+]

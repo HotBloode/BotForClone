@@ -1,1 +1,26 @@
-[{"SсhemeCraft":[0,0,0,0,0],"Id":0,"Name":"Main Gold","ImgUrl":"img\\1r.jpg","Count":0,"FakeCount":0,"Element":0,"Search":[null,null,null,null,null,null,null]}]
+[
+  {
+    "SсhemeCraft": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Id": 0,
+    "Name": "Main Gold",
+    "ImgUrl": "img\\1r.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
+]
