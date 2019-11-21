@@ -604,21 +604,35 @@ namespace Bot
             {
                 checkBox13.Checked = true;
             }
+
+            if(curenChemp.Search[3]!=null|| curenChemp.Search[4] != null || curenChemp.Search[5] != null || curenChemp.Search[6] != null)
+            {
+                checkBox12.Checked = Enabled;
+            }
+
             if (curenChemp.Search[3] != null)
             {
-                textBox8.Text = curenChemp.Search[3];
+                textBox8.Text = curenChemp.Search[3].Trim();
+                checkBox11.Checked = Enabled;
+                textBox8.Enabled = true;
             }
             if (curenChemp.Search[4] != null)
             {
-                textBox7.Text = curenChemp.Search[4];
+                textBox7.Text = curenChemp.Search[4].Trim();
+                checkBox10.Checked = Enabled;
+                textBox7.Enabled = true;
             }
             if (curenChemp.Search[5] != null)
             {
-                textBox6.Text = curenChemp.Search[5];
+                textBox6.Text = curenChemp.Search[5].Trim();
+                checkBox9.Checked = Enabled;
+                textBox6.Enabled = true;
             }
             if (curenChemp.Search[6] != null)
             {
-                textBox5.Text = curenChemp.Search[6];
+                textBox5.Text = curenChemp.Search[6].Trim();
+                checkBox8.Checked = Enabled;
+                textBox5.Enabled = true;
             }
 
 
@@ -734,6 +748,34 @@ namespace Bot
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox11.Enabled = checkBox12.Checked;
+            checkBox10.Enabled = checkBox12.Checked;
+            checkBox9.Enabled = checkBox12.Checked;
+            checkBox8.Enabled = checkBox12.Checked;
+
+            checkBox11.Checked = false;
+            checkBox10.Checked = false;
+            checkBox9.Checked = false;
+            checkBox8.Checked = false;
+
+            textBox8.Enabled = false;
+            textBox7.Enabled = false;
+            textBox6.Enabled = false;
+            textBox5.Enabled = false;
+
+            textBox8.Text = null;
+            textBox7.Text = null;
+            textBox6.Text = null;
+            textBox5.Text = null;
+        }
+
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {            
+            textBox8.Enabled = checkBox11.Checked;
         }
     }
 }
