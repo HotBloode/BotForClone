@@ -39,10 +39,28 @@ namespace Bot
             picEdit.Add(pic77);
         }
 
+        //Чистим окно крафта
+        void ClearCraftPanel()
+        {
+            textBoxName.Clear();
+            textUrl.Clear();
+            textCount.Clear();
+            comboElement.SelectedIndex = -1;
+            comboBoxColor.SelectedIndex = -1;
+            checkBoxShop1.Checked = false; 
+                checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            pictureBox1.Image = null;
 
+            foreach(PictureBox pb in picCraft)
+            {
+                pb.Image = null;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ClearCraftPanel();
         }
         //Списки персов
         public List<RedCharacter> redList;
@@ -268,7 +286,7 @@ namespace Bot
             tmpGold.ImgUrl = "img\\" + textUrl.Text;
             tmpGold.Count = Convert.ToInt32(textCount.Text);
             tmpGold.Element = comboElement.SelectedIndex;
-            tmpGold.Id = blueList.Count;
+            tmpGold.Id = goldList.Count;
 
             tmpGold.Search = AddSearch();
 
@@ -290,7 +308,7 @@ namespace Bot
             tmpPink.ImgUrl = "img\\" + textUrl.Text;
             tmpPink.Count = Convert.ToInt32(textCount.Text);
             tmpPink.Element = comboElement.SelectedIndex;
-            tmpPink.Id = blueList.Count ;
+            tmpPink.Id = pinkList.Count ;
 
             tmpPink.Search = AddSearch();
 
@@ -310,7 +328,7 @@ namespace Bot
             tmpRed.ImgUrl = "img\\" + textUrl.Text;
             tmpRed.Count = Convert.ToInt32(textCount.Text);
             tmpRed.Element = comboElement.SelectedIndex;
-            tmpRed.Id = blueList.Count;
+            tmpRed.Id = redList.Count;
 
            tmpRed.Search = AddSearch();
 
@@ -522,29 +540,9 @@ namespace Bot
                 catch (OutOfMemoryException) { continue; }
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
                 pb.Click += new System.EventHandler(BaseClickPb);
-                //if ()
-                //{
-
-                //}
-                //else if ()
-                //{
-
-                //}
-                //else if ()
-                //{
-
-                //}
-                //else if()
-                //{
-
-                //}
-
-                //Создаём новое событие для нажатия
-                //pb.Click += new System.EventHandler(ClickPb);
-                //Добавляем Pb на панель
+               
                 panel.Controls.Add(pb);
-                //Добавляем Pb в список
-                //pictureboxList.Add(pb);
+                
             }
         }
 
@@ -564,17 +562,27 @@ namespace Bot
             if (tabControl2.SelectedIndex == 0)
             {
                 curenChemp = blueList[idChange];
+                panel1.Visible = false;
             }
             else if (tabControl2.SelectedIndex == 1)
             {
+                panel1.Visible = true;
+                picEdit[5].Hide();
+                picEdit[6].Hide();
                 curenChemp = pinkList[idChange];
             }
             else if (tabControl2.SelectedIndex == 2)
             {
+                panel1.Visible = true;
+                picEdit[5].Visible = true;
+                picEdit[6].Visible = true;
                 curenChemp = goldList[idChange];
             }
             else if (tabControl2.SelectedIndex == 3)
             {
+                panel1.Visible = true;
+                picEdit[5].Hide();
+                picEdit[6].Hide();
                 curenChemp = redList[idChange];
             }
 
@@ -662,7 +670,7 @@ namespace Bot
 
         }
 
-        
+        //Сохранение изменений после редактирования перса
         void ReSave()
         {
             //Синие
@@ -714,12 +722,14 @@ namespace Bot
                 redList[idChange].Element = comboBox2.SelectedIndex;
                
                 redList[idChange].Search = AddSearch();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    redList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
+                }
             }
 
-            for (int i = 0; i < 5; i++)
-            {
-                redList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
-            }
+           
         }
 
         void ClearEditPanel()
@@ -763,28 +773,22 @@ namespace Bot
             {
                 ClearPb(false);
                 flowLayoutPanel2.Controls.Clear();
-                EditPanel(flowLayoutPanel2, pinkList);
-                picEdit[5].Hide();
-                picEdit[6].Hide();
-                panel1.Visible = true;
+                EditPanel(flowLayoutPanel2, pinkList);               
+                panel1.Visible = false;
             }
             else if (index == 2)
             {
                 ClearPb(false);
                 flowLayoutPanel3.Controls.Clear();
-                EditPanel(flowLayoutPanel3, goldList);
-                picEdit[5].Visible = true;
-                picEdit[6].Visible = true;
-                panel1.Visible = true;
+                EditPanel(flowLayoutPanel3, goldList);               
+                panel1.Visible = false;
             }
             else if (index == 3)
             {
                 ClearPb(false);
                 flowLayoutPanel4.Controls.Clear();
-                EditPanel(flowLayoutPanel4, redList);
-                picEdit[5].Hide();
-                picEdit[6].Hide();
-                panel1.Visible = true;
+                EditPanel(flowLayoutPanel4, redList);                
+                panel1.Visible = false;
             }
 
             ClearEditPanel();
@@ -872,8 +876,7 @@ namespace Bot
         private void ClickEditPb(object sender, EventArgs e)
         {
             
-            newForm.pictureBox = sender as PictureBox;
-            MessageBox.Show(newForm.pictureBox.Name);
+            newForm.pictureBox = sender as PictureBox;           
             newForm.SelectChamp();
            
         }

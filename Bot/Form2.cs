@@ -102,9 +102,7 @@ namespace Bot
             pictureBox.Name = pb.Name;
             pictureBox.Image = pb.Image;
             flowLayoutPanel1.Controls.Clear();
-            this.Hide();
-            MessageBox.Show(pictureBox.Name);
-            //MessageBox.Show(pb.Name);
+            this.Hide();           
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

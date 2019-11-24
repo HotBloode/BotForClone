@@ -154,17 +154,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
+            this.button1.Location = new System.Drawing.Point(784, 398);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(117, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Очистить окно";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonSer
             // 
-            this.buttonSer.Location = new System.Drawing.Point(648, 12);
+            this.buttonSer.Location = new System.Drawing.Point(788, 8);
             this.buttonSer.Name = "buttonSer";
             this.buttonSer.Size = new System.Drawing.Size(140, 28);
             this.buttonSer.TabIndex = 1;
@@ -188,6 +188,7 @@
             // 
             this.tabPage1.Controls.Add(this.SelectImg);
             this.tabPage1.Controls.Add(this.panel);
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.buttonAdd);
             this.tabPage1.Controls.Add(this.comboBoxColor);
             this.tabPage1.Controls.Add(this.Color);
@@ -1108,7 +1109,7 @@
             // 
             this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(248, 442);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(289, 442);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // tabPage5
@@ -1140,7 +1141,7 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(14, 10);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(6, 5);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(299, 442);
             this.flowLayoutPanel4.TabIndex = 2;
@@ -1152,7 +1153,6 @@
             this.ClientSize = new System.Drawing.Size(940, 562);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.buttonSer);
-            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

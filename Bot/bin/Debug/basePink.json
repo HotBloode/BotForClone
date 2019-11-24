@@ -22,5 +22,29 @@
       null,
       null
     ]
+  },
+  {
+    "SсhemeCraft": [
+      9,
+      1,
+      1,
+      1,
+      5
+    ],
+    "Id": 1,
+    "Name": "Махатма",
+    "ImgUrl": "img\\7p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      "50",
+      null
+    ]
   }
 ]
