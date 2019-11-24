@@ -178,7 +178,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.HotTrack = true;
-            this.tabControl1.Location = new System.Drawing.Point(13, 46);
+            this.tabControl1.Location = new System.Drawing.Point(12, 46);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(915, 516);
@@ -730,6 +730,7 @@
             this.pic77.Size = new System.Drawing.Size(65, 75);
             this.pic77.TabIndex = 19;
             this.pic77.TabStop = false;
+            this.pic77.Click += new System.EventHandler(this.ClickEditPb);
             // 
             // pic66
             // 
@@ -739,6 +740,7 @@
             this.pic66.Size = new System.Drawing.Size(65, 75);
             this.pic66.TabIndex = 18;
             this.pic66.TabStop = false;
+            this.pic66.Click += new System.EventHandler(this.ClickEditPb);
             // 
             // pic55
             // 
@@ -748,6 +750,7 @@
             this.pic55.Size = new System.Drawing.Size(65, 75);
             this.pic55.TabIndex = 17;
             this.pic55.TabStop = false;
+            this.pic55.Click += new System.EventHandler(this.ClickEditPb);
             // 
             // pic44
             // 
@@ -757,6 +760,7 @@
             this.pic44.Size = new System.Drawing.Size(65, 75);
             this.pic44.TabIndex = 16;
             this.pic44.TabStop = false;
+            this.pic44.Click += new System.EventHandler(this.ClickEditPb);
             // 
             // pic33
             // 
@@ -766,6 +770,7 @@
             this.pic33.Size = new System.Drawing.Size(65, 75);
             this.pic33.TabIndex = 15;
             this.pic33.TabStop = false;
+            this.pic33.Click += new System.EventHandler(this.ClickEditPb);
             // 
             // pic22
             // 
@@ -775,6 +780,7 @@
             this.pic22.Size = new System.Drawing.Size(65, 75);
             this.pic22.TabIndex = 14;
             this.pic22.TabStop = false;
+            this.pic22.Click += new System.EventHandler(this.ClickEditPb);
             // 
             // pic11
             // 
@@ -784,7 +790,7 @@
             this.pic11.Size = new System.Drawing.Size(65, 75);
             this.pic11.TabIndex = 13;
             this.pic11.TabStop = false;
-            this.pic11.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.pic11.Click += new System.EventHandler(this.ClickEditPb);
             // 
             // button3
             // 
@@ -1239,7 +1245,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.PictureBox pic4;
@@ -1250,7 +1256,7 @@
         private System.Windows.Forms.PictureBox pic6;
         private System.Windows.Forms.PictureBox pic5;
         private System.Windows.Forms.Button SelectImg;
-        private System.Windows.Forms.TabControl tabControl2;
+        public System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;

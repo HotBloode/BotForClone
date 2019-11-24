@@ -1,14 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Newtonsoft.Json;
 using System.IO;
+using System.Windows.Forms;
 
 
 
@@ -17,7 +12,8 @@ namespace Bot
     public partial class Form1 : Form
     {
         //Создаём форму для выбора перса    
-        private Form2 newForm = new Form2();
+        private Form2 newForm = new Form2();        
+
         public List<PictureBox> picCraft = new List<PictureBox>();
         public List<PictureBox> picEdit = new List<PictureBox>();
         public int idChnge;
@@ -722,7 +718,7 @@ namespace Bot
 
         }
 
-        //Очистка панелей отображающих списки и очитка полей с данніми о персе
+        //Очистка панелей отображающих списки и очитка полей с данными о персе
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = ((TabControl)sender).SelectedIndex;
@@ -864,6 +860,14 @@ namespace Bot
         private void pictureBox9_Click(object sender, EventArgs e)
         {
 
+        }
+        private void ClickEditPb(object sender, EventArgs e)
+        {
+            
+            newForm.pictureBox = sender as PictureBox;
+            MessageBox.Show(newForm.pictureBox.Name);
+            newForm.SelectChamp();
+           
         }
     }
 }

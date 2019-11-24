@@ -19,6 +19,7 @@ namespace Bot
         }
         //Переменная с сылкой на перфую форму
         public Form1 mainForm;
+        
         //Ссылка на pb на первой форме
         public PictureBox pictureBox = new PictureBox();
 
@@ -29,37 +30,47 @@ namespace Bot
         {
             List<BaseCharacter> list = new List<BaseCharacter>();
             //Выбираем список из первой формы с которым будем работать(зависит от комбоБокса)
-            if (mainForm.comboBoxColor.SelectedIndex == 2)
+            int index;
+            if(mainForm.tabControl1.SelectedIndex == 0)
             {
-                //Розовые    
-                if (mainForm.blueList == null)
-                {
-                    MessageBox.Show("Список синих персонажей пуст");
-                    return;
-                }
-                list = mainForm.blueList.Select(x => (BaseCharacter)x).ToList();
+                index = mainForm.comboBoxColor.SelectedIndex;
             }
-            else if (mainForm.comboBoxColor.SelectedIndex == 1)
+            else
             {
-                //Золотые
-                if (mainForm.pinkList == null)
-                {
-                    MessageBox.Show("Список розовых персонажей пуст");
-                    return;
-                }
-                list = mainForm.pinkList.Select(x => (BaseCharacter)x).ToList();
+                index = 3 - mainForm.tabControl2.SelectedIndex;
             }
-            else if (mainForm.comboBoxColor.SelectedIndex == 0)
-            {
-                //Красные
-                if (mainForm.goldList == null)
+           
+                if (index == 2)
                 {
-                    MessageBox.Show("Список золотых персонажей пуст");
-                    return;
+                    //Розовые    
+                    if (mainForm.blueList == null)
+                    {
+                        MessageBox.Show("Список синих персонажей пуст");
+                        return;
+                    }
+                    list = mainForm.blueList.Select(x => (BaseCharacter)x).ToList();
                 }
-                list = mainForm.goldList.Select(x => (BaseCharacter)x).ToList();
-            }
-
+                else if (index == 1)
+                {
+                    //Золотые
+                    if (mainForm.pinkList == null)
+                    {
+                        MessageBox.Show("Список розовых персонажей пуст");
+                        return;
+                    }
+                    list = mainForm.pinkList.Select(x => (BaseCharacter)x).ToList();
+                }
+                else if (index == 0)
+                {
+                    //Красные
+                    if (mainForm.goldList == null)
+                    {
+                        MessageBox.Show("Список золотых персонажей пуст");
+                        return;
+                    }
+                    list = mainForm.goldList.Select(x => (BaseCharacter)x).ToList();
+                }
+            
             List<PictureBox> pictureboxList = new List<PictureBox>();
             int y = 10;
             foreach (var file in list)
@@ -95,6 +106,7 @@ namespace Bot
             pictureBox.Image = pb.Image;
             flowLayoutPanel1.Controls.Clear();
             this.Hide();
+            MessageBox.Show(pictureBox.Name);
             //MessageBox.Show(pb.Name);
         }
 
