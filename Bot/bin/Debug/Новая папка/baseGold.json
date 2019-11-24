@@ -1,18 +1,20 @@
 [
   {
     "SсhemeCraft": [
-      4,
-      4,
-      4,
-      4,
-      4
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "Id": 0,
-    "Name": "Main Gold",
-    "ImgUrl": "img\\1r.jpg",
+    "Name": "Любой Золотой",
+    "ImgUrl": "img\\1g.jpg",
     "Count": 0,
     "FakeCount": 0,
-    "Element": 0,
+    "Element": -1,
     "Search": [
       null,
       null,

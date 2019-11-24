@@ -16,7 +16,7 @@ namespace Bot
 
         public List<PictureBox> picCraft = new List<PictureBox>();
         public List<PictureBox> picEdit = new List<PictureBox>();
-        public int idChnge;
+        public int idChange;
         public Form1()
         {
             InitializeComponent();
@@ -77,11 +77,6 @@ namespace Bot
             File.WriteAllText("baseRed.json", JsonConvert.SerializeObject(redList, Formatting.Indented));
         }
 
-        private void labelElement_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         //Проверяем существование картнки
         private bool ChekImg(PictureBox pic, TextBox text)
         {            
@@ -105,16 +100,6 @@ namespace Bot
             ChekImg(pictureBox1, textUrl);
         }
         
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {            
-           
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         //Взаимоисключающие чекБоксы
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {           
@@ -177,13 +162,6 @@ namespace Bot
             return true;            
         }
 
-       
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //private BaseCharacter SelectChar(List<BaseCharacter> list, PictureBox imj)
         //{
         //    BaseCharacter a = (BaseCharacter)from t in list where t.Id == Convert.ToInt32(imj.Name) select t;  
@@ -200,70 +178,72 @@ namespace Bot
         }
 
         #region addToList
-        void AddSearch(BaseCharacter character)
+        List<string> AddSearch()
         {
+            List<string> seatch = new List<string>();
             if (checkBoxShop1.Checked == true)
             {
-                character.Search.Add("1");
+                seatch.Add("1");
             }
             else
             {
-                character.Search.Add(null);
+                seatch.Add(null);
             }
 
             if (checkBox1.Checked == true)
             {
-                character.Search.Add("1");
+                seatch.Add("1");
             }
             else
             {
-                character.Search.Add(null);
+                seatch.Add(null);
             }
 
             if (checkBox2.Checked == true)
             {
-                character.Search.Add("1");
+                seatch.Add("1");
             }
             else
             {
-                character.Search.Add(null);
+                seatch.Add(null);
             }
 
             if (checkBox4.Checked == true)
             {
-                character.Search.Add(textBox1.Text);
+                seatch.Add(textBox1.Text);
             }
             else
             {
-                character.Search.Add(null);
+                seatch.Add(null);
             }
 
             if (checkBox5.Checked == true)
             {
-                character.Search.Add(textBox2.Text);
+                seatch.Add(textBox2.Text);
             }
             else
             {
-                character.Search.Add(null);
+                seatch.Add(null);
             }
 
             if (checkBox6.Checked == true)
             {
-                character.Search.Add(textBox3.Text);
+                seatch.Add(textBox3.Text);
             }
             else
             {
-                character.Search.Add(null);
+                seatch.Add(null);
             }
 
             if (checkBox7.Checked == true)
             {
-                character.Search.Add(textBox4.Text);
+                seatch.Add(textBox4.Text);
             }
             else
             {
-                character.Search.Add(null);
+                seatch.Add(null);
             }
+            return seatch;
         }
 
         //Избыточно, но работает. Позже заюзать апкаст или шаблон
@@ -277,7 +257,7 @@ namespace Bot
                 tmpBlue.Element = comboElement.SelectedIndex;
                 tmpBlue.Id = blueList.Count;
 
-            AddSearch(tmpBlue);
+            tmpBlue.Search = AddSearch();
             
             blueList.Add(tmpBlue);
         }
@@ -290,7 +270,7 @@ namespace Bot
             tmpGold.Element = comboElement.SelectedIndex;
             tmpGold.Id = blueList.Count;
 
-            AddSearch(tmpGold);
+            tmpGold.Search = AddSearch();
 
             tmpGold.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpGold.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
@@ -312,7 +292,7 @@ namespace Bot
             tmpPink.Element = comboElement.SelectedIndex;
             tmpPink.Id = blueList.Count ;
 
-            AddSearch(tmpPink);
+            tmpPink.Search = AddSearch();
 
             tmpPink.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpPink.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
@@ -332,7 +312,7 @@ namespace Bot
             tmpRed.Element = comboElement.SelectedIndex;
             tmpRed.Id = blueList.Count;
 
-            AddSearch(tmpRed);
+           tmpRed.Search = AddSearch();
 
             tmpRed.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpRed.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
@@ -523,15 +503,7 @@ namespace Bot
                 }
             }
         }
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         private void EditPanel<T>(FlowLayoutPanel panel, List<T> list) where T:BaseCharacter
         {
             List<PictureBox> pictureboxList = new List<PictureBox>();
@@ -584,7 +556,7 @@ namespace Bot
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             //Отображаем картинку перса           
             pictureBox9.Image = pb.Image;
-            int idChange = Convert.ToInt32(pb.Name);
+            idChange = Convert.ToInt32(pb.Name);
             
 
             BaseCharacter curenChemp = null;           
@@ -664,7 +636,7 @@ namespace Bot
                 {
                     picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
                     picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    picEdit[i].Load(blueList[tmp.Id].ImgUrl);
+                    picEdit[i].Load(blueList[tmp.SсhemeCraft[i]].ImgUrl);
                 }
             }
             else if (curenChemp is RedCharacter)
@@ -674,7 +646,7 @@ namespace Bot
                 {
                     picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
                     picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    picEdit[i].Load(goldList[tmp.Id].ImgUrl);
+                    picEdit[i].Load(goldList[tmp.SсhemeCraft[i]].ImgUrl);
                 }
             }
             else if (curenChemp is GoldCharacter)
@@ -684,13 +656,71 @@ namespace Bot
                 {
                     picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
                     picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    picEdit[i].Load(pinkList[tmp.Id].ImgUrl);
+                    picEdit[i].Load(pinkList[tmp.SсhemeCraft[i]].ImgUrl);
                 }
             }
 
         }
 
+        
+        void ReSave()
+        {
+            //Синие
+            if (tabControl2.SelectedIndex == 0)
+            {
+                blueList[idChange].Name = textBox11.Text;
+                blueList[idChange].ImgUrl = "img\\" + textBox9.Text;
+                blueList[idChange].Count = Convert.ToInt32(textBox10.Text);
+                blueList[idChange].Element = comboBox2.SelectedIndex;
+                blueList[idChange].Search = AddSearch();
+            }
+            //Розовые
+            else if (tabControl2.SelectedIndex == 1)
+            {
+                pinkList[idChange].Name = textBox11.Text;
+                pinkList[idChange].ImgUrl = "img\\" + textBox9.Text;
+                pinkList[idChange].Count = Convert.ToInt32(textBox10.Text);
+                pinkList[idChange].Element = comboBox2.SelectedIndex;
 
+                pinkList[idChange].Search = AddSearch();
+
+                for(int i = 0; i<5;i++)
+                {
+                    pinkList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
+                }
+               
+            }
+            //Золотые
+            else if (tabControl2.SelectedIndex == 2)
+            {
+                goldList[idChange].Name = textBox11.Text;
+                goldList[idChange].ImgUrl = "img\\" + textBox9.Text;
+                goldList[idChange].Count = Convert.ToInt32(textBox10.Text);
+                goldList[idChange].Element = comboBox2.SelectedIndex;
+
+                goldList[idChange].Search = AddSearch();
+
+                for (int i = 0; i < 7; i++)
+                {
+                    goldList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
+                }
+            }
+            //Красные
+            else if (tabControl2.SelectedIndex == 3)
+            {
+                redList[idChange].Name = textBox11.Text;
+                redList[idChange].ImgUrl = "img\\" + textBox9.Text;
+                redList[idChange].Count = Convert.ToInt32(textBox10.Text);
+                redList[idChange].Element = comboBox2.SelectedIndex;
+               
+                redList[idChange].Search = AddSearch();
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                redList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
+            }
+        }
 
         void ClearEditPanel()
         {
@@ -770,21 +800,7 @@ namespace Bot
                 EditPanel(flowLayoutPanel1, blueList);
             }
         }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+      
         //Выбор картинки через диалог, подгрузка имени файла и проверка картинки
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -847,20 +863,12 @@ namespace Bot
         }
         #endregion checkBoxes EditPanel
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
+      
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             ClearPb(false);
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ClickEditPb(object sender, EventArgs e)
         {
             
@@ -868,6 +876,11 @@ namespace Bot
             MessageBox.Show(newForm.pictureBox.Name);
             newForm.SelectChamp();
            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ReSave();
         }
     }
 }

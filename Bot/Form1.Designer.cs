@@ -86,7 +86,6 @@
             this.pic22 = new System.Windows.Forms.PictureBox();
             this.pic11 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -484,7 +483,6 @@
             this.label4.Size = new System.Drawing.Size(74, 17);
             this.label4.TabIndex = 20;
             this.label4.Text = "Кампания";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // checkBox2
             // 
@@ -530,7 +528,6 @@
             this.checkBoxShop1.Size = new System.Drawing.Size(18, 17);
             this.checkBoxShop1.TabIndex = 15;
             this.checkBoxShop1.UseVisualStyleBackColor = true;
-            this.checkBoxShop1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textBox1
             // 
@@ -556,7 +553,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(65, 75);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonChekImg
             // 
@@ -614,7 +610,6 @@
             this.labelElement.Size = new System.Drawing.Size(54, 17);
             this.labelElement.TabIndex = 4;
             this.labelElement.Text = "Стихия";
-            this.labelElement.Click += new System.EventHandler(this.labelElement_Click);
             // 
             // labelUrl
             // 
@@ -647,7 +642,6 @@
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.label12);
@@ -798,18 +792,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 23);
             this.button3.TabIndex = 72;
-            this.button3.Text = "Добавить";
+            this.button3.Text = "Сохранить изменения";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(315, 180);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 17);
-            this.label9.TabIndex = 70;
-            this.label9.Text = "Качество";
             // 
             // label10
             // 
@@ -1003,7 +988,6 @@
             this.pictureBox9.Size = new System.Drawing.Size(65, 75);
             this.pictureBox9.TabIndex = 49;
             this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // button4
             // 
@@ -1101,7 +1085,6 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Синие";
             this.tabPage3.UseVisualStyleBackColor = true;
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -1109,7 +1092,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 442);
             this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // tabPage4
             // 
@@ -1121,7 +1103,6 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Розовые";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -1275,7 +1256,6 @@
         private System.Windows.Forms.PictureBox pic22;
         private System.Windows.Forms.PictureBox pic11;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

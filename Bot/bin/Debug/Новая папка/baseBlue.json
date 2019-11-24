@@ -1,0 +1,138 @@
+[
+  {
+    "Id": 0,
+    "Name": "Любой Вода",
+    "ImgUrl": "img\\1b.png",
+    "Count": 5,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "Id": 1,
+    "Name": "Любой Свет",
+    "ImgUrl": "img\\2b.png",
+    "Count": 5,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Любой Тьма",
+    "ImgUrl": "img\\3b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Любой Огнь",
+    "ImgUrl": "img\\4b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Любой Молния",
+    "ImgUrl": "img\\5b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Любой Земля",
+    "ImgUrl": "img\\6b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Джоан",
+    "ImgUrl": "img\\7b.jpg",
+    "Count": 1,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      "23",
+      null,
+      "25",
+      null
+    ]
+  },
+  {
+    "Id": 7,
+    "Name": "У.Уолес",
+    "ImgUrl": "img\\8b.jpg",
+    "Count": 3,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      "1",
+      null,
+      "15",
+      "25",
+      null,
+      "40"
+    ]
+  }
+]
