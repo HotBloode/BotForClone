@@ -168,5 +168,430 @@
       "40",
       "25"
     ]
+  },
+  {
+    "Id": 10,
+    "Name": "Тутанхамон",
+    "ImgUrl": "img\\11b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      "13",
+      null,
+      "43"
+    ]
+  },
+  {
+    "Id": 11,
+    "Name": "Мечтатель Мартин",
+    "ImgUrl": "img\\12b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      "1",
+      null,
+      null,
+      "9",
+      "11",
+      "31",
+      "11"
+    ]
+  },
+  {
+    "Id": 12,
+    "Name": "Яркий волшебник",
+    "ImgUrl": "img\\13b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      "1",
+      null,
+      null,
+      "21",
+      null,
+      "21"
+    ]
+  },
+  {
+    "Id": 13,
+    "Name": "Тесла-пехотинец",
+    "ImgUrl": "img\\14b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      "1",
+      null,
+      null,
+      "8",
+      "26",
+      null,
+      "26"
+    ]
+  },
+  {
+    "Id": 14,
+    "Name": "Любовник",
+    "ImgUrl": "img\\15b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      "1",
+      null,
+      "16",
+      null,
+      "16"
+    ]
+  },
+  {
+    "Id": 15,
+    "Name": "Форт",
+    "ImgUrl": "img\\16b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      "17",
+      "46",
+      "41",
+      "46"
+    ]
+  },
+  {
+    "Id": 16,
+    "Name": "А. Тюринг",
+    "ImgUrl": "img\\17b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      "1",
+      "11",
+      "1"
+    ]
+  },
+  {
+    "Id": 17,
+    "Name": "Даг Землянка",
+    "ImgUrl": "img\\18b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      "1",
+      "40",
+      null,
+      "21",
+      null
+    ]
+  },
+  {
+    "Id": 18,
+    "Name": "Белл IV",
+    "ImgUrl": "img\\19b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      "1",
+      null,
+      null,
+      "31",
+      "26",
+      "31"
+    ]
+  },
+  {
+    "Id": 19,
+    "Name": "Тихая звезда",
+    "ImgUrl": "img\\20b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      "1",
+      null,
+      null,
+      "30",
+      null,
+      "16",
+      null
+    ]
+  },
+  {
+    "Id": 20,
+    "Name": "Бенджамин Тунитурус",
+    "ImgUrl": "img\\21b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      "1",
+      null,
+      "31",
+      null,
+      "46",
+      null
+    ]
+  },
+  {
+    "Id": 21,
+    "Name": "Служитель Ра",
+    "ImgUrl": "img\\22b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      "28",
+      null,
+      "1",
+      null
+    ]
+  },
+  {
+    "Id": 22,
+    "Name": "Д-р Время",
+    "ImgUrl": "img\\23b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      "21",
+      "41",
+      null,
+      "41"
+    ]
+  },
+  {
+    "Id": 23,
+    "Name": "Чё",
+    "ImgUrl": "img\\24.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      "1",
+      "36",
+      "27",
+      "32",
+      "27"
+    ]
+  },
+  {
+    "Id": 24,
+    "Name": "Гэли.Гэри",
+    "ImgUrl": "img\\25b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      "1",
+      "43",
+      null,
+      "37",
+      null
+    ]
+  },
+  {
+    "Id": 25,
+    "Name": "Аун Сан Сучи",
+    "ImgUrl": "img\\26b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      "1",
+      null,
+      null,
+      "17",
+      "47",
+      "17"
+    ]
+  },
+  {
+    "Id": 26,
+    "Name": "Спартак",
+    "ImgUrl": "img\\27b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      "37",
+      null,
+      "7",
+      null
+    ]
+  },
+  {
+    "Id": 27,
+    "Name": "Летун",
+    "ImgUrl": "img\\28b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      "1",
+      null,
+      "22",
+      null,
+      "22"
+    ]
+  },
+  {
+    "Id": 28,
+    "Name": "Паровик",
+    "ImgUrl": "img\\29b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      "1",
+      null,
+      "2",
+      "27",
+      "2"
+    ]
+  },
+  {
+    "Id": 29,
+    "Name": "Кровавая Мэри",
+    "ImgUrl": "img\\30b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      "1",
+      null,
+      null,
+      "42",
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "Id": 30,
+    "Name": "Луиза XXIV",
+    "ImgUrl": "img\\31b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      "1",
+      "13",
+      "32",
+      "17",
+      "32"
+    ]
+  },
+  {
+    "Id": 31,
+    "Name": "PFK",
+    "ImgUrl": "img\\32b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      "20",
+      "37",
+      null,
+      "37"
+    ]
+  },
+  {
+    "Id": 32,
+    "Name": "Мастер-бластер",
+    "ImgUrl": "img\\33b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      "26",
+      "47",
+      "22",
+      "47"
+    ]
+  },
+  {
+    "Id": 33,
+    "Name": "Король Артур",
+    "ImgUrl": "img\\34b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      "1",
+      null,
+      null,
+      null,
+      "7",
+      "2",
+      "7"
+    ]
+  },
+  {
+    "Id": 34,
+    "Name": "Корсиканский монстр",
+    "ImgUrl": "img\\35b.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      "33",
+      null,
+      null,
+      null
+    ]
   }
 ]

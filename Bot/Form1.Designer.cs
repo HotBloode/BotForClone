@@ -1077,7 +1077,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 7);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(309, 480);
+            this.tabControl2.Size = new System.Drawing.Size(312, 480);
             this.tabControl2.TabIndex = 0;
             this.tabControl2.SelectedIndexChanged += new System.EventHandler(this.tabControl2_SelectedIndexChanged);
             // 
@@ -1087,16 +1087,17 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(301, 451);
+            this.tabPage3.Size = new System.Drawing.Size(304, 451);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Синие";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 6);
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 442);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(302, 448);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // tabPage4
@@ -1194,6 +1195,7 @@
             this.Controls.Add(this.buttonSer);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

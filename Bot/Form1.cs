@@ -12,7 +12,7 @@ namespace Bot
     public partial class Form1 : Form
     {
         //Создаём форму для выбора перса    
-        private Form2 newForm = new Form2();        
+        private Form2 newForm = new Form2();
 
         public List<PictureBox> picCraft = new List<PictureBox>();
         public List<PictureBox> picEdit = new List<PictureBox>();
@@ -21,7 +21,7 @@ namespace Bot
         {
             InitializeComponent();
             //Список с боксов с картинками
-            newForm.mainForm = this;            
+            newForm.mainForm = this;
             picCraft.Add(pic1);
             picCraft.Add(pic2);
             picCraft.Add(pic3);
@@ -47,13 +47,13 @@ namespace Bot
             textCount.Clear();
             comboElement.SelectedIndex = -1;
             comboBoxColor.SelectedIndex = -1;
-            checkBoxShop1.Checked = false; 
-                checkBox1.Checked = false;
+            checkBoxShop1.Checked = false;
+            checkBox1.Checked = false;
             checkBox2.Checked = false;
             checkBox3.Checked = false;
             pictureBox1.Image = null;
 
-            foreach(PictureBox pb in picCraft)
+            foreach (PictureBox pb in picCraft)
             {
                 pb.Image = null;
             }
@@ -72,7 +72,7 @@ namespace Bot
         //Подгружаем базу
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             if (!File.Exists("baseRed.json") || !File.Exists("baseBlue.json") || !File.Exists("baseGold.json") || !File.Exists("basePink.json"))
             {
                 MessageBox.Show("Один из файлов базы не найден!");
@@ -97,7 +97,7 @@ namespace Bot
 
         //Проверяем существование картнки
         private bool ChekImg(PictureBox pic, TextBox text)
-        {            
+        {
             try
             {
                 pic.Image = null;
@@ -117,21 +117,21 @@ namespace Bot
         {
             ChekImg(pictureBox1, textUrl);
         }
-        
+
         //Взаимоисключающие чекБоксы
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {           
-            checkBox4.Enabled = checkBox3.Checked;            
-            checkBox5.Enabled = checkBox3.Checked;           
-            checkBox6.Enabled = checkBox3.Checked;            
-            checkBox7.Enabled = checkBox3.Checked;            
+        {
+            checkBox4.Enabled = checkBox3.Checked;
+            checkBox5.Enabled = checkBox3.Checked;
+            checkBox6.Enabled = checkBox3.Checked;
+            checkBox7.Enabled = checkBox3.Checked;
 
             checkBox4.Checked = false;
             checkBox5.Checked = false;
             checkBox6.Checked = false;
             checkBox7.Checked = false;
 
-            textBox1.Enabled = false;           
+            textBox1.Enabled = false;
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;
@@ -169,7 +169,7 @@ namespace Bot
         //Проверка активности чекБоксов и заполнености текстБоксов
         private bool checkedBox()
         {
-            if( checkBox4.Checked == true && textBox1.Text=="" ||
+            if (checkBox4.Checked == true && textBox1.Text == "" ||
                 checkBox5.Checked == true && textBox2.Text == "" ||
                 checkBox6.Checked == true && textBox3.Text == "" ||
                 checkBox7.Checked == true && textBox4.Text == "")
@@ -177,7 +177,7 @@ namespace Bot
                 MessageBox.Show("Введите уровень кампании или уберите флаг");
                 return false;
             }
-            return true;            
+            return true;
         }
 
         //private BaseCharacter SelectChar(List<BaseCharacter> list, PictureBox imj)
@@ -192,7 +192,7 @@ namespace Bot
         {
             //Шлём 2ой рабочий бокс
             newForm.pictureBox = sender as PictureBox;
-            newForm.SelectChamp();          
+            newForm.SelectChamp();
         }
 
         #region addToList
@@ -334,17 +334,17 @@ namespace Bot
 
         //Избыточно, но работает. Позже заюзать апкаст или шаблон
         private void AddBlueToList()
-        {            
-                BlueCharacter tmpBlue = new BlueCharacter();
+        {
+            BlueCharacter tmpBlue = new BlueCharacter();
 
-                tmpBlue.Name = textBoxName.Text;
-                tmpBlue.ImgUrl = "img\\" + textUrl.Text;
-                tmpBlue.Count = Convert.ToInt32(textCount.Text);
-                tmpBlue.Element = comboElement.SelectedIndex;
-                tmpBlue.Id = blueList.Count;
+            tmpBlue.Name = textBoxName.Text;
+            tmpBlue.ImgUrl = "img\\" + textUrl.Text;
+            tmpBlue.Count = Convert.ToInt32(textCount.Text);
+            tmpBlue.Element = comboElement.SelectedIndex;
+            tmpBlue.Id = blueList.Count;
 
             tmpBlue.Search = AddSearch();
-            
+
             blueList.Add(tmpBlue);
         }
         private void AddGoldToList()
@@ -376,7 +376,7 @@ namespace Bot
             tmpPink.ImgUrl = "img\\" + textUrl.Text;
             tmpPink.Count = Convert.ToInt32(textCount.Text);
             tmpPink.Element = comboElement.SelectedIndex;
-            tmpPink.Id = pinkList.Count ;
+            tmpPink.Id = pinkList.Count;
 
             tmpPink.Search = AddSearch();
 
@@ -398,7 +398,7 @@ namespace Bot
             tmpRed.Element = comboElement.SelectedIndex;
             tmpRed.Id = redList.Count;
 
-           tmpRed.Search = AddSearch();
+            tmpRed.Search = AddSearch();
 
             tmpRed.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
             tmpRed.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
@@ -431,18 +431,18 @@ namespace Bot
 
         //Поработаем с окошками списка крафта, ёптить
         public void comboBoxColor_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            if(comboBoxColor.SelectedIndex==3)
+        {
+            if (comboBoxColor.SelectedIndex == 3)
             {
                 //Синие персы
                 panel.Visible = false;
-               
-            }            
+
+            }
             else if (comboBoxColor.SelectedIndex == 2)
             {
                 picCraft[5].Hide();
-                picCraft[6].Hide();                
-                panel.Visible = true;               
+                picCraft[6].Hide();
+                panel.Visible = true;
                 //Розовые
             }
             else if (comboBoxColor.SelectedIndex == 1)
@@ -450,7 +450,7 @@ namespace Bot
                 picCraft[5].Visible = true;
                 picCraft[6].Visible = true;
                 panel.Visible = true;
-               
+
                 //Золотые
 
             }
@@ -458,63 +458,63 @@ namespace Bot
             {
                 picCraft[5].Hide();
                 picCraft[6].Hide();
-                panel.Visible = true;                
+                panel.Visible = true;
                 //Красные
             }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if(textBoxName.Text == "")
+            if (textBoxName.Text == "")
             {
                 MessageBox.Show("Введите Имя");
             }
             else
             {
-                if(!ChekImg(pictureBox1, textUrl))
+                if (!ChekImg(pictureBox1, textUrl))
                 {
                     //МСБ с ошибкой
                 }
                 else
                 {
-                    if(textCount.Text == "")
+                    if (textCount.Text == "")
                     {
                         MessageBox.Show("Введите колличество");
                     }
                     else
                     {
-                        if(comboElement.SelectedIndex<0)
+                        if (comboElement.SelectedIndex < 0)
                         {
-                            
+
                             MessageBox.Show("Выбирите стихию");
                         }
                         else
                         {
-                            if(comboBoxColor.SelectedIndex < 0)
+                            if (comboBoxColor.SelectedIndex < 0)
                             {
                                 MessageBox.Show("Выбирите качество");
                             }
                             else
                             {
-                               if(comboBoxColor.SelectedIndex == 1)
+                                if (comboBoxColor.SelectedIndex == 1)
                                 {
-                                    if(pic1==null|| pic2 == null || pic3 == null || pic4 == null || pic5 == null || pic6 == null || pic7 == null)
+                                    if (pic1 == null || pic2 == null || pic3 == null || pic4 == null || pic5 == null || pic6 == null || pic7 == null)
                                     {
                                         MessageBox.Show("Выберите всех персонажей для крафта");
                                     }
                                     else
                                     {
-                                        if(!checkedBox())
+                                        if (!checkedBox())
                                         {
                                             //МСБ с ошибкой
                                         }
                                         else
                                         {
                                             AddGoldToList();
-                                        }                                        
+                                        }
                                     }
                                 }
-                               else if(comboBoxColor.SelectedIndex==0|| comboBoxColor.SelectedIndex == 2)
+                                else if (comboBoxColor.SelectedIndex == 0 || comboBoxColor.SelectedIndex == 2)
                                 {
                                     if (pic1.Image == null || pic2 == null || pic3 == null || pic4 == null || pic5 == null)
                                     {
@@ -554,9 +554,9 @@ namespace Bot
                             }
                         }
                     }
-                    
+
                 }
-            }      
+            }
         }
 
         private void comboBoxColor_SelectedValueChanged(object sender, EventArgs e)
@@ -589,8 +589,8 @@ namespace Bot
                 }
             }
         }
-       
-        private void EditPanel<T>(FlowLayoutPanel panel, List<T> list) where T:BaseCharacter
+
+        private void EditPanel<T>(FlowLayoutPanel panel, List<T> list) where T : BaseCharacter
         {
             List<PictureBox> pictureboxList = new List<PictureBox>();
             int y = 10;
@@ -608,9 +608,9 @@ namespace Bot
                 catch (OutOfMemoryException) { continue; }
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
                 pb.Click += new System.EventHandler(BaseClickPb);
-               
+
                 panel.Controls.Add(pb);
-                
+
             }
         }
 
@@ -623,9 +623,9 @@ namespace Bot
             //Отображаем картинку перса           
             pictureBox9.Image = pb.Image;
             idChange = Convert.ToInt32(pb.Name);
-            
 
-            BaseCharacter curenChemp = null;           
+
+            BaseCharacter curenChemp = null;
 
             if (tabControl2.SelectedIndex == 0)
             {
@@ -659,13 +659,13 @@ namespace Bot
             textBox10.Text = Convert.ToString(curenChemp.Count);
             textBox9.Text = Path.GetFileName(curenChemp.ImgUrl);
             comboBox2.SelectedIndex = curenChemp.Element;
-            
 
-            if (curenChemp.Search[0]!=null)
-            {                
+
+            if (curenChemp.Search[0] != null)
+            {
                 checkBox15.Checked = true;
             }
-            if (curenChemp.Search[1]!= null)
+            if (curenChemp.Search[1] != null)
             {
                 checkBox14.Checked = true;
             }
@@ -674,7 +674,7 @@ namespace Bot
                 checkBox13.Checked = true;
             }
             //Если в поисковом списке есть поиск хотя бы в 1 уровне кампании, то активировать чек бокс кампании
-            if(curenChemp.Search[3]!=null|| curenChemp.Search[4] != null || curenChemp.Search[5] != null || curenChemp.Search[6] != null)
+            if (curenChemp.Search[3] != null || curenChemp.Search[4] != null || curenChemp.Search[5] != null || curenChemp.Search[6] != null)
             {
                 checkBox12.Checked = Enabled;
             }
@@ -702,13 +702,13 @@ namespace Bot
                 textBox5.Text = curenChemp.Search[6].Trim();
                 checkBox8.Checked = Enabled;
                 textBox5.Enabled = true;
-            } 
+            }
 
-            
-            if(curenChemp is PinkCharacter)
+
+            if (curenChemp is PinkCharacter)
             {
                 ICharacter tmp = (ICharacter)curenChemp;
-                for(int i=0; i<tmp.SсhemeCraft.Length;i++)
+                for (int i = 0; i < tmp.SсhemeCraft.Length; i++)
                 {
                     picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
                     picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
@@ -751,12 +751,16 @@ namespace Bot
 
             //Синие
             if (tabControl2.SelectedIndex == 0)
-            {               
+            {
                 blueList[idChange].Name = textBox11.Text;
                 blueList[idChange].ImgUrl = "img\\" + textBox9.Text;
                 blueList[idChange].Count = Convert.ToInt32(textBox10.Text);
                 blueList[idChange].Element = comboBox2.SelectedIndex;
                 blueList[idChange].Search = AddEditSearch();
+
+                //Обновление отображаемых персонажей
+                flowLayoutPanel1.Controls.Clear();
+                EditPanel(flowLayoutPanel1, blueList);
             }
             //Розовые
             else if (tabControl2.SelectedIndex == 1)
@@ -768,11 +772,14 @@ namespace Bot
 
                 pinkList[idChange].Search = AddEditSearch();
 
-                for(int i = 0; i<5;i++)
+                for (int i = 0; i < 5; i++)
                 {
                     pinkList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
                 }
-               
+
+                flowLayoutPanel2.Controls.Clear();
+                EditPanel(flowLayoutPanel2, pinkList);
+
             }
             //Золотые
             else if (tabControl2.SelectedIndex == 2)
@@ -788,6 +795,9 @@ namespace Bot
                 {
                     goldList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
                 }
+
+                flowLayoutPanel3.Controls.Clear();
+                EditPanel(flowLayoutPanel3, goldList);
             }
             //Красные
             else if (tabControl2.SelectedIndex == 3)
@@ -796,16 +806,19 @@ namespace Bot
                 redList[idChange].ImgUrl = "img\\" + textBox9.Text;
                 redList[idChange].Count = Convert.ToInt32(textBox10.Text);
                 redList[idChange].Element = comboBox2.SelectedIndex;
-               
+
                 redList[idChange].Search = AddEditSearch();
 
                 for (int i = 0; i < 5; i++)
                 {
                     redList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
                 }
+
+                flowLayoutPanel4.Controls.Clear();
+                EditPanel(flowLayoutPanel4, redList);
             }
 
-           
+
         }
 
         void ClearEditPanel()
@@ -814,7 +827,7 @@ namespace Bot
             textBox9.Clear();
             textBox10.Clear();
             textBox11.Clear();
-            pictureBox9.Image = null;            
+            pictureBox9.Image = null;
             comboBox2.SelectedIndex = -1;
 
             //Чистим чек боксы
@@ -838,32 +851,32 @@ namespace Bot
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = ((TabControl)sender).SelectedIndex;
-            if(index ==0)
+            if (index == 0)
             {
                 ClearPb(false);
                 flowLayoutPanel1.Controls.Clear();
                 EditPanel(flowLayoutPanel1, blueList);
                 panel1.Visible = false;
             }
-            else if(index ==1)
+            else if (index == 1)
             {
                 ClearPb(false);
                 flowLayoutPanel2.Controls.Clear();
-                EditPanel(flowLayoutPanel2, pinkList);               
+                EditPanel(flowLayoutPanel2, pinkList);
                 panel1.Visible = false;
             }
             else if (index == 2)
             {
                 ClearPb(false);
                 flowLayoutPanel3.Controls.Clear();
-                EditPanel(flowLayoutPanel3, goldList);               
+                EditPanel(flowLayoutPanel3, goldList);
                 panel1.Visible = false;
             }
             else if (index == 3)
             {
                 ClearPb(false);
                 flowLayoutPanel4.Controls.Clear();
-                EditPanel(flowLayoutPanel4, redList);                
+                EditPanel(flowLayoutPanel4, redList);
                 panel1.Visible = false;
             }
 
@@ -880,7 +893,7 @@ namespace Bot
                 EditPanel(flowLayoutPanel1, blueList);
             }
         }
-      
+
         //Выбор картинки через диалог, подгрузка имени файла и проверка картинки
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -923,7 +936,7 @@ namespace Bot
         }
 
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
-        {            
+        {
             textBox8.Enabled = checkBox11.Checked;
         }
 
@@ -934,7 +947,7 @@ namespace Bot
 
         private void checkBox9_CheckedChanged(object sender, EventArgs e)
         {
-            textBox6.Enabled = checkBox9.Checked; 
+            textBox6.Enabled = checkBox9.Checked;
         }
 
         private void checkBox8_CheckedChanged(object sender, EventArgs e)
@@ -943,7 +956,7 @@ namespace Bot
         }
         #endregion checkBoxes EditPanel
 
-      
+
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             ClearPb(false);
@@ -951,15 +964,35 @@ namespace Bot
 
         private void ClickEditPb(object sender, EventArgs e)
         {
-            
-            newForm.pictureBox = sender as PictureBox;           
+
+            newForm.pictureBox = sender as PictureBox;
             newForm.SelectChamp();
-           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ReSave();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+        "Выгрузить базу перед выходом?",
+        "Предупреждение!",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Information,
+        MessageBoxDefaultButton.Button1,
+        MessageBoxOptions.DefaultDesktopOnly);
+
+            if (result == DialogResult.Yes)
+            {
+                File.WriteAllText("baseBlue.json", JsonConvert.SerializeObject(blueList, Formatting.Indented));
+                File.WriteAllText("basePink.json", JsonConvert.SerializeObject(pinkList, Formatting.Indented));
+                File.WriteAllText("baseGold.json", JsonConvert.SerializeObject(goldList, Formatting.Indented));
+                File.WriteAllText("baseRed.json", JsonConvert.SerializeObject(redList, Formatting.Indented));
+            }
+        }
+                
     }
 }
