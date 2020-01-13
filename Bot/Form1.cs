@@ -264,6 +264,74 @@ namespace Bot
             return seatch;
         }
 
+        List<string> AddEditSearch()
+        {
+            List<string> seatch = new List<string>();
+            if (checkBox15.Checked == true)
+            {
+                seatch.Add("1");
+            }
+            else
+            {
+                seatch.Add(null);
+            }
+
+            if (checkBox14.Checked == true)
+            {
+                seatch.Add("1");
+            }
+            else
+            {
+                seatch.Add(null);
+            }
+
+            if (checkBox13.Checked == true)
+            {
+                seatch.Add("1");
+            }
+            else
+            {
+                seatch.Add(null);
+            }
+
+            if (checkBox11.Checked == true)
+            {
+                seatch.Add(textBox8.Text);
+            }
+            else
+            {
+                seatch.Add(null);
+            }
+
+            if (checkBox10.Checked == true)
+            {
+                seatch.Add(textBox7.Text);
+            }
+            else
+            {
+                seatch.Add(null);
+            }
+
+            if (checkBox9.Checked == true)
+            {
+                seatch.Add(textBox6.Text);
+            }
+            else
+            {
+                seatch.Add(null);
+            }
+
+            if (checkBox8.Checked == true)
+            {
+                seatch.Add(textBox5.Text);
+            }
+            else
+            {
+                seatch.Add(null);
+            }
+            return seatch;
+        }
+
         //Избыточно, но работает. Позже заюзать апкаст или шаблон
         private void AddBlueToList()
         {            
@@ -673,14 +741,22 @@ namespace Bot
         //Сохранение изменений после редактирования перса
         void ReSave()
         {
+            /*
+             Имя
+             Картинка
+             Колличество
+             Стихия
+             Поиск
+             */
+
             //Синие
             if (tabControl2.SelectedIndex == 0)
-            {
+            {               
                 blueList[idChange].Name = textBox11.Text;
                 blueList[idChange].ImgUrl = "img\\" + textBox9.Text;
                 blueList[idChange].Count = Convert.ToInt32(textBox10.Text);
                 blueList[idChange].Element = comboBox2.SelectedIndex;
-                blueList[idChange].Search = AddSearch();
+                blueList[idChange].Search = AddEditSearch();
             }
             //Розовые
             else if (tabControl2.SelectedIndex == 1)
@@ -690,7 +766,7 @@ namespace Bot
                 pinkList[idChange].Count = Convert.ToInt32(textBox10.Text);
                 pinkList[idChange].Element = comboBox2.SelectedIndex;
 
-                pinkList[idChange].Search = AddSearch();
+                pinkList[idChange].Search = AddEditSearch();
 
                 for(int i = 0; i<5;i++)
                 {
@@ -706,7 +782,7 @@ namespace Bot
                 goldList[idChange].Count = Convert.ToInt32(textBox10.Text);
                 goldList[idChange].Element = comboBox2.SelectedIndex;
 
-                goldList[idChange].Search = AddSearch();
+                goldList[idChange].Search = AddEditSearch();
 
                 for (int i = 0; i < 7; i++)
                 {
@@ -721,7 +797,7 @@ namespace Bot
                 redList[idChange].Count = Convert.ToInt32(textBox10.Text);
                 redList[idChange].Element = comboBox2.SelectedIndex;
                
-                redList[idChange].Search = AddSearch();
+                redList[idChange].Search = AddEditSearch();
 
                 for (int i = 0; i < 5; i++)
                 {

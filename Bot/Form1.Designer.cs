@@ -124,6 +124,9 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel.SuspendLayout();
@@ -150,6 +153,7 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -176,6 +180,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.HotTrack = true;
             this.tabControl1.Location = new System.Drawing.Point(12, 46);
             this.tabControl1.Name = "tabControl1";
@@ -1146,6 +1151,40 @@
             this.flowLayoutPanel4.Size = new System.Drawing.Size(299, 442);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.comboBox1);
+            this.tabPage7.Controls.Add(this.label9);
+            this.tabPage7.Location = new System.Drawing.Point(4, 25);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(907, 487);
+            this.tabPage7.TabIndex = 2;
+            this.tabPage7.Text = "Крафт";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Красный",
+            "Золотой",
+            "Розовый",
+            "Синий"});
+            this.comboBox1.Location = new System.Drawing.Point(83, 11);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 24);
+            this.comboBox1.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 17);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Качество";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1184,6 +1223,8 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1286,6 +1327,9 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TabPage tabPage7;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label9;
     }
 }
 
