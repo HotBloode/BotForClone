@@ -17,6 +17,8 @@ namespace Bot
         public List<PictureBox> picCraft = new List<PictureBox>();
         public List<PictureBox> picEdit = new List<PictureBox>();
         public int idChange;
+
+        public bool flagNotPinkResept = false;
         public Form1()
         {
             InitializeComponent();
@@ -380,12 +382,22 @@ namespace Bot
 
             tmpPink.Search = AddSearch();
 
-            tmpPink.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
-            tmpPink.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
-            tmpPink.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
-            tmpPink.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
-            tmpPink.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
-
+            if (flagNotPinkResept)
+            {
+                tmpPink.SсhemeCraft[0] = 9999999;
+                tmpPink.SсhemeCraft[1] = 9999999;
+                tmpPink.SсhemeCraft[2] = 9999999;
+                tmpPink.SсhemeCraft[3] = 9999999;
+                tmpPink.SсhemeCraft[4] = 9999999;
+            }
+            else
+            {
+                tmpPink.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
+                tmpPink.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
+                tmpPink.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
+                tmpPink.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
+                tmpPink.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
+            }
             pinkList.Add(tmpPink);
 
         }
@@ -440,9 +452,12 @@ namespace Bot
             }
             else if (comboBoxColor.SelectedIndex == 2)
             {
+
                 picCraft[5].Hide();
                 picCraft[6].Hide();
                 panel.Visible = true;
+
+                NotReseptPink();
                 //Розовые
             }
             else if (comboBoxColor.SelectedIndex == 1)
@@ -516,25 +531,34 @@ namespace Bot
                                 }
                                 else if (comboBoxColor.SelectedIndex == 0 || comboBoxColor.SelectedIndex == 2)
                                 {
-                                    if (pic1.Image == null || pic2 == null || pic3 == null || pic4 == null || pic5 == null)
+                                    //Если флаг БЕзРецепта активен и выбран розовый перс
+                                    if (flagNotPinkResept && comboBoxColor.SelectedIndex == 2)
                                     {
-                                        MessageBox.Show("Выберите всех персонажей для крафта");
+                                        AddPinkToList();
                                     }
+                                    //Если нет то поступаем как обычно
                                     else
                                     {
-                                        if (!checkedBox())
+                                        if (pic1.Image == null || pic2 == null || pic3 == null || pic4 == null || pic5 == null)
                                         {
-                                            //МСБ с ошибкой
+                                            MessageBox.Show("Выберите всех персонажей для крафта");
                                         }
                                         else
                                         {
-                                            if (comboBoxColor.SelectedIndex == 0)
+                                            if (!checkedBox())
                                             {
-                                                AddRedToList();
+                                                //МСБ с ошибкой
                                             }
                                             else
                                             {
-                                                AddPinkToList();
+                                                if (comboBoxColor.SelectedIndex == 0)
+                                                {
+                                                    AddRedToList();
+                                                }
+                                                else
+                                                {
+                                                    AddPinkToList();
+                                                }
                                             }
                                         }
                                     }
@@ -634,10 +658,19 @@ namespace Bot
             }
             else if (tabControl2.SelectedIndex == 1)
             {
+                //Если розовый перс не имеет рецепта крафта то скрываем панель
+                if(pinkList[idChange].SсhemeCraft[0]== 9999999)
+                {
+                    panel1.Visible = false;
+                    curenChemp = pinkList[idChange];
+                }
+                else
+                { 
+                curenChemp = pinkList[idChange];
                 panel1.Visible = true;
                 picEdit[5].Hide();
                 picEdit[6].Hide();
-                curenChemp = pinkList[idChange];
+                }
             }
             else if (tabControl2.SelectedIndex == 2)
             {
@@ -706,13 +739,20 @@ namespace Bot
 
 
             if (curenChemp is PinkCharacter)
-            {
+            {                
                 ICharacter tmp = (ICharacter)curenChemp;
-                for (int i = 0; i < tmp.SсhemeCraft.Length; i++)
+                if (tmp.SсhemeCraft[0] == 9999999)
                 {
-                    picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
-                    picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    picEdit[i].Load(blueList[tmp.SсhemeCraft[i]].ImgUrl);
+                    //Если розовый перс не имеет рецепта крафта то не пытаемся отобразить схему
+                }
+                else
+                {
+                    for (int i = 0; i < tmp.SсhemeCraft.Length; i++)
+                    {
+                        picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
+                        picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                        picEdit[i].Load(blueList[tmp.SсhemeCraft[i]].ImgUrl);
+                    }
                 }
             }
             else if (curenChemp is RedCharacter)
@@ -993,6 +1033,29 @@ namespace Bot
                 File.WriteAllText("baseRed.json", JsonConvert.SerializeObject(redList, Formatting.Indented));
             }
         }
-                
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void NotReseptPink()
+        {
+            if (comboBoxColor.SelectedIndex == 2 && checkBox16.Checked == true)
+            {
+                panel.Visible = false;
+                flagNotPinkResept = true;
+            }
+            else
+            {
+                flagNotPinkResept = false;
+            }
+
+        }
+        private void checkBox16_CheckedChanged(object sender, EventArgs e)
+        {
+            NotReseptPink();
+        }
     }
 }
