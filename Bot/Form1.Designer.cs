@@ -1117,9 +1117,10 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(289, 442);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(299, 442);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // tabPage5
@@ -1134,6 +1135,7 @@
             // 
             // flowLayoutPanel3
             // 
+            this.flowLayoutPanel3.AutoSize = true;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(299, 442);
@@ -1151,6 +1153,7 @@
             // 
             // flowLayoutPanel4
             // 
+            this.flowLayoutPanel4.AutoScroll = true;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(6, 5);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(299, 442);
@@ -1248,6 +1251,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();

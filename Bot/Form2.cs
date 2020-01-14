@@ -75,7 +75,7 @@ namespace Bot
                 var pb = new PictureBox();
 
                 pb.Location = new Point(pictureboxList.Count * 120 + 20, y);
-                pb.Size = new Size(65, 75);
+                pb.Size = new Size(55, 75);
                 try
                 {
                     pb.Image = Image.FromFile(file.ImgUrl);

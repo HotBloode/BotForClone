@@ -46,5 +46,197 @@
       "50",
       null
     ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 2,
+    "Name": "Клеопатра",
+    "ImgUrl": "img\\23p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      "1",
+      null,
+      null,
+      null,
+      "42",
+      "12",
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 3,
+    "Name": "Отец-основатель",
+    "ImgUrl": "img\\9p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      "1",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 4,
+    "Name": "Честный Эйб",
+    "ImgUrl": "img\\24p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      "1",
+      null,
+      null,
+      "48",
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9,
+      1,
+      1,
+      1,
+      5
+    ],
+    "Id": 5,
+    "Name": "Дядюшка Джо",
+    "ImgUrl": "img\\25p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      "1",
+      null,
+      null,
+      null,
+      "49",
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 6,
+    "Name": "Ю. Цезарь",
+    "ImgUrl": "img\\26p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      "1",
+      null,
+      null,
+      "18",
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 7,
+    "Name": "Симфони Ди",
+    "ImgUrl": "img\\27p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      "1",
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 8,
+    "Name": "Поэт Уильям",
+    "ImgUrl": "img\\28p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      "1",
+      null,
+      null,
+      "48",
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 9,
+    "Name": "Ким",
+    "ImgUrl": "img\\29p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      "1",
+      null,
+      null,
+      null,
+      "49"
+    ]
   }
 ]
