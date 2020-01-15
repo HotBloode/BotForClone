@@ -25,7 +25,7 @@ namespace Bot
         public List<string> Search { get; set; }
         public BaseCharacter()
         {
-            Search = new List<string>(7);
+            Search = new List<string>(8);
         }
     }
 }
