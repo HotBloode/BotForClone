@@ -67,9 +67,9 @@ namespace Bot
                     }
                     list = mainForm.goldList.Select(x => (BaseCharacter)x).ToList();
                 }
-            
+            #region Только отображение
             List<PictureBox> pictureboxList = new List<PictureBox>();
-            int y = 10;
+            int y = 0;
             foreach (var file in list)
             {
                 var pb = new PictureBox();
@@ -87,11 +87,27 @@ namespace Bot
                 //Создаём новое событие для нажатия
                 pb.Click += new System.EventHandler(ClickPb);
                 //Добавляем Pb на панель
-                flowLayoutPanel1.Controls.Add(pb);
+                if (file.Element == 0)
+                {
+                    flowLayoutPanel1.Controls.Add(pb);
+                }
+                else if(file.Element == 1)
+                {
+                    flowLayoutPanel2.Controls.Add(pb);
+                }
+                else if (file.Element == 2)
+                {
+                    flowLayoutPanel3.Controls.Add(pb);
+                }
+                else
+                {
+                    flowLayoutPanel4.Controls.Add(pb);
+                }
                 //Добавляем Pb в список
                 //pictureboxList.Add(pb);
             }
             Show();
+            #endregion
         }
 
         private void ClickPb(object sender, EventArgs e)
@@ -118,9 +134,12 @@ namespace Bot
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            flowLayoutPanel1.Controls.Clear();
+            e.Cancel = true;            
             this.Hide();
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel3.Controls.Clear();
+            flowLayoutPanel4.Controls.Clear();
         }
     }
 }

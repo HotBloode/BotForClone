@@ -129,6 +129,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel.SuspendLayout();
@@ -341,7 +344,7 @@
             // 
             this.buttonAdd.Location = new System.Drawing.Point(805, 87);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(84, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(96, 23);
             this.buttonAdd.TabIndex = 36;
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -558,7 +561,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(824, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(826, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 75);
             this.pictureBox1.TabIndex = 12;
@@ -648,7 +651,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.button3);
@@ -693,11 +695,11 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(315, 58);
+            this.label21.Location = new System.Drawing.Point(17, 8);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(35, 17);
+            this.label21.Size = new System.Drawing.Size(57, 17);
             this.label21.TabIndex = 40;
-            this.label21.Text = "Имя";
+            this.label21.Text = "Синие: ";
             // 
             // button2
             // 
@@ -1213,11 +1215,42 @@
             this.label22.Text = "Без рецепта";
             this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(105, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(73, 17);
+            this.label23.TabIndex = 41;
+            this.label23.Text = "Розовые: ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(223, 9);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 17);
+            this.label24.TabIndex = 42;
+            this.label24.Text = "Золотые: ";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(334, 8);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(74, 17);
+            this.label25.TabIndex = 43;
+            this.label25.Text = "Красные: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 562);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.buttonSer);
             this.Name = "Form1";
@@ -1256,6 +1289,7 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1362,6 +1396,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
     }
 }
 

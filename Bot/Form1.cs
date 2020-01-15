@@ -70,6 +70,14 @@ namespace Bot
         public List<PinkCharacter> pinkList;
         public List<BlueCharacter> blueList;
 
+        //Информация о колличестве персов. Херачим их в "Наклейки"
+        private void CounyInfo()
+        {
+            label21.Text = "Синие: " + blueList.Count;
+            label23.Text = "Розовые: " + pinkList.Count;
+            label24.Text = "Золотые: " + goldList.Count;
+            label25.Text = "Красные: " + redList.Count;
+        }
 
         //Подгружаем базу
         private void Form1_Load(object sender, EventArgs e)
@@ -85,6 +93,7 @@ namespace Bot
                 blueList = JsonConvert.DeserializeObject<List<BlueCharacter>>(File.ReadAllText("baseBlue.json"));
                 goldList = JsonConvert.DeserializeObject<List<GoldCharacter>>(File.ReadAllText("baseGold.json"));
                 pinkList = JsonConvert.DeserializeObject<List<PinkCharacter>>(File.ReadAllText("basePink.json"));
+                CounyInfo();
             }
         }
 
@@ -348,6 +357,7 @@ namespace Bot
             tmpBlue.Search = AddSearch();
 
             blueList.Add(tmpBlue);
+            CounyInfo();
         }
         private void AddGoldToList()
         {
@@ -369,7 +379,7 @@ namespace Bot
             tmpGold.SсhemeCraft[6] = Convert.ToInt32(pic7.Name);
 
             goldList.Add(tmpGold);
-
+            CounyInfo();
         }
         private void AddPinkToList()
         {
@@ -399,7 +409,7 @@ namespace Bot
                 tmpPink.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
             }
             pinkList.Add(tmpPink);
-
+            CounyInfo();
         }
         private void AddRedToList()
         {
@@ -418,7 +428,7 @@ namespace Bot
             tmpRed.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
             tmpRed.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
             redList.Add(tmpRed);
-
+            CounyInfo();
         }
 
         #endregion addToList
@@ -525,7 +535,7 @@ namespace Bot
                                         }
                                         else
                                         {
-                                            AddGoldToList();
+                                            AddGoldToList();                                            
                                         }
                                     }
                                 }
@@ -553,11 +563,11 @@ namespace Bot
                                             {
                                                 if (comboBoxColor.SelectedIndex == 0)
                                                 {
-                                                    AddRedToList();
+                                                    AddRedToList();                                                    
                                                 }
                                                 else
                                                 {
-                                                    AddPinkToList();
+                                                    AddPinkToList();                                                    
                                                 }
                                             }
                                         }
@@ -571,7 +581,7 @@ namespace Bot
                                     }
                                     else
                                     {
-                                        AddBlueToList();
+                                        AddBlueToList();                                        
                                     }
                                 }
 
@@ -1039,7 +1049,6 @@ namespace Bot
 
         }
 
-
         private void NotReseptPink()
         {
             if (comboBoxColor.SelectedIndex == 2 && checkBox16.Checked == true)
@@ -1047,8 +1056,9 @@ namespace Bot
                 panel.Visible = false;
                 flagNotPinkResept = true;
             }
-            else
+            if (comboBoxColor.SelectedIndex == 2 && checkBox16.Checked == false)
             {
+                panel.Visible = true;
                 flagNotPinkResept = false;
             }
 

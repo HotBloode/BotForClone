@@ -84,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -98,6 +99,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\2811854-gradient-simple-background-colorful-abstract___abstract-wallpapers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\591204cf454db.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\b2ec947cfe206538b0c36d81914f7702083bd449.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\_23-2147734233.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

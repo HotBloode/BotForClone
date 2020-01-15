@@ -238,5 +238,317 @@
       null,
       "49"
     ]
+  },
+  {
+    "SсhemeCraft": [
+      4,
+      4,
+      6,
+      6,
+      22
+    ],
+    "Id": 10,
+    "Name": "Д-р Время",
+    "ImgUrl": "img\\8p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      4,
+      4,
+      6,
+      6,
+      20
+    ],
+    "Id": 11,
+    "Name": "Бенджамин Тунитрус",
+    "ImgUrl": "img\\10p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      4,
+      4,
+      6,
+      6,
+      19
+    ],
+    "Id": 12,
+    "Name": "Тихая звезда",
+    "ImgUrl": "img\\11p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 13,
+    "Name": "Обществмен",
+    "ImgUrl": "img\\12p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 14,
+    "Name": "Католический герой",
+    "ImgUrl": "img\\13p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      "26",
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      4,
+      4,
+      6,
+      6,
+      21
+    ],
+    "Id": 15,
+    "Name": "Служитель Ра",
+    "ImgUrl": "img\\14p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      "6",
+      null,
+      "36"
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 16,
+    "Name": "Рок-бог",
+    "ImgUrl": "img\\15p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      "36",
+      "6"
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 17,
+    "Name": "Форт",
+    "ImgUrl": "img\\16p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "6"
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      4,
+      4,
+      6,
+      6,
+      16
+    ],
+    "Id": 18,
+    "Name": "А. Тюринг",
+    "ImgUrl": "img\\17p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 19,
+    "Name": "Король борьбы",
+    "ImgUrl": "img\\18p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 20,
+    "Name": "Братья Райт",
+    "ImgUrl": "img\\19p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 21,
+    "Name": "Гасу",
+    "ImgUrl": "img\\20p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 22,
+    "Name": "Парацельс",
+    "ImgUrl": "img\\21p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]
