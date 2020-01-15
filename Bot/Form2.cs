@@ -117,8 +117,13 @@ namespace Bot
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.Name = pb.Name;
             pictureBox.Image = pb.Image;
+
+            
+            this.Hide();
             flowLayoutPanel1.Controls.Clear();
-            this.Hide();           
+            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel3.Controls.Clear();
+            flowLayoutPanel4.Controls.Clear();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -134,12 +139,9 @@ namespace Bot
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;            
             this.Hide();
-            flowLayoutPanel1.Controls.Clear();
-            flowLayoutPanel2.Controls.Clear();
-            flowLayoutPanel3.Controls.Clear();
-            flowLayoutPanel4.Controls.Clear();
+            e.Cancel = true;
+           
         }
     }
 }
