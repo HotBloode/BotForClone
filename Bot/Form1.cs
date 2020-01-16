@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -11,9 +13,288 @@ namespace Bot
 {
     public partial class Form1 : Form
     {
-        //Создаём форму для выбора перса    
-        private Form2 newForm = new Form2();
+        
 
+        //Функция подсчёта всхе видов персов
+        public void FallBlue()
+        {
+            blueList[0].Count = 0;
+            blueList[1].Count = 0;
+            blueList[2].Count = 0;
+            blueList[3].Count = 0;
+            blueList[4].Count = 0;
+            blueList[5].Count = 0;
+            blueList[6].Count = 0;
+
+
+
+            foreach (BlueCharacter curen in blueList)
+            {
+                switch (curen.Element)
+                {
+                    case 3: blueList[0].Count++; break;
+                    case 4: blueList[1].Count++; break;
+                    case 5: blueList[2].Count++; break;
+                    case 2: blueList[3].Count++; break;
+                    case 0: blueList[4].Count++; break;
+                    default: blueList[5].Count++; break;
+                }
+            }
+
+            blueList[0].Count = blueList[0].Count - 2;
+            blueList[1].Count = blueList[1].Count - 1;
+            blueList[2].Count = blueList[2].Count - 1;
+            blueList[3].Count = blueList[3].Count - 1;
+            blueList[4].Count = blueList[4].Count - 1;
+            blueList[5].Count = blueList[5].Count - 1;
+            blueList[6].Count = blueList.Count - 7;
+
+
+        }
+        public void FallPink()
+        {
+            pinkList[0].Count = 0;
+            pinkList[1].Count = 0;
+            pinkList[2].Count = 0;
+            pinkList[3].Count = 0;
+            pinkList[4].Count = 0;
+            pinkList[5].Count = 0;
+
+            foreach (PinkCharacter curen in pinkList)
+            {
+                switch (curen.Element)
+                {
+                    case 3: pinkList[0].Count++; break;
+                    case 4: pinkList[1].Count++; break;
+                    case 5: pinkList[2].Count++; break;
+                    case 2: pinkList[3].Count++; break;
+                    case 0: pinkList[4].Count++; break;
+                    default: pinkList[5].Count++; break;
+                }
+
+
+                blueList[0].Count = blueList[0].Count - 1;
+                blueList[1].Count = blueList[1].Count - 1;
+                blueList[2].Count = blueList[2].Count - 1;
+                blueList[3].Count = blueList[3].Count - 1;
+                blueList[4].Count = blueList[4].Count - 1;
+                blueList[5].Count = blueList[5].Count - 1;
+            }
+
+        }
+
+        public void test()
+        {
+            PinkCharacter min = pinkList[6];
+            int tmp = tmpCount(min);
+            if (blueList[6].Count >= 5)
+            {
+                for (int i = 7; i < pinkList.Count; i++)
+                {
+                    int tmp1 = tmpCount(pinkList[i]);
+                    if (tmp1 <= tmp)
+                    {
+                        min = pinkList[i];
+                    }
+                }
+            }
+            MessageBox.Show(min.Name);
+        }
+        public int tmpCount(PinkCharacter pinkChamp)
+        {
+            //Проверка на наличие схемы крафта
+            if (pinkChamp.SсhemeCraft[0] == 9999999)
+            {
+                return 99;
+            }
+            else
+            {
+                int tmp = 5;
+                int realId = -9;
+                //Присваиваем всем синим персам переменную для работы
+                FakeCount();
+
+                //Ищем "конкретного" перса в схеме крафта
+                foreach (int tmpId in pinkChamp.SсhemeCraft)
+                {
+                    if (tmpId != 0 && tmpId != 1 && tmpId != 2 && tmpId != 3 && tmpId != 4 && tmpId != 5 && tmpId != 6)
+                    {
+                        realId = tmpId;
+                        if (blueList[tmpId].FakeCount > 0)
+                        {
+                            //Минусуем фейковое значение САМОГО ПЕРСА
+                            blueList[tmpId].FakeCount--;
+
+                            //Минусуем фейковое значение персов этой стихии
+                            switch (blueList[tmpId].Element)
+                            {
+                                case 0: blueList[4].FakeCount--; break;
+                                case 1: blueList[5].FakeCount--; break;
+                                case 2: blueList[3].FakeCount--; break;
+                                case 3: blueList[0].FakeCount--; break;
+                                case 4: blueList[1].FakeCount--; break;
+                                case 5: blueList[2].FakeCount--; break;
+                            }
+
+                            //Минисуем общее кол всех персов
+                            blueList[6].FakeCount--;
+
+                            //Минусуем колличество недостающих персов для крафта
+                            tmp--;
+                            break;
+                        }
+                    }
+                }
+                for (int i = 0; i < 5; i++)
+                {
+
+                    if (blueList[pinkChamp.SсhemeCraft[i]].Id != realId)
+                        switch (blueList[pinkChamp.SсhemeCraft[i]].Element)
+                        {
+                            case 0:
+                                {
+                                    if (CheckFCount(blueList[4]))
+                                    {
+                                        tmp--;
+                                    }
+                                    break;
+                                }
+
+                            case 1:
+                                {
+                                    if (CheckFCount(blueList[5]))
+                                    {
+                                        tmp--;
+                                    }
+                                    break;
+                                }
+                            case 2:
+                                {
+                                    if (CheckFCount(blueList[3]))
+                                    {
+                                        tmp--;
+                                    }
+                                    break;
+                                }
+                            case 3:
+                                {
+                                    if (CheckFCount(blueList[0]))
+                                    {
+                                        tmp--;
+                                    }
+                                    break;
+                                }
+                            case 4:
+                                {
+                                    if (CheckFCount(blueList[1]))
+                                    {
+                                        tmp--;
+                                    }
+                                    break;
+                                }
+                            case 5:
+                                {
+                                    if (CheckFCount(blueList[2]))
+                                    {
+                                        tmp--;
+                                    }
+                                    break;
+                                }
+                        }
+                }
+                return tmp;
+            }
+        }
+
+        //Функции проверки колличества персов
+        public bool CheckFCount(BlueCharacter tmp)
+        {
+            if (tmp.FakeCount > 0)
+            {
+                tmp.FakeCount--;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void FakeCount()
+        {
+            FallBlue();
+            for (int i = 0; i < blueList.Count; i++)
+            {
+                blueList[i].FakeCount = blueList[i].Count;
+            }
+        }
+
+
+        public void QWERTY()
+        {
+
+            int countAllLand = 0;
+            int countAllFire = 0;
+            int countAllLightning = 0;
+            int countAllShine = 0;
+            int countAllDark = 0;
+            int countWater = 0;
+            int countAll = 0;
+
+            for (int i = 0; i < blueList.Count; i++)
+            {
+                switch (blueList[i].Element)
+                {
+
+                    case 0:
+                        {
+                            countAllLightning++;
+                            break;
+                        }
+                    case 1:
+                        {
+                            countAllLand++;
+                            break;
+                        }
+                    case 2:
+                        {
+                            countAllFire++;
+                            break;
+                        }
+                    case 3:
+                        {
+                            countWater++;
+                            break;
+                        }
+                    case 4:
+                        {
+                            countAllShine++;
+                            break;
+                        }
+                    case 5:
+                        {
+                            countAllDark++;
+                            break;
+                        }
+                }
+                
+            }
+            countAll = countAllLightning + countAllLand + countAllFire + countWater + countAllShine + countAllDark;
+            label31.Text = "К-во персонажей стихии молнии: " + countAllLightning;
+            label32.Text = "К-во персонажей стихии земли: " + countAllLand;
+            label33.Text = "К-во персонажей стихии огня: " + countAllFire;
+            label34.Text = "К-во персонажей стихии воды: " + countWater;
+            label35.Text = "К-во персонажей стихии света: " + countAllShine;
+            label36.Text = "К-во персонажей стихии тьмы: " + countAllDark;
+            label37.Text = "К-во персонажей всего: " + countAll;
+
+
+        }
+
+
+            //Создаём форму для выбора перса    
+             private Form2 newForm = new Form2();
+    
         //Список отображаемых PictureBox ов на окне крафта
         public List<PictureBox> picCraft = new List<PictureBox>();
 
@@ -82,8 +363,8 @@ namespace Bot
         //Функция которая отображает информацию о колличестве персов. Херачим их в "Наклейки"
         private void CounyInfo()
         {
-            label21.Text = "Синие: " + blueList.Count;
-            label23.Text = "Розовые: " + pinkList.Count;
+            label21.Text = "Синие: " + (blueList.Count - 7);
+            label23.Text = "Розовые: " + (pinkList.Count-6);
             label24.Text = "Золотые: " + goldList.Count;
             label25.Text = "Красные: " + redList.Count;
         }
@@ -632,10 +913,12 @@ namespace Bot
                 pinkList[idChange].Element = comboBox2.SelectedIndex;
 
                 pinkList[idChange].Search = AddEditSearch();
-
-                for (int i = 0; i < 5; i++)
+                if (pinkList[idChange].SсhemeCraft[0] != 9999999)
                 {
-                    pinkList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        pinkList[idChange].SсhemeCraft[i] = Convert.ToInt32(picEdit[i].Name);
+                    }
                 }
 
                 flowLayoutPanel2.Controls.Clear();
@@ -735,6 +1018,7 @@ namespace Bot
         private void button1_Click(object sender, EventArgs e)
         {
             ClearCraftPanel();
+            test();
         }
          
        
@@ -755,6 +1039,10 @@ namespace Bot
                 blueList = JsonConvert.DeserializeObject<List<BlueCharacter>>(File.ReadAllText("baseBlue.json"));
                 goldList = JsonConvert.DeserializeObject<List<GoldCharacter>>(File.ReadAllText("baseGold.json"));
                 pinkList = JsonConvert.DeserializeObject<List<PinkCharacter>>(File.ReadAllText("basePink.json"));
+
+                FallPink();
+                FallBlue();
+
                 //Вызов функции отображения информации о количестве персов в БД
                 CounyInfo();
             }            
@@ -1022,6 +1310,7 @@ namespace Bot
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+
             flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel2.Controls.Clear();
             flowLayoutPanel3.Controls.Clear();
@@ -1031,7 +1320,7 @@ namespace Bot
             EditPanel(flowLayoutPanel2, pinkList);
             EditPanel(flowLayoutPanel3, goldList);
             EditPanel(flowLayoutPanel4, redList);
-            
+
         }
 
         //Выбор картинки через диалог, подгрузка имени файла и проверка картинки
@@ -1115,6 +1404,7 @@ namespace Bot
         private void button3_Click(object sender, EventArgs e)
         {
             ReSave();
+            FallBlue();
         }
 
         //ПРи закрыти приложения удостоверимся, что всё сохранено
@@ -1138,6 +1428,14 @@ namespace Bot
         private void checkBox16_CheckedChanged(object sender, EventArgs e)
         {
             NotReseptPink();
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if(e.TabPageIndex==3)
+            {
+                QWERTY();
+            }
         }
     }
 }
