@@ -3,7 +3,7 @@
     "Id": 0,
     "Name": "Любой Вода",
     "ImgUrl": "img\\1b.png",
-    "Count": 11,
+    "Count": 12,
     "FakeCount": 0,
     "Element": 3,
     "Search": [
@@ -21,7 +21,7 @@
     "Id": 1,
     "Name": "Любой Свет",
     "ImgUrl": "img\\2b.png",
-    "Count": 3,
+    "Count": 4,
     "FakeCount": 0,
     "Element": 4,
     "Search": [
@@ -39,7 +39,7 @@
     "Id": 2,
     "Name": "Любой Тьма",
     "ImgUrl": "img\\3b.jpg",
-    "Count": 7,
+    "Count": 8,
     "FakeCount": 0,
     "Element": 5,
     "Search": [
@@ -57,7 +57,7 @@
     "Id": 3,
     "Name": "Любой Огнь",
     "ImgUrl": "img\\4b.jpg",
-    "Count": 11,
+    "Count": 12,
     "FakeCount": 0,
     "Element": 2,
     "Search": [
@@ -75,7 +75,7 @@
     "Id": 4,
     "Name": "Любой Молния",
     "ImgUrl": "img\\5b.jpg",
-    "Count": 11,
+    "Count": 12,
     "FakeCount": 0,
     "Element": 0,
     "Search": [
@@ -93,7 +93,7 @@
     "Id": 5,
     "Name": "Любой Земля",
     "ImgUrl": "img\\6b.jpg",
-    "Count": 11,
+    "Count": 12,
     "FakeCount": 0,
     "Element": 1,
     "Search": [

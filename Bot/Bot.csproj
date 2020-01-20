@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlueCharacter.cs" />
+    <Compile Include="Craft.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +66,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ICharacter.cs" />
+    <Compile Include="Information.cs" />
     <Compile Include="PinkCharacter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\_23-2147734233.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\aqua-blue-gradient-background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

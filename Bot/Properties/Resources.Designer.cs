@@ -93,6 +93,16 @@ namespace Bot.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aqua_blue_gradient_background {
+            get {
+                object obj = ResourceManager.GetObject("aqua-blue-gradient-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap b2ec947cfe206538b0c36d81914f7702083bd449 {
             get {
                 object obj = ResourceManager.GetObject("b2ec947cfe206538b0c36d81914f7702083bd449", resourceCulture);

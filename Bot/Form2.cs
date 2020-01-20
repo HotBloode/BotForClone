@@ -99,6 +99,10 @@ namespace Bot
                 {
                     flowLayoutPanel3.Controls.Add(pb);
                 }
+                else if(file.Element == 3)
+                {
+                    flowLayoutPanel5.Controls.Add(pb);
+                }
                 else
                 {
                     flowLayoutPanel4.Controls.Add(pb);
@@ -124,6 +128,7 @@ namespace Bot
             flowLayoutPanel2.Controls.Clear();
             flowLayoutPanel3.Controls.Clear();
             flowLayoutPanel4.Controls.Clear();
+            flowLayoutPanel5.Controls.Clear();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -141,7 +146,12 @@ namespace Bot
         {
             this.Hide();
             e.Cancel = true;
-           
+
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
+            flowLayoutPanel3.Controls.Clear();
+            flowLayoutPanel4.Controls.Clear();
+            flowLayoutPanel5.Controls.Clear();
         }
     }
 }
