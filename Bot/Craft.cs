@@ -9,6 +9,8 @@ namespace Bot
         List<GoldCharacter> goldList;
         List<PinkCharacter> pinkList;
         List<BlueCharacter> blueList;
+        public int tmp;
+
         public Craft(List<RedCharacter> redList, List<GoldCharacter> goldList, List<PinkCharacter> pinkList, List<BlueCharacter> blueList)
             {
             this.redList = redList;
@@ -21,7 +23,7 @@ namespace Bot
         {
 
             PinkCharacter min = pinkList[6];
-            int tmp = tmpCount(min);
+            tmp = tmpCount(min);
             if (blueList[6].Count >= 5)
             {
                 for (int i = 7; i < pinkList.Count; i++)
@@ -178,26 +180,19 @@ namespace Bot
 
 
 
-            foreach (BlueCharacter curen in blueList)
+            foreach (BlueCharacter curent in blueList)
             {
-                switch (curen.Element)
+                switch (curent.Element)
                 {
-                    case 3: blueList[0].Count++; break;
-                    case 4: blueList[1].Count++; break;
-                    case 5: blueList[2].Count++; break;
-                    case 2: blueList[3].Count++; break;
-                    case 0: blueList[4].Count++; break;
-                    default: blueList[5].Count++; break;
+                    case 3: blueList[0].Count+= curent.Count; break;
+                    case 4: blueList[1].Count += curent.Count; break;
+                    case 5: blueList[2].Count += curent.Count; break;
+                    case 2: blueList[3].Count += curent.Count; break;
+                    case 0: blueList[4].Count += curent.Count; break;
+                    default: blueList[5].Count += curent.Count; break;
                 }
             }
-
-            blueList[0].Count = blueList[0].Count - 2;
-            blueList[1].Count = blueList[1].Count - 1;
-            blueList[2].Count = blueList[2].Count - 1;
-            blueList[3].Count = blueList[3].Count - 1;
-            blueList[4].Count = blueList[4].Count - 1;
-            blueList[5].Count = blueList[5].Count - 1;
-            blueList[6].Count = blueList.Count - 7;
+            blueList[6].Count = blueList[0].Count + blueList[1].Count + blueList[2].Count + blueList[3].Count + blueList[4].Count + blueList[5].Count;
 
 
         }
@@ -210,25 +205,18 @@ namespace Bot
             pinkList[4].Count = 0;
             pinkList[5].Count = 0;
 
-            foreach (PinkCharacter curen in pinkList)
+            foreach (PinkCharacter curent in pinkList)
             {
-                switch (curen.Element)
+                switch (curent.Element)
                 {
-                    case 3: pinkList[0].Count++; break;
-                    case 4: pinkList[1].Count++; break;
-                    case 5: pinkList[2].Count++; break;
-                    case 2: pinkList[3].Count++; break;
-                    case 0: pinkList[4].Count++; break;
-                    default: pinkList[5].Count++; break;
+                    case 3: pinkList[0].Count += curent.Count; break;
+                    case 4: pinkList[1].Count += curent.Count; break;
+                    case 5: pinkList[2].Count += curent.Count; break;
+                    case 2: pinkList[3].Count += curent.Count; break;
+                    case 0: pinkList[4].Count += curent.Count; break;
+                    default: pinkList[5].Count += curent.Count; break;
                 }
 
-
-                blueList[0].Count = blueList[0].Count - 1;
-                blueList[1].Count = blueList[1].Count - 1;
-                blueList[2].Count = blueList[2].Count - 1;
-                blueList[3].Count = blueList[3].Count - 1;
-                blueList[4].Count = blueList[4].Count - 1;
-                blueList[5].Count = blueList[5].Count - 1;
             }
 
         }

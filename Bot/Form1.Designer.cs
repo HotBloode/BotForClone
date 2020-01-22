@@ -176,6 +176,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label47 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel.SuspendLayout();
@@ -1296,6 +1298,8 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.label63);
+            this.tabPage7.Controls.Add(this.label55);
             this.tabPage7.Controls.Add(this.pictureBox2);
             this.tabPage7.Controls.Add(this.label47);
             this.tabPage7.Controls.Add(this.button5);
@@ -1724,7 +1728,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(514, 127);
+            this.label47.Location = new System.Drawing.Point(9, 208);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(35, 17);
             this.label47.TabIndex = 38;
@@ -1733,11 +1737,29 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(517, 49);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 130);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(65, 75);
             this.pictureBox2.TabIndex = 39;
             this.pictureBox2.TabStop = false;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(9, 90);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(294, 17);
+            this.label55.TabIndex = 40;
+            this.label55.Text = "Ближайший розовый персонаж для крафта";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(9, 110);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(169, 17);
+            this.label63.TabIndex = 41;
+            this.label63.Text = "Не хватает персонажей:";
             // 
             // Form1
             // 
@@ -1949,6 +1971,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label55;
     }
 }
 

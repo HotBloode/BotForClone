@@ -1127,6 +1127,7 @@ namespace Bot
         {
             ReSave();
             craft.FallBlue();
+            craft.FallPink();
         }
 
         //ПРи закрыти приложения удостоверимся, что всё сохранено
@@ -1164,7 +1165,8 @@ namespace Bot
             {
                 pictureBox2.Image = null;
                 label47.Text = "";
-
+                label63.Text = "";
+                comboBox1.SelectedIndex = -1;
             }
         }
 
@@ -1178,7 +1180,7 @@ namespace Bot
                 pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox2.Image = Image.FromFile(craftPink.ImgUrl);
                 label47.Text = craftPink.Name;
-
+                label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
             }
         }
     }
