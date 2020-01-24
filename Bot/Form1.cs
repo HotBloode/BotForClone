@@ -28,7 +28,7 @@ namespace Bot
         public int idChange;
 
         //Флаг отсутствия рецепта для РОзовых персов
-        public bool flagNotPinkResept = false;
+        public bool flagNotResept = false;
 
         //Списки персов
         public List<RedCharacter> redList;
@@ -75,6 +75,9 @@ namespace Bot
             checkBox2.Checked = false;
             checkBox3.Checked = false;
             pictureBox1.Image = null;
+
+            label29.Visible = false;
+            panel.Visible = false;
 
             //Чистим боксы с картинками для окна крафта
             foreach (PictureBox pb in picCraft)
@@ -325,14 +328,27 @@ namespace Bot
             tmpGold.Id = goldList.Count;
 
             tmpGold.Search = AddSearch();
-
-            tmpGold.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
-            tmpGold.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
-            tmpGold.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
-            tmpGold.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
-            tmpGold.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
-            tmpGold.SсhemeCraft[5] = Convert.ToInt32(pic6.Name);
-            tmpGold.SсhemeCraft[6] = Convert.ToInt32(pic7.Name);
+            if (flagNotResept)
+            {                
+                tmpGold.SсhemeCraft[0] = 9999999;
+                tmpGold.SсhemeCraft[1] = 9999999;
+                tmpGold.SсhemeCraft[2] = 9999999;
+                tmpGold.SсhemeCraft[3] = 9999999;
+                tmpGold.SсhemeCraft[4] = 9999999;
+                tmpGold.SсhemeCraft[5] = 9999999;
+                tmpGold.SсhemeCraft[6] = 9999999;
+            }
+            else
+            {
+                tmpGold.SсhemeCraft[0] = Convert.ToInt32(pic1.Name);
+                tmpGold.SсhemeCraft[1] = Convert.ToInt32(pic2.Name);
+                tmpGold.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
+                tmpGold.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
+                tmpGold.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
+                tmpGold.SсhemeCraft[5] = Convert.ToInt32(pic6.Name);
+                tmpGold.SсhemeCraft[6] = Convert.ToInt32(pic7.Name);
+            }
+            
 
             goldList.Add(tmpGold);
             CounyInfo();
@@ -348,7 +364,7 @@ namespace Bot
 
             tmpPink.Search = AddSearch();
 
-            if (flagNotPinkResept)
+            if (flagNotResept)
             {
                 tmpPink.SсhemeCraft[0] = 9999999;
                 tmpPink.SсhemeCraft[1] = 9999999;
@@ -492,10 +508,21 @@ namespace Bot
             }
             else if (tabControl2.SelectedIndex == 2)
             {
-                label28.Visible = true;
-                panel1.Visible = true;
-                picEdit[5].Visible = true;
-                picEdit[6].Visible = true;
+
+
+                if (goldList[idChange].SсhemeCraft[0] == 9999999)
+                {
+                    label28.Visible = false;
+                    panel1.Visible = false;                    
+                    curenChemp = pinkList[idChange];
+                }
+                else
+                {
+                    label28.Visible = true;
+                    panel1.Visible = true;
+                    picEdit[5].Visible = true;
+                    picEdit[6].Visible = true;
+                }
                 curenChemp = goldList[idChange];
             }
             else if (tabControl2.SelectedIndex == 3)
@@ -592,11 +619,18 @@ namespace Bot
             else if (curenChemp is GoldCharacter)
             {
                 ICharacter tmp = (ICharacter)curenChemp;
-                for (int i = 0; i < tmp.SсhemeCraft.Length; i++)
+                if (tmp.SсhemeCraft[0] == 9999999)
                 {
-                    picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
-                    picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                    picEdit[i].Load(pinkList[tmp.SсhemeCraft[i]].ImgUrl);
+                    //Если розовый перс не имеет рецепта крафта то не пытаемся отобразить схему
+                }
+                else
+                {
+                    for (int i = 0; i < tmp.SсhemeCraft.Length; i++)
+                    {
+                        picEdit[i].Name = tmp.SсhemeCraft[i].ToString();
+                        picEdit[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                        picEdit[i].Load(pinkList[tmp.SсhemeCraft[i]].ImgUrl);
+                    }
                 }
             }
 
@@ -719,18 +753,18 @@ namespace Bot
         //Функция отвечающая за скрытие ПБ рецепта и установку флага в случае если у розового перса нет рецепта
         private void NotReseptPink()
         {
-            if (comboBoxColor.SelectedIndex == 2 && checkBox16.Checked == true)
+            if (comboBoxColor.SelectedIndex == 2 && checkBox16.Checked == true || comboBoxColor.SelectedIndex == 1 && checkBox16.Checked == true )
             {
 
                 panel.Visible = false;
-                flagNotPinkResept = true;
+                flagNotResept = true;
 
                 label29.Visible = false;
             }
-            if (comboBoxColor.SelectedIndex == 2 && checkBox16.Checked == false)
+            if (comboBoxColor.SelectedIndex == 2 && checkBox16.Checked == false || comboBoxColor.SelectedIndex == 1 && checkBox16.Checked == false)
             {
                 panel.Visible = true;
-                flagNotPinkResept = false;
+                flagNotResept = false;
 
                 label29.Visible = true;
             }
@@ -848,8 +882,7 @@ namespace Bot
             {
 
                 picCraft[5].Hide();
-                picCraft[6].Hide();                
-
+                picCraft[6].Hide(); 
 
                 NotReseptPink();
                 //Розовые
@@ -860,6 +893,8 @@ namespace Bot
                 picCraft[6].Visible = true;
                 panel.Visible = true;
                 label29.Visible = true;
+
+                NotReseptPink();
                 //Золотые
 
             }
@@ -928,7 +963,7 @@ namespace Bot
                                 else if (comboBoxColor.SelectedIndex == 0 || comboBoxColor.SelectedIndex == 2)
                                 {
                                     //Если флаг БЕзРецепта активен и выбран розовый перс
-                                    if (flagNotPinkResept && comboBoxColor.SelectedIndex == 2)
+                                    if (flagNotResept && comboBoxColor.SelectedIndex == 2)
                                     {
                                         AddPinkToList();
                                     }

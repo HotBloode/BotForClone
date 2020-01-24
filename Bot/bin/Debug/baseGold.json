@@ -25,5 +25,1328 @@
       null,
       null
     ]
+  },
+  {
+    "SсhemeCraft": [
+      13,
+      13,
+      13,
+      14,
+      28,
+      4,
+      4
+    ],
+    "Id": 1,
+    "Name": "Обществомен",
+    "ImgUrl": "img\\2g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      14,
+      14,
+      14,
+      12,
+      30,
+      4,
+      4
+    ],
+    "Id": 2,
+    "Name": "Каталический герой",
+    "ImgUrl": "img\\3g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      16,
+      16,
+      16,
+      11,
+      6,
+      4,
+      4
+    ],
+    "Id": 3,
+    "Name": "Рок-бог",
+    "ImgUrl": "img\\4g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      25,
+      25,
+      25,
+      17,
+      33,
+      4,
+      4
+    ],
+    "Id": 4,
+    "Name": "Отец-основатель",
+    "ImgUrl": "img\\4g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      19,
+      19,
+      19,
+      16,
+      10,
+      4,
+      4
+    ],
+    "Id": 5,
+    "Name": "Короь борьбы\r\n\t",
+    "ImgUrl": "img\\6g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      20,
+      20,
+      20,
+      13,
+      29,
+      4,
+      4
+    ],
+    "Id": 6,
+    "Name": "Братья Райт",
+    "ImgUrl": "img\\7g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      21,
+      21,
+      21,
+      19,
+      66,
+      4,
+      4
+    ],
+    "Id": 7,
+    "Name": "Гаус",
+    "ImgUrl": "img\\8g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      22,
+      22,
+      22,
+      60,
+      66,
+      4,
+      4
+    ],
+    "Id": 8,
+    "Name": "Парацельс",
+    "ImgUrl": "img\\9g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      10,
+      10,
+      10,
+      24,
+      34,
+      3,
+      3
+    ],
+    "Id": 9,
+    "Name": "Симфони Ди",
+    "ImgUrl": "img\\11g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      24,
+      24,
+      24,
+      28,
+      32,
+      3,
+      3
+    ],
+    "Id": 10,
+    "Name": "Клеопатра",
+    "ImgUrl": "img\\12g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      29,
+      29,
+      29,
+      31,
+      18,
+      3,
+      3
+    ],
+    "Id": 11,
+    "Name": "Малая Медведица",
+    "ImgUrl": "img\\13g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      35,
+      35,
+      35,
+      29,
+      25,
+      3,
+      3
+    ],
+    "Id": 12,
+    "Name": "Ханзо",
+    "ImgUrl": "img\\14g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      36,
+      36,
+      36,
+      10,
+      24,
+      3,
+      3
+    ],
+    "Id": 13,
+    "Name": "Охотник на патнер",
+    "ImgUrl": "img\\15g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      37,
+      37,
+      37,
+      19,
+      64,
+      3,
+      3
+    ],
+    "Id": 14,
+    "Name": "Лю Бу",
+    "ImgUrl": "img\\16g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      38,
+      38,
+      38,
+      36,
+      71,
+      3,
+      3
+    ],
+    "Id": 15,
+    "Name": "Самсон",
+    "ImgUrl": "img\\17g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 2,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      7,
+      7,
+      7,
+      39,
+      54,
+      5,
+      5
+    ],
+    "Id": 16,
+    "Name": "Ю. Цкзацрь",
+    "ImgUrl": "img\\18g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      8,
+      8,
+      8,
+      42,
+      41,
+      5,
+      5
+    ],
+    "Id": 17,
+    "Name": "Поэт Уильям",
+    "ImgUrl": "img\\19g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      26,
+      26,
+      26,
+      52,
+      75,
+      5,
+      5
+    ],
+    "Id": 18,
+    "Name": "Честный Эйб",
+    "ImgUrl": "img\\20g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      45,
+      45,
+      45,
+      26,
+      55,
+      5,
+      5
+    ],
+    "Id": 19,
+    "Name": "Робин",
+    "ImgUrl": "img\\21g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      46,
+      46,
+      46,
+      8,
+      27,
+      5,
+      5
+    ],
+    "Id": 20,
+    "Name": "Суровый убийца",
+    "ImgUrl": "img\\22g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      47,
+      47,
+      47,
+      7,
+      56,
+      5,
+      5
+    ],
+    "Id": 21,
+    "Name": "Цинь Шихуанди",
+    "ImgUrl": "img\\23g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      48,
+      48,
+      48,
+      26,
+      79,
+      5,
+      5
+    ],
+    "Id": 22,
+    "Name": "Винсет ван Гог",
+    "ImgUrl": "img\\24g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      49,
+      49,
+      49,
+      46,
+      45,
+      5,
+      5
+    ],
+    "Id": 23,
+    "Name": "Боудика",
+    "ImgUrl": "img\\25g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      50,
+      50,
+      50,
+      47,
+      76,
+      5,
+      5
+    ],
+    "Id": 24,
+    "Name": "Джеронимо",
+    "ImgUrl": "img\\26g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 1,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9,
+      9,
+      9,
+      51,
+      78,
+      0,
+      0
+    ],
+    "Id": 25,
+    "Name": "Ким",
+    "ImgUrl": "img\\34g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      56,
+      56,
+      56,
+      7,
+      57,
+      0,
+      0
+    ],
+    "Id": 26,
+    "Name": "Александр",
+    "ImgUrl": "img\\33g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      55,
+      55,
+      55,
+      40,
+      56,
+      0,
+      0
+    ],
+    "Id": 27,
+    "Name": "Императрица Ву",
+    "ImgUrl": "img\\27g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      27,
+      27,
+      27,
+      58,
+      79,
+      0,
+      0
+    ],
+    "Id": 28,
+    "Name": "Дадюшка Джо",
+    "ImgUrl": "img\\28g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      59,
+      59,
+      59,
+      9,
+      7,
+      0,
+      0
+    ],
+    "Id": 29,
+    "Name": "Леди Светозарная",
+    "ImgUrl": "img\\29g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      60,
+      60,
+      60,
+      55,
+      41,
+      0,
+      0
+    ],
+    "Id": 30,
+    "Name": "Ренгар",
+    "ImgUrl": "img\\30g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      61,
+      61,
+      61,
+      60,
+      47,
+      0,
+      0
+    ],
+    "Id": 31,
+    "Name": "Законник",
+    "ImgUrl": "img\\31g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      62,
+      62,
+      62,
+      59,
+      76,
+      0,
+      0
+    ],
+    "Id": 32,
+    "Name": "Бог мечей",
+    "ImgUrl": "img\\32g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 3,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      66,
+      66,
+      66,
+      65,
+      68,
+      2,
+      2
+    ],
+    "Id": 33,
+    "Name": "Чингисхан",
+    "ImgUrl": "img\\35g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      64,
+      64,
+      64,
+      63,
+      10,
+      2,
+      2
+    ],
+    "Id": 34,
+    "Name": "Гер Фольф",
+    "ImgUrl": "img\\36g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      69,
+      69,
+      69,
+      66,
+      13,
+      2,
+      2
+    ],
+    "Id": 35,
+    "Name": "Распутин -нежить",
+    "ImgUrl": "img\\37g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      70,
+      70,
+      70,
+      64,
+      24,
+      2,
+      2
+    ],
+    "Id": 36,
+    "Name": "Мастер инь-янь",
+    "ImgUrl": "img\\38g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      71,
+      71,
+      71,
+      64,
+      63,
+      2,
+      2
+    ],
+    "Id": 37,
+    "Name": "Дариус",
+    "ImgUrl": "img\\39g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      72,
+      72,
+      72,
+      2,
+      2,
+      2,
+      2
+    ],
+    "Id": 38,
+    "Name": "Тыквомонстр",
+    "ImgUrl": "img\\40g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      73,
+      73,
+      73,
+      66,
+      71,
+      2,
+      2
+    ],
+    "Id": 39,
+    "Name": "Правитель Западного Чу",
+    "ImgUrl": "img\\43g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      74,
+      74,
+      74,
+      70,
+      69,
+      2,
+      2
+    ],
+    "Id": 40,
+    "Name": "Андерсен",
+    "ImgUrl": "img\\42g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 5,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      76,
+      76,
+      76,
+      79,
+      75,
+      1,
+      1
+    ],
+    "Id": 41,
+    "Name": "Американский бизон",
+    "ImgUrl": "img\\44g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      79,
+      79,
+      79,
+      80,
+      27,
+      1,
+      1
+    ],
+    "Id": 42,
+    "Name": "Фэт Чилл",
+    "ImgUrl": "img\\45g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      78,
+      78,
+      78,
+      8,
+      23,
+      1,
+      1
+    ],
+    "Id": 43,
+    "Name": "Элизабет",
+    "ImgUrl": "img\\46g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      80,
+      80,
+      80,
+      76,
+      5,
+      1,
+      1
+    ],
+    "Id": 44,
+    "Name": "Миротворец",
+    "ImgUrl": "img\\47g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      81,
+      81,
+      81,
+      78,
+      56,
+      1,
+      1
+    ],
+    "Id": 45,
+    "Name": "Воин восходящей луны",
+    "ImgUrl": "img\\48g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      82,
+      82,
+      82,
+      75,
+      45,
+      1,
+      1
+    ],
+    "Id": 46,
+    "Name": "Сын чёрной дыры",
+    "ImgUrl": "img\\49g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      83,
+      83,
+      83,
+      82,
+      76,
+      1,
+      1
+    ],
+    "Id": 47,
+    "Name": "Моцарт",
+    "ImgUrl": "img\\50g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      84,
+      84,
+      84,
+      81,
+      79,
+      1,
+      1
+    ],
+    "Id": 48,
+    "Name": "Моцарт",
+    "ImgUrl": "img\\52g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 49,
+    "Name": "Санта-Клаус",
+    "ImgUrl": "img\\51g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]
