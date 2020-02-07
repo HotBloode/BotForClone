@@ -91,7 +91,7 @@ namespace Bot
         {
             label21.Text = "Синие: " + (blueList.Count - 7);
             label23.Text = "Розовые: " + (pinkList.Count-6);
-            label24.Text = "Золотые: " + goldList.Count;
+            label24.Text = "Золотые: " + (goldList.Count-1);
             label25.Text = "Красные: " + redList.Count;
         }
 
@@ -1160,9 +1160,16 @@ namespace Bot
         //Пересохранене персонажа после редактирования
         private void button3_Click(object sender, EventArgs e)
         {
+            if(textBox9.Text == "")
+            {
+                MessageBox.Show("Выберите персонажа или заполните поле адреса картинки");
+            }
+            else
+            {            
             ReSave();
             craft.FallBlue();
             craft.FallPink();
+            }
         }
 
         //ПРи закрыти приложения удостоверимся, что всё сохранено
@@ -1195,6 +1202,7 @@ namespace Bot
             {
                 info.InfoPage(label31, label32, label33, label34, label35, label36, label37, label50, label53, label48, label49, label54, label52, label51, blueList);
                 info.InfoPage(label42, label45, label40, label41, label46, label44, label43, label58, label61, label56, label57, label62, label60, label59, pinkList);
+                info.InfoPage(label74, label77, label72, label73, label78, label76, label75, label66, label69, label64, label65, label70, label68, label67, goldList);
             }
             else if(e.TabPageIndex == 2)
             {
@@ -1208,15 +1216,28 @@ namespace Bot
         private void button5_Click(object sender, EventArgs e)
         {
             
-            PinkCharacter craftPink;
+            
+            
             if (comboBox1.SelectedIndex == 2)
             {
+                PinkCharacter craftPink;
                 craftPink = craft.CraftPink();
                 pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBox2.Image = Image.FromFile(craftPink.ImgUrl);
                 label47.Text = craftPink.Name;
                 label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
             }
+            if (comboBox1.SelectedIndex == 1)
+            {
+                GoldCharacter craftGold;
+                craftGold = craft.CraftGold();
+                MessageBox.Show(craftGold.Name);
+            }
+        }
+
+        private void label71_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
