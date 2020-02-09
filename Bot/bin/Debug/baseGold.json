@@ -1348,5 +1348,32 @@
       null,
       null
     ]
+  },
+  {
+    "SсhemeCraft": [
+      88,
+      88,
+      88,
+      22,
+      62,
+      4,
+      4
+    ],
+    "Id": 50,
+    "Name": "Харар",
+    "ImgUrl": "img\\56g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 0,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]

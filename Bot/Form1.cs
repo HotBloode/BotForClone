@@ -1231,8 +1231,14 @@ namespace Bot
             {
                 GoldCharacter craftGold;
                 craftGold = craft.CraftGold();
-                MessageBox.Show(craftGold.Name);
+
+
+                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox2.Image = Image.FromFile(craftGold.ImgUrl);
+                label47.Text = craftGold.Name;
+                label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
             }
+            
         }
 
         private void label71_Click(object sender, EventArgs e)
