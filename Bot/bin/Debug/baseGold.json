@@ -1375,5 +1375,59 @@
       null,
       null
     ]
+  },
+  {
+    "SсhemeCraft": [
+      89,
+      89,
+      89,
+      84,
+      80,
+      1,
+      1
+    ],
+    "Id": 51,
+    "Name": "Богиня Луны",
+    "ImgUrl": "img\\60g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
+    "SсhemeCraft": [
+      86,
+      86,
+      86,
+      83,
+      78,
+      1,
+      1
+    ],
+    "Id": 52,
+    "Name": "Яйцо дракона",
+    "ImgUrl": "img\\61g.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]

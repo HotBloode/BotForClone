@@ -2223,5 +2223,30 @@
       null,
       null
     ]
+  },
+  {
+    "SсhemeCraft": [
+      9999999,
+      9999999,
+      9999999,
+      9999999,
+      9999999
+    ],
+    "Id": 89,
+    "Name": "Богиня луны",
+    "ImgUrl": "img\\90p.jpg",
+    "Count": 0,
+    "FakeCount": 0,
+    "Element": 4,
+    "Search": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
   }
 ]
