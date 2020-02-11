@@ -119,6 +119,38 @@ namespace Bot
                 }
                 RealcountAll = RealCountLand + RealCountFire + RealCountLightning + RealCountShine + RealCountDark + RealCountWater;
             }
+            if(list[0] is RedCharacter)
+            {
+                countAllLand = 0;
+                countAllFire = 0;
+                countAllLightning = 0;
+                countAllShine = 0;
+                countAllDark = 0;
+                countWater = 0;
+
+                RealCountLand = 0;
+                RealCountFire = 0;
+                RealCountLightning = 0;
+                RealCountShine = 0;
+                RealCountDark = 0;
+                RealCountWater = 0;
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    switch (list[i].Element)
+                    {
+
+                        case 0: RealCountLightning += list[i].Count; break;
+                        case 1: RealCountLightning += list[i].Count; break;
+                        case 2: RealCountLand += list[i].Count; break;
+                        case 3: RealCountWater += list[i].Count; break;
+                        case 4: RealCountShine += list[i].Count; break;
+                        case 5: RealCountDark += list[i].Count; break;
+
+                    }
+                }
+                RealcountAll = RealCountLand + RealCountFire + RealCountLightning + RealCountShine + RealCountDark + RealCountWater;
+            }
             for (int i = 0; i < list.Count; i++)
             {
                 switch (list[i].Element)

@@ -798,7 +798,8 @@ namespace Bot
 
                 craft = new Craft(redList, goldList, pinkList, blueList);
                 craft.FallPink();                
-                craft.FallBlue();                
+                craft.FallBlue();
+                craft.FallGold();
                 //Вызов функции отображения информации о количестве персов в БД
                 CounyInfo();
             }            
@@ -1166,9 +1167,11 @@ namespace Bot
             }
             else
             {            
-            ReSave();
-            craft.FallBlue();
-            craft.FallPink();
+                ReSave();
+                craft.FallBlue();
+                craft.FallPink();
+                craft.FallGold();
+                
             }
         }
 
@@ -1203,6 +1206,7 @@ namespace Bot
                 info.InfoPage(label31, label32, label33, label34, label35, label36, label37, label50, label53, label48, label49, label54, label52, label51, blueList);
                 info.InfoPage(label42, label45, label40, label41, label46, label44, label43, label58, label61, label56, label57, label62, label60, label59, pinkList);
                 info.InfoPage(label74, label77, label72, label73, label78, label76, label75, label66, label69, label64, label65, label70, label68, label67, goldList);
+                info.InfoPage(label89, label92, label87, label88, label93, label91, label90, label81, label84, label79, label80, label85, label83, label82, redList);
             }
             else if(e.TabPageIndex == 2)
             {
@@ -1238,11 +1242,17 @@ namespace Bot
                 label47.Text = craftGold.Name;
                 label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
             }
-            
-        }
+            if (comboBox1.SelectedIndex == 0)
+            {
+                RedCharacter craftRed;
+                craftRed = craft.CraftRed();
 
-        private void label71_Click(object sender, EventArgs e)
-        {
+
+                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox2.Image = Image.FromFile(craftRed.ImgUrl);
+                label47.Text = craftRed.Name;
+                label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
+            }
 
         }
     }
