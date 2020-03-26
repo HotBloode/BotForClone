@@ -802,7 +802,13 @@ namespace Bot
                 craft.FallGold();
                 //Вызов функции отображения информации о количестве персов в БД
                 CounyInfo();
-            }            
+            }
+
+            var ndoasd = new UserControl1();
+            ndoasd.Location = new Point(20, 5);
+            ndoasd.one(redList[0].ImgUrl);
+            tabPage9.Controls.Add(ndoasd);
+            ndoasd.pictureBox1.Image = Image.FromFile(redList[1].ImgUrl);
         }
 
         //Выгрузка БД в файлы json
@@ -1253,7 +1259,74 @@ namespace Bot
                 label47.Text = craftRed.Name;
                 label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
             }
+            
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            //Список для отображения
+            List<BaseCharacter> SearchList =  new List<BaseCharacter>();
+            List<BaseCharacter> SearchBaseList;
+
+            int index = tabControl2.SelectedIndex;
+            if (index == 0)
+            {
+                 SearchBaseList = new List<BaseCharacter>(blueList);
+                Seatch(textBox12.Text, SearchList, SearchBaseList);
+
+                ClearPb(false);
+                flowLayoutPanel1.Controls.Clear();
+                EditPanel(flowLayoutPanel1, SearchList);
+                panel1.Visible = false;
+            }
+            else if (index == 1)
+            {
+                SearchBaseList = new List<BaseCharacter>(pinkList);
+                Seatch(textBox12.Text, SearchList, SearchBaseList);
+
+                ClearPb(false);
+                flowLayoutPanel2.Controls.Clear();
+                EditPanel(flowLayoutPanel2, SearchList);
+                panel1.Visible = false;
+            }
+            else if (index == 2)
+            {
+                SearchBaseList = new List<BaseCharacter>(goldList);
+                Seatch(textBox12.Text, SearchList, SearchBaseList);
+
+                ClearPb(false);
+                flowLayoutPanel3.Controls.Clear();
+                EditPanel(flowLayoutPanel3, SearchList);
+                panel1.Visible = false;
+            }
+            else if (index == 3)
+            {
+                SearchBaseList = new List<BaseCharacter>(redList);
+                Seatch(textBox12.Text, SearchList, SearchBaseList);
+
+                ClearPb(false);
+                flowLayoutPanel4.Controls.Clear();
+                EditPanel(flowLayoutPanel4, SearchList);
+                panel1.Visible = false;
+            }
+
+            ClearEditPanel();
 
         }
+
+        //Функция поиска персов в имя которых включается введённый текст
+        void Seatch(string text, List<BaseCharacter> SearchList, List<BaseCharacter> BaseList)
+        {     
+            //перебираем имена
+            foreach (BaseCharacter x in BaseList)
+            {
+                //Забиваем болт на регистр
+                if(x.Name.IndexOf(text, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    SearchList.Add(x);
+                }
+            }          
+        }
+    
     }
 }

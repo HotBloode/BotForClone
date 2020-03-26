@@ -26,3 +26,4 @@ C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.csproj.CoreCompileInp
 C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.csproj.CopyComplete
 C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.exe
 C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.pdb
+C:\Users\Andrey\source\repos\BotForClone\Bot\obj\Debug\Bot.UserControl1.resources

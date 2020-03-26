@@ -21,7 +21,7 @@
     "Id": 1,
     "Name": "Любой Свет",
     "ImgUrl": "img\\2b.png",
-    "Count": 0,
+    "Count": 2,
     "FakeCount": 0,
     "Element": 4,
     "Search": [
@@ -111,8 +111,8 @@
     "Id": 6,
     "Name": "Любой",
     "ImgUrl": "img\\67b.jpg",
-    "Count": 0,
-    "FakeCount": 0,
+    "Count": 2,
+    "FakeCount": 1,
     "Element": 3,
     "Search": [
       "1",
@@ -129,8 +129,8 @@
     "Id": 7,
     "Name": "У.Уолес",
     "ImgUrl": "img\\8b.jpg",
-    "Count": 0,
-    "FakeCount": 0,
+    "Count": 1,
+    "FakeCount": 1,
     "Element": 4,
     "Search": [
       null,
@@ -165,8 +165,8 @@
     "Id": 9,
     "Name": "Махатма",
     "ImgUrl": "img\\10b.jpg",
-    "Count": 0,
-    "FakeCount": 0,
+    "Count": 1,
+    "FakeCount": 1,
     "Element": 4,
     "Search": [
       null,
