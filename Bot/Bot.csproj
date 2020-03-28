@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="BlueCharacter.cs" />
     <Compile Include="Craft.cs" />
+    <Compile Include="FAQ controler.cs" />
+    <Compile Include="FAQ.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>

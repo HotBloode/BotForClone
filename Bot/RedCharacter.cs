@@ -9,6 +9,7 @@ namespace Bot
    public  class RedCharacter : BaseCharacter, ICharacter
     {        
         public int[] SсhemeCraft { get; set; }
+        public int CraftDifficulty { get; set; }
         public RedCharacter()
         {
             SсhemeCraft = new int [5];

@@ -7,12 +7,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 0,
     "Name": "Ветер гнева",
     "ImgUrl": "img\\1r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -32,12 +34,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 13,
     "Id": 1,
     "Name": "Гермес",
     "ImgUrl": "img\\2r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -57,12 +61,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 2,
     "Name": "Зорро",
     "ImgUrl": "img\\3r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -82,12 +88,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 3,
     "Name": "Франкенштейн",
     "ImgUrl": "img\\4r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -107,12 +115,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 4,
     "Name": "Один",
     "ImgUrl": "img\\5r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -132,12 +142,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 5,
     "Name": "Красная королева",
     "ImgUrl": "img\\6r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -157,12 +169,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 6,
     "Name": "Король обезьян",
     "ImgUrl": "img\\7r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -182,12 +196,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 7,
     "Name": "Царь-скорпион",
     "ImgUrl": "img\\8r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -207,12 +223,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 8,
     "Name": "Тамамо-но маэ",
     "ImgUrl": "img\\9r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -232,12 +250,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 9,
     "Name": "Великий пес",
     "ImgUrl": "img\\10r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -257,12 +277,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 10,
     "Name": "Аули",
     "ImgUrl": "img\\11r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -282,12 +304,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 11,
     "Name": "Мастер Панда",
     "ImgUrl": "img\\12r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -307,12 +331,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 12,
     "Name": "Злой охотник",
     "ImgUrl": "img\\13r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -332,12 +358,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 13,
     "Name": "Медуза",
     "ImgUrl": "img\\14r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -357,12 +385,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 14,
     "Name": "Валькирия",
     "ImgUrl": "img\\15r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -382,12 +412,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 15,
     "Name": "Воин сангхи",
     "ImgUrl": "img\\16r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -407,12 +439,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 16,
     "Name": "Ван Хельсинг",
     "ImgUrl": "img\\17r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -432,12 +466,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 17,
     "Name": "Ариэль",
     "ImgUrl": "img\\18r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -457,12 +493,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 18,
     "Name": "Повелитель морей",
     "ImgUrl": "img\\19r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -482,12 +520,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 19,
     "Name": "Ледяная королева",
     "ImgUrl": "img\\20r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -507,12 +547,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 20,
     "Name": "Капитан Деккен",
     "ImgUrl": "img\\22r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -532,12 +574,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 21,
     "Name": "Дракула",
     "ImgUrl": "img\\21r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -557,12 +601,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 22,
     "Name": "Красная Шапочка",
     "ImgUrl": "img\\23r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -582,12 +628,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 23,
     "Name": "Мориарти",
     "ImgUrl": "img\\24r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -607,12 +655,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 24,
     "Name": "Танос",
     "ImgUrl": "img\\25r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -632,12 +682,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 25,
     "Name": "Эру Илуватар",
     "ImgUrl": "img\\26r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -657,12 +709,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 26,
     "Name": "Дон Кихот",
     "ImgUrl": "img\\27r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -682,12 +736,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 27,
     "Name": "Джинн ДЖИННИ",
     "ImgUrl": "img\\28r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -707,12 +763,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 12,
     "Id": 28,
     "Name": "Вагар",
     "ImgUrl": "img\\29r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -732,12 +790,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 13,
     "Id": 29,
     "Name": "Бильфельд",
     "ImgUrl": "img\\30r.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,

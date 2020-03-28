@@ -9,12 +9,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 0,
     "Id": 0,
     "Name": "Любой Золотой",
     "ImgUrl": "img\\1g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": -1,
+    "TotalDifficulty": 0,
     "Search": [
       null,
       null,
@@ -36,12 +38,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 17,
     "Id": 1,
     "Name": "Обществомен",
     "ImgUrl": "img\\2g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -63,12 +67,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 8,
     "Id": 2,
     "Name": "Каталический герой",
     "ImgUrl": "img\\3g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -90,12 +96,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 11,
     "Id": 3,
     "Name": "Рок-бог",
     "ImgUrl": "img\\4g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -117,12 +125,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 10,
     "Id": 4,
     "Name": "Отец-основатель",
     "ImgUrl": "img\\5g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -144,12 +154,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 18,
     "Id": 5,
     "Name": "Короь борьбы\r\n\t",
     "ImgUrl": "img\\6g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -171,12 +183,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 21,
     "Id": 6,
     "Name": "Братья Райт",
     "ImgUrl": "img\\7g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -198,12 +212,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 23,
     "Id": 7,
     "Name": "Гаус",
     "ImgUrl": "img\\8g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -225,12 +241,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 21,
     "Id": 8,
     "Name": "Парацельс",
     "ImgUrl": "img\\9g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -252,12 +270,14 @@
       3,
       3
     ],
+    "CraftDifficulty": 8,
     "Id": 9,
     "Name": "Симфони Ди",
     "ImgUrl": "img\\11g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -279,12 +299,14 @@
       3,
       3
     ],
+    "CraftDifficulty": 7,
     "Id": 10,
     "Name": "Клеопатра",
     "ImgUrl": "img\\12g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -306,12 +328,14 @@
       3,
       3
     ],
+    "CraftDifficulty": 10,
     "Id": 11,
     "Name": "Малая Медведица",
     "ImgUrl": "img\\13g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -333,12 +357,14 @@
       3,
       3
     ],
+    "CraftDifficulty": 12,
     "Id": 12,
     "Name": "Ханзо",
     "ImgUrl": "img\\14g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -360,12 +386,14 @@
       3,
       3
     ],
+    "CraftDifficulty": 12,
     "Id": 13,
     "Name": "Охотник на патнер",
     "ImgUrl": "img\\15g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -387,12 +415,14 @@
       3,
       3
     ],
+    "CraftDifficulty": 17,
     "Id": 14,
     "Name": "Лю Бу",
     "ImgUrl": "img\\16g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -414,12 +444,14 @@
       3,
       3
     ],
+    "CraftDifficulty": 21,
     "Id": 15,
     "Name": "Самсон",
     "ImgUrl": "img\\17g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 2,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -441,12 +473,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 9,
     "Id": 16,
     "Name": "Ю. Цкзацрь",
     "ImgUrl": "img\\18g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -468,12 +502,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 5,
     "Id": 17,
     "Name": "Поэт Уильям",
     "ImgUrl": "img\\19g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -495,12 +531,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 7,
     "Id": 18,
     "Name": "Честный Эйб",
     "ImgUrl": "img\\20g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -522,12 +560,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 11,
     "Id": 19,
     "Name": "Робин",
     "ImgUrl": "img\\21g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -549,12 +589,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 11,
     "Id": 20,
     "Name": "Суровый убийца",
     "ImgUrl": "img\\22g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -576,12 +618,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 11,
     "Id": 21,
     "Name": "Цинь Шихуанди",
     "ImgUrl": "img\\23g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -603,12 +647,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 11,
     "Id": 22,
     "Name": "Винсет ван Гог",
     "ImgUrl": "img\\24g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -630,12 +676,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 21,
     "Id": 23,
     "Name": "Боудика",
     "ImgUrl": "img\\25g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -657,12 +705,14 @@
       5,
       5
     ],
+    "CraftDifficulty": 21,
     "Id": 24,
     "Name": "Джеронимо",
     "ImgUrl": "img\\26g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 1,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -684,12 +734,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 5,
     "Id": 25,
     "Name": "Ким",
     "ImgUrl": "img\\34g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -711,12 +763,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 8,
     "Id": 26,
     "Name": "Александр",
     "ImgUrl": "img\\33g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -738,12 +792,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 5,
     "Id": 27,
     "Name": "Императрица Ву",
     "ImgUrl": "img\\27g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -765,12 +821,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 8,
     "Id": 28,
     "Name": "Дадюшка Джо",
     "ImgUrl": "img\\28g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -792,12 +850,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 11,
     "Id": 29,
     "Name": "Леди Светозарная",
     "ImgUrl": "img\\29g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -819,12 +879,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 11,
     "Id": 30,
     "Name": "Ренгар",
     "ImgUrl": "img\\30g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -846,12 +908,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 21,
     "Id": 31,
     "Name": "Законник",
     "ImgUrl": "img\\31g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -873,12 +937,14 @@
       0,
       0
     ],
+    "CraftDifficulty": 21,
     "Id": 32,
     "Name": "Бог мечей",
     "ImgUrl": "img\\32g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 3,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -900,12 +966,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 16,
     "Id": 33,
     "Name": "Чингисхан",
     "ImgUrl": "img\\35g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -927,12 +995,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 14,
     "Id": 34,
     "Name": "Гер Фольф",
     "ImgUrl": "img\\36g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -954,12 +1024,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 17,
     "Id": 35,
     "Name": "Распутин -нежить",
     "ImgUrl": "img\\37g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -981,12 +1053,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 19,
     "Id": 36,
     "Name": "Мастер инь-янь",
     "ImgUrl": "img\\38g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1008,12 +1082,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 15,
     "Id": 37,
     "Name": "Дариус",
     "ImgUrl": "img\\39g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1035,12 +1111,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 15,
     "Id": 38,
     "Name": "Тыквомонстр",
     "ImgUrl": "img\\40g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1062,12 +1140,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 21,
     "Id": 39,
     "Name": "Правитель Западного Чу",
     "ImgUrl": "img\\43g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1089,12 +1169,14 @@
       2,
       2
     ],
+    "CraftDifficulty": 23,
     "Id": 40,
     "Name": "Андерсен",
     "ImgUrl": "img\\42g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 5,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1116,12 +1198,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 11,
     "Id": 41,
     "Name": "Американский бизон",
     "ImgUrl": "img\\44g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1143,12 +1227,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 5,
     "Id": 42,
     "Name": "Фэт Чилл",
     "ImgUrl": "img\\45g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1170,12 +1256,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 5,
     "Id": 43,
     "Name": "Элизабет",
     "ImgUrl": "img\\46g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1197,12 +1285,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 6,
     "Id": 44,
     "Name": "Миротворец",
     "ImgUrl": "img\\47g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1224,12 +1314,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 5,
     "Id": 45,
     "Name": "Воин восходящей луны",
     "ImgUrl": "img\\48g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1251,12 +1343,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 13,
     "Id": 46,
     "Name": "Сын чёрной дыры",
     "ImgUrl": "img\\49g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1278,12 +1372,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 21,
     "Id": 47,
     "Name": "Моцарт",
     "ImgUrl": "img\\50g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1305,12 +1401,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 17,
     "Id": 48,
     "Name": "Карл Великий",
     "ImgUrl": "img\\52g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1332,12 +1430,14 @@
       9999999,
       9999999
     ],
+    "CraftDifficulty": 9999999,
     "Id": 49,
     "Name": "Санта-Клаус",
     "ImgUrl": "img\\51g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 5,
     "Search": [
       null,
       null,
@@ -1359,12 +1459,14 @@
       4,
       4
     ],
+    "CraftDifficulty": 25,
     "Id": 50,
     "Name": "Харар",
     "ImgUrl": "img\\56g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1378,20 +1480,22 @@
   },
   {
     "SсhemeCraft": [
-      89,
-      89,
-      89,
+      77,
+      77,
+      77,
       84,
       80,
       1,
       1
     ],
+    "CraftDifficulty": 21,
     "Id": 51,
     "Name": "Богиня Луны",
     "ImgUrl": "img\\60g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1413,12 +1517,14 @@
       1,
       1
     ],
+    "CraftDifficulty": 21,
     "Id": 52,
     "Name": "Яйцо дракона",
     "ImgUrl": "img\\61g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 4,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,
@@ -1432,20 +1538,22 @@
   },
   {
     "SсhemeCraft": [
-      90,
-      90,
-      90,
+      85,
+      85,
+      85,
       21,
       71,
       4,
       4
     ],
+    "CraftDifficulty": 23,
     "Id": 53,
     "Name": "Джейн Остин",
     "ImgUrl": "img\\62g.jpg",
     "Count": 0,
     "FakeCount": 0,
     "Element": 0,
+    "TotalDifficulty": 4,
     "Search": [
       null,
       null,

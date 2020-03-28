@@ -17,7 +17,6 @@ namespace Bot
          private Form2 newForm = new Form2();
 
         Information info =  new Information();
-
         //Список отображаемых PictureBox ов на окне крафта
         public List<PictureBox> picCraft = new List<PictureBox>();
 
@@ -29,6 +28,8 @@ namespace Bot
 
         //Флаг отсутствия рецепта для РОзовых персов
         public bool flagNotResept = false;
+
+        public FAQ_controler faq =  new FAQ_controler();
 
         //Списки персов
         public List<RedCharacter> redList;
@@ -295,6 +296,158 @@ namespace Bot
             return seatch;
         }
 
+
+        //Посдчёт сложности поиска/крафта персов
+        private void FDifficulty(BlueCharacter x)
+        {
+            if (x.Search[4] != null || x.Search[5] != null || x.Search[6] != null || x.Search[7] != null)
+            {
+                x.TotalDifficulty = 1;
+            }
+            else if (x.Search[1] != null || x.Search[2] != null || x.Search[3] != null)
+            {
+                x.TotalDifficulty = 2;
+            }
+            else if (x.Search[0] != null)
+            {
+                x.TotalDifficulty = 3;
+            }
+            else
+            {
+                x.TotalDifficulty = 4;
+            }
+        }
+
+        private void FDifficulty(PinkCharacter x)
+        { 
+                    if (x.Search[4] != null || x.Search[5] != null || x.Search[6] != null || x.Search[7] != null)
+                    {
+                        x.TotalDifficulty = 1;
+                    }
+                    else if (x.Search[1] != null || x.Search[2] != null || x.Search[3] != null)
+                    {
+                        x.TotalDifficulty = 2;
+                    }
+                    else if (x.Search[0] != null)
+                    {
+                        x.TotalDifficulty = 3;
+                    }
+                    else if (x.SсhemeCraft[0] != 9999999)
+                    {
+                        x.TotalDifficulty = 4;
+                    }
+                    else
+                    {
+                        x.TotalDifficulty = 5;
+                    }
+
+                    if (x.SсhemeCraft[0] != 9999999)
+                    {
+                        int tmp1 = 0;
+                        for (int i = 0; i < x.SсhemeCraft.Length; i++)
+                        {
+                            if (x.SсhemeCraft[i] == 0 || x.SсhemeCraft[i] == 1 || x.SсhemeCraft[i] == 2 || x.SсhemeCraft[i] == 3 || x.SсhemeCraft[i] == 4 || x.SсhemeCraft[i] == 5 || x.SсhemeCraft[i] == 6)
+                            {
+
+                            }
+                            else
+                            {
+                                tmp1 += blueList[x.SсhemeCraft[i]].TotalDifficulty;
+                            }
+                        }
+                        x.CraftDifficulty = tmp1;
+                    }
+                    else
+                    {
+                        x.CraftDifficulty = 9999999;
+                    }                           
+        }
+
+        private void FDifficulty(GoldCharacter x)
+        {
+            if (x.Search[4] != null || x.Search[5] != null || x.Search[6] != null || x.Search[7] != null)
+                            {
+                                x.TotalDifficulty = 1;
+                            }
+                            else if (x.Search[1] != null || x.Search[2] != null || x.Search[3] != null)
+                            {
+                                x.TotalDifficulty = 2;
+                            }
+                            else if (x.Search[0] != null)
+                            {
+                                x.TotalDifficulty = 3;
+                            }
+                            else if (x.SсhemeCraft[0] != 9999999)
+                            {
+                                x.TotalDifficulty = 4;
+                            }
+                            else
+                            {
+                                x.TotalDifficulty = 5;
+                            }
+                        
+
+                    if (x.SсhemeCraft[0] != 9999999)
+                    {
+                        int tmp1 = 0;
+                        for (int i = 0; i < x.SсhemeCraft.Length; i++)
+                        {
+                            if (x.SсhemeCraft[i] == 0 || x.SсhemeCraft[i] == 1 || x.SсhemeCraft[i] == 2 || x.SсhemeCraft[i] == 3 || x.SсhemeCraft[i] == 4 || x.SсhemeCraft[i] == 5)
+                            {
+
+                            }
+                            else
+                            {
+                                tmp1 += pinkList[x.SсhemeCraft[i]].TotalDifficulty;
+                            }
+                        }
+                        x.CraftDifficulty = tmp1;
+                    }
+                    else
+                    {
+                        x.CraftDifficulty = 9999999;
+                    }
+                
+        }
+
+        private void FDifficulty(RedCharacter x)
+        {
+            x.TotalDifficulty = 5;
+            int tmp1 = 0;
+            for (int i = 0; i < x.SсhemeCraft.Length; i++)
+            {
+                if (x.SсhemeCraft[i] == 0)
+                {
+                }
+                else
+                {
+                    tmp1 += goldList[x.SсhemeCraft[i]].TotalDifficulty;
+                }
+            }
+            x.CraftDifficulty = tmp1;
+        }
+
+        //Пересчёт сложности сложности поиска/крафта для всех персов
+        private void RecountDifficulty()
+        {
+            foreach(BlueCharacter x in blueList)
+            {
+                FDifficulty(x);
+            }
+            foreach (PinkCharacter x in pinkList)
+            {
+                FDifficulty(x);
+            }
+            foreach (GoldCharacter x in goldList)
+            {
+                FDifficulty(x);
+            }
+            foreach (RedCharacter x in redList)
+            {
+                FDifficulty(x);
+            }
+        }
+
         //Функции добавления нового персонажа в список
         //Избыточно, но работает. Позже заюзать апкаст или шаблон
         private void AddBlueToList()
@@ -313,6 +466,10 @@ namespace Bot
             tmpBlue.Id = blueList.Count;
             //Список поиска
             tmpBlue.Search = AddSearch();
+
+            //Расчёт сложности поиска перса
+            FDifficulty(tmpBlue);
+
             //Добавление в список
             blueList.Add(tmpBlue);
             //Обновлене информации
@@ -348,8 +505,8 @@ namespace Bot
                 tmpGold.SсhemeCraft[5] = Convert.ToInt32(pic6.Name);
                 tmpGold.SсhemeCraft[6] = Convert.ToInt32(pic7.Name);
             }
-            
 
+            FDifficulty(tmpGold);
             goldList.Add(tmpGold);
             CounyInfo();
         }
@@ -380,6 +537,7 @@ namespace Bot
                 tmpPink.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
                 tmpPink.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
             }
+            FDifficulty(tmpPink);
             pinkList.Add(tmpPink);
             CounyInfo();
         }
@@ -399,6 +557,8 @@ namespace Bot
             tmpRed.SсhemeCraft[2] = Convert.ToInt32(pic3.Name);
             tmpRed.SсhemeCraft[3] = Convert.ToInt32(pic4.Name);
             tmpRed.SсhemeCraft[4] = Convert.ToInt32(pic5.Name);
+
+            FDifficulty(tmpRed);
             redList.Add(tmpRed);
             CounyInfo();
         }
@@ -479,14 +639,16 @@ namespace Bot
             pictureBox9.Image = pb.Image;
             idChange = Convert.ToInt32(pb.Name);
 
+            
 
             BaseCharacter curenChemp = null;
 
             if (tabControl2.SelectedIndex == 0)
             {
                 curenChemp = blueList[idChange];
-                panel1.Visible = false;
+                panel1.Visible = false;               
                 label28.Visible = false;
+                label95.Visible = false;
             }
             else if (tabControl2.SelectedIndex == 1)
             {
@@ -495,6 +657,7 @@ namespace Bot
                 {
                     panel1.Visible = false;
                     label28.Visible = false;
+                    label95.Visible = true;
                     curenChemp = pinkList[idChange];
                 }
                 else
@@ -502,24 +665,25 @@ namespace Bot
                     curenChemp = pinkList[idChange];
                     panel1.Visible = true;
                     label28.Visible = true;
+                    label95.Visible = true;
                     picEdit[5].Hide();
                     picEdit[6].Hide();
                 }
             }
             else if (tabControl2.SelectedIndex == 2)
             {
-
-
                 if (goldList[idChange].SсhemeCraft[0] == 9999999)
                 {
                     label28.Visible = false;
-                    panel1.Visible = false;                    
+                    panel1.Visible = false;
+                    label95.Visible = true;
                     curenChemp = pinkList[idChange];
                 }
                 else
                 {
                     label28.Visible = true;
                     panel1.Visible = true;
+                    label95.Visible = true;
                     picEdit[5].Visible = true;
                     picEdit[6].Visible = true;
                 }
@@ -529,16 +693,25 @@ namespace Bot
             {
                 panel1.Visible = true;
                 label28.Visible = true;
+                label95.Visible = true;
                 picEdit[5].Hide();
                 picEdit[6].Hide();
-                curenChemp = redList[idChange];
+                curenChemp = redList[idChange];                
             }
 
             //Отображение: Имя, колличество, ссылка на файл, стихии и качества
             textBox11.Text = curenChemp.Name;
+            label94.Text = "Сложность поиска: " + curenChemp.TotalDifficulty;
             textBox10.Text = Convert.ToString(curenChemp.Count);
             textBox9.Text = Path.GetFileName(curenChemp.ImgUrl);
             comboBox2.SelectedIndex = curenChemp.Element;
+
+            if(!(curenChemp is BlueCharacter))
+            {
+                
+                label95.Text = "Сложность крафта: " + (curenChemp as ICharacter).CraftDifficulty;
+            }
+
 
             if (curenChemp.Search[0] != null)
             {
@@ -776,10 +949,12 @@ namespace Bot
         {
             ClearCraftPanel();           
         }
-         
-       
-        //////////////////////////////////////////////////////////////////////////////
+
+
+
         
+        //////////////////////////////////////////////////////////////////////////////
+
         //Загрузка базы из json
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -796,20 +971,35 @@ namespace Bot
                 goldList = JsonConvert.DeserializeObject<List<GoldCharacter>>(File.ReadAllText("baseGold.json"));
                 pinkList = JsonConvert.DeserializeObject<List<PinkCharacter>>(File.ReadAllText("basePink.json"));
 
+                faq.faqList = JsonConvert.DeserializeObject<List<FAQ>>(File.ReadAllText("FAQ.json"));
+                faq.head = comboBox3;
+                faq.textBox = richTextBox1;
+
+
+                //Подгрузка инфы FAQ
                 craft = new Craft(redList, goldList, pinkList, blueList);
-                craft.FallPink();                
+
+                craft.FallPink();
                 craft.FallBlue();
                 craft.FallGold();
+
                 //Вызов функции отображения информации о количестве персов в БД
                 CounyInfo();
-            }
 
-            var ndoasd = new UserControl1();
-            ndoasd.Location = new Point(20, 5);
-            ndoasd.one(redList[0].ImgUrl);
-            tabPage9.Controls.Add(ndoasd);
-            ndoasd.pictureBox1.Image = Image.FromFile(redList[1].ImgUrl);
-        }
+                
+
+                //a();
+
+
+                //var ndoasd = new UserControl1();
+                //ndoasd.Location = new Point(20, 5);
+                //ndoasd.one(redList[0].ImgUrl);
+                //tabPage9.Controls.Add(ndoasd);
+                //ndoasd.pictureBox1.Image = Image.FromFile(redList[1].ImgUrl);
+
+
+            }
+        }       
 
         //Выгрузка БД в файлы json
         private void buttonDes_Click(object sender, EventArgs e)
@@ -1177,7 +1367,7 @@ namespace Bot
                 craft.FallBlue();
                 craft.FallPink();
                 craft.FallGold();
-                
+                RecountDifficulty();
             }
         }
 
@@ -1220,6 +1410,11 @@ namespace Bot
                 label47.Text = "";
                 label63.Text = "";
                 comboBox1.SelectedIndex = -1;
+            }
+            else if (e.TabPageIndex == 3)
+            {
+                faq.Clear();
+                faq.GetHead();
             }
         }
 
@@ -1327,6 +1522,10 @@ namespace Bot
                 }
             }          
         }
-    
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            faq.Select(comboBox3.SelectedIndex);
+        }
     }
 }

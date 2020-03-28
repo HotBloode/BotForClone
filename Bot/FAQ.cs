@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bot
 {
-    interface ICharacter:IBaseCharacter
-    {       
-        int CraftDifficulty { get; set; }
-        int[] SсhemeCraft { get; }
+    public class FAQ
+    {
+        public string Headline { get; set; }
+        public string Text { get; set; }        
     }
 }

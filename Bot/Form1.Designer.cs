@@ -80,6 +80,7 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox12 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.checkBox17 = new System.Windows.Forms.CheckBox();
@@ -210,7 +211,10 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel.SuspendLayout();
@@ -239,6 +243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage9.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -797,6 +802,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label95);
+            this.tabPage2.Controls.Add(this.label94);
             this.tabPage2.Controls.Add(this.textBox12);
             this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.label28);
@@ -842,6 +849,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "База клонов";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(9, 6);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(299, 22);
+            this.textBox12.TabIndex = 79;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // label30
             // 
@@ -1283,7 +1298,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(294, 419);
+            this.tabPage4.Size = new System.Drawing.Size(301, 419);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Розовые";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1301,7 +1316,7 @@
             this.tabPage5.Controls.Add(this.flowLayoutPanel3);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(294, 419);
+            this.tabPage5.Size = new System.Drawing.Size(301, 419);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "Золотые";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1319,7 +1334,7 @@
             this.tabPage6.Controls.Add(this.flowLayoutPanel4);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(294, 419);
+            this.tabPage6.Size = new System.Drawing.Size(301, 419);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Красные";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1426,12 +1441,14 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.richTextBox1);
+            this.tabPage9.Controls.Add(this.comboBox3);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage9.Size = new System.Drawing.Size(907, 487);
             this.tabPage9.TabIndex = 4;
-            this.tabPage9.Text = "tabPage9";
+            this.tabPage9.Text = "FAQ";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // tabPage8
@@ -2128,13 +2145,40 @@
             this.label25.TabIndex = 43;
             this.label25.Text = "Красные: ";
             // 
-            // textBox12
+            // comboBox3
             // 
-            this.textBox12.Location = new System.Drawing.Point(9, 6);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(299, 22);
-            this.textBox12.TabIndex = 79;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(540, 6);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(361, 24);
+            this.comboBox3.TabIndex = 0;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(6, 6);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(528, 473);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(683, 310);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(54, 17);
+            this.label94.TabIndex = 80;
+            this.label94.Text = "label94";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(683, 327);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(54, 17);
+            this.label95.TabIndex = 81;
+            this.label95.Text = "label95";
             // 
             // Form1
             // 
@@ -2185,6 +2229,7 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage9.ResumeLayout(false);
             this.tabPage8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -2384,6 +2429,10 @@
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label94;
     }
 }
 

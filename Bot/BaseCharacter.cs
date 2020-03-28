@@ -14,6 +14,7 @@ namespace Bot
         public int Count { get;  set; }
         public int FakeCount { get; set; }
         public int Element { get;  set; }
+        public int TotalDifficulty { get; set; }
         public void AddCharacter(int count)
         {
             Count += count;
@@ -22,7 +23,8 @@ namespace Bot
         {
             Count -= count;
         }
-        public List<string> Search { get; set; }
+        public List<string> Search { get; set; }       
+
         public BaseCharacter()
         {
             Search = new List<string>(8);

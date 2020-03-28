@@ -14,6 +14,7 @@ namespace Bot
         int Count { get;  set; }
         int Element { get;  set; }   
         int FakeCount { get; set; }
+        int TotalDifficulty { get; set; }
         void AddCharacter(int count);
         void DelCharacter(int count);
         List<string> Search { get; set; }
