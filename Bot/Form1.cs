@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
 
@@ -15,6 +16,8 @@ namespace Bot
 
          //Создаём форму для выбора перса    
          private Form2 newForm = new Form2();
+
+         private Form3 Form3 = new Form3();
 
         Information info =  new Information();
         //Список отображаемых PictureBox ов на окне крафта
@@ -37,12 +40,14 @@ namespace Bot
         public List<PinkCharacter> pinkList;
         public List<BlueCharacter> blueList;
 
+        public List<Label> listLabel = new List<Label>();
         public Form1()
         {
             InitializeComponent();
             
             //Ссылка на эту форму (ссылка нужна для второй формы)
             newForm.mainForm = this;
+            Form3.mainForm = this;
 
             //Список с боксов с картинками для окна создания
             picCraft.Add(pic1);
@@ -61,6 +66,17 @@ namespace Bot
             picEdit.Add(pic55);
             picEdit.Add(pic66);
             picEdit.Add(pic77);
+
+            listLabel.Add(label97);
+            listLabel.Add(label98);
+            listLabel.Add(label99);
+            listLabel.Add(label105);
+            listLabel.Add(label102);
+            listLabel.Add(label106);
+            listLabel.Add(label100);
+            listLabel.Add(label104);
+            listLabel.Add(label101);
+            listLabel.Add(label103);
         }
 
         //Чистим окно крафта
@@ -707,8 +723,7 @@ namespace Bot
             comboBox2.SelectedIndex = curenChemp.Element;
 
             if(!(curenChemp is BlueCharacter))
-            {
-                
+            {                
                 label95.Text = "Сложность крафта: " + (curenChemp as ICharacter).CraftDifficulty;
             }
 
@@ -806,7 +821,6 @@ namespace Bot
                     }
                 }
             }
-
         }
 
         //Функця сохранения изменений после редактирования перса
@@ -981,23 +995,11 @@ namespace Bot
 
                 craft.FallPink();
                 craft.FallBlue();
-                craft.FallGold();
+                craft.FallGold();              
+
 
                 //Вызов функции отображения информации о количестве персов в БД
                 CounyInfo();
-
-                
-
-                //a();
-
-
-                //var ndoasd = new UserControl1();
-                //ndoasd.Location = new Point(20, 5);
-                //ndoasd.one(redList[0].ImgUrl);
-                //tabPage9.Controls.Add(ndoasd);
-                //ndoasd.pictureBox1.Image = Image.FromFile(redList[1].ImgUrl);
-
-
             }
         }       
 
@@ -1262,8 +1264,7 @@ namespace Bot
 
         //Очистка панелей с персонажами в окне редактирования и сохранение
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+        {           
 
             flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel2.Controls.Clear();
@@ -1405,11 +1406,10 @@ namespace Bot
                 info.InfoPage(label89, label92, label87, label88, label93, label91, label90, label81, label84, label79, label80, label85, label83, label82, redList);
             }
             else if(e.TabPageIndex == 2)
-            {
-                pictureBox2.Image = null;
-                label47.Text = "";
-                label63.Text = "";
+            {                
                 comboBox1.SelectedIndex = -1;
+                UiCraftListClear();
+
             }
             else if (e.TabPageIndex == 3)
             {
@@ -1417,42 +1417,142 @@ namespace Bot
                 faq.GetHead();
             }
         }
+        
+        void UiCraftListClear()
+        {            
+            flowLayoutPanel5.Controls.Clear();
+            label97.Text = "";
+            label98.Text = "";
+            label99.Text = "";
+            label105.Text = "";
+            label102.Text = "";
+            label106.Text = "";
+            label100.Text = "";
+            label104.Text = "";
+            label101.Text = "";
+            label103.Text = "";
+        }
+
+        void UiCraftList(int flagColor)
+        {           
+            List <PictureBox> pictureboxList = new List<PictureBox>();
+            int y = 0;
+            foreach (var file in craft.minLst)
+            {
+                var pb = new PictureBox();
+
+                pb.Location = new Point(pictureboxList.Count * 120 + 20, y);                
+                pb.Size = new Size(55, 75);
+                try
+                {
+                    Image img = null;
+                    if (flagColor == 2)
+                     {
+                        img = Image.FromFile(pinkList[file.IdCharacter].ImgUrl);
+                    }
+                    else if(flagColor == 1)
+                    {
+                        img = Image.FromFile(goldList[file.IdCharacter].ImgUrl);
+                    }
+                    else
+                    {
+                        img = Image.FromFile(redList[file.IdCharacter].ImgUrl);
+                    }
+
+                    if (file.Key > 0)
+                    {
+                        SetBW(img);
+                    }
+                    pb.Click += new System.EventHandler(ClickPb);
+                    pb.Image = img;
+                    pb.Name = file.IdCharacter.ToString();
+                    pictureboxList.Add(pb);
+                }
+                catch (OutOfMemoryException)
+                {
+                    continue;
+                }
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                flowLayoutPanel5.Controls.Add(pb);
+                Show();
+            }
+
+            for(int i =0; i< craft.minLst.Count; i++)
+            {
+                listLabel[i].Text = craft.minLst[i].Key.ToString();
+            }
+
+           
+        }
+
+        private void ClickPb(object sender, EventArgs e)
+        {
+            PictureBox pb = sender as PictureBox;
+
+            int key=0;
+            for(int i =0;i<craft.minLst.Count;i++)
+            {
+                if(craft.minLst[i].IdCharacter== Int32.Parse(pb.Name))
+                {
+                    key = craft.minLst[i].Key;
+                    break;
+                }
+            }
+            Form3.Ui(comboBox1.SelectedIndex, Int32.Parse(pb.Name),key);
+            Form3.Show();
+        }   
+        //Накладываем маску ЧБ на картинку
+        void SetBW(Image img)
+        {
+            var sr =  0.2126f;
+            var sg =  0.7152f;
+            var sb =  0.0722f;
+
+            using (var gfx = Graphics.FromImage(img))
+            using (var attr = new ImageAttributes())
+            {
+                attr.SetColorMatrix(new ColorMatrix
+                {
+                    Matrix00 = sr,
+                    Matrix01 = sr,
+                    Matrix02 = sr,
+                    Matrix10 = sg,
+                    Matrix11 = sg,
+                    Matrix12 = sg,
+                    Matrix20 = sb,
+                    Matrix21 = sb,
+                    Matrix22 = sb
+                });
+
+                gfx.DrawImage(img,
+                    new Rectangle(Point.Empty, img.Size),
+                    0, 0,
+                    img.Width,
+                    img.Height,
+                    GraphicsUnit.Pixel,
+                    attr);
+            }
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
-            
-            
+            UiCraftListClear();
             if (comboBox1.SelectedIndex == 2)
-            {
-                PinkCharacter craftPink;
-                craftPink = craft.CraftPink();
-                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox2.Image = Image.FromFile(craftPink.ImgUrl);
-                label47.Text = craftPink.Name;
-                label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
+            {                
+                craft.CraftPink();
+                UiCraftList(2);
             }
             if (comboBox1.SelectedIndex == 1)
-            {
-                GoldCharacter craftGold;
-                craftGold = craft.CraftGold();
+            {                
+               craft.CraftGold();                             
+               UiCraftList(1);
 
-
-                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox2.Image = Image.FromFile(craftGold.ImgUrl);
-                label47.Text = craftGold.Name;
-                label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
             }
             if (comboBox1.SelectedIndex == 0)
-            {
-                RedCharacter craftRed;
-                craftRed = craft.CraftRed();
-
-
-                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox2.Image = Image.FromFile(craftRed.ImgUrl);
-                label47.Text = craftRed.Name;
-                label63.Text = "Не хватает персонажей для крафта: " + craft.tmp;
+            {                
+               craft.CraftRed();
+               UiCraftList(0);
             }
             
         }
@@ -1515,7 +1615,7 @@ namespace Bot
             //перебираем имена
             foreach (BaseCharacter x in BaseList)
             {
-                //Забиваем болт на регистр
+                //Забиваем болт на регистр букв
                 if(x.Name.IndexOf(text, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     SearchList.Add(x);
@@ -1526,6 +1626,16 @@ namespace Bot
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             faq.Select(comboBox3.SelectedIndex);
+        }
+
+        private void label97_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

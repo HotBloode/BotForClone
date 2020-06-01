@@ -6,78 +6,128 @@ namespace Bot
 {
     public class Craft
     {
+        public class KeyCharList
+        {
+            public int Key { get; set; }
+            public int IdCharacter { get; set; }
+            public KeyCharList(int a, int b)
+            {
+                Key = a;
+                IdCharacter = b;
+            }
+        }
+
+        public List<KeyCharList> minLst = new List<KeyCharList>();
+
         List<RedCharacter> redList;
         List<GoldCharacter> goldList;
         List<PinkCharacter> pinkList;
         List<BlueCharacter> blueList;
         public int tmp;
 
-        int pinkCount=0;
-       
+        int pinkCount = 0;
 
         public Craft(List<RedCharacter> redList, List<GoldCharacter> goldList, List<PinkCharacter> pinkList, List<BlueCharacter> blueList)
-            {
+        {
             this.redList = redList;
             this.goldList = goldList;
             this.pinkList = pinkList;
             this.blueList = blueList;
         }
 
-        public PinkCharacter CraftPink()
+
+        //Метод для генерации следующего шага (В сортировке)
+        int GetNextStep(int s)
         {
+            s = s * 1000 / 1247;
+            return s > 1 ? s : 1;
+        }
 
-            PinkCharacter min = pinkList[6];
-            tmp = tmpCount(min);
+        void CombSort()
+        {
+            var listLength = minLst.Count;
+            var currentStep = listLength - 1;
 
-                for (int i = 7; i < pinkList.Count; i++)
+            while (currentStep > 1)
+            {
+                for (int i = 0; i + currentStep < minLst.Count; i++)
                 {
-                    int tmp1 = tmpCount(pinkList[i]);
-                    if (tmp1 <= tmp)
+                    if (minLst[i].Key > minLst[i + currentStep].Key)
                     {
-                        min = pinkList[i];
+                        KeyCharList temp = minLst[i];
+                        minLst[i] = minLst[i + currentStep];
+                        minLst[i + currentStep] = temp;
                     }
                 }
-            
-            return min;           
-        }
-        public GoldCharacter CraftGold()
-        {
 
-            GoldCharacter min = goldList[1];
+                currentStep = GetNextStep(currentStep);
+            }
+
+            //сортировка пузырьком
+            for (var i = 1; i < listLength; i++)
+            {
+                var swapFlag = false;
+                for (var j = 0; j < listLength - i; j++)
+                {
+                    if (minLst[j].Key > minLst[j + 1].Key)
+                    {
+                        KeyCharList temp = minLst[j];
+                        minLst[j] = minLst[j + 1];
+                        minLst[j + 1] = temp;
+                        swapFlag = true;
+                    }
+                }
+
+                if (!swapFlag)
+                {
+                    break;
+                }
+            }
+        }
+
+        //Вычисления списка розовых персов в минимальные требованиями к крафту
+        public void CraftPink()
+        {
+            //Чистим список персонажей с минимальными требованиями для крафта
+            minLst.Clear();
+
+            for (int i = 6; i < pinkList.Count; i++)
+            {
+                int tmp = tmpCount(pinkList[i]);
+                minLst.Add(new KeyCharList(tmp, i));
+            }
+
+            CombSort();
+            minLst.RemoveRange(10, minLst.Count - 10);
+        }
+        //Вычисления списка Золотых персов в минимальные требованиями к крафту
+        public void CraftGold()
+        {
+            minLst.Clear();
             CountAllPink();
-            tmp = tmpCount(min);
 
-                for (int i = 2; i < goldList.Count; i++)
-                {
-                    int tmp1 = tmpCount(goldList[i]);
-                    if (tmp1 < tmp)
-                    {
-                        min = goldList[i];
-                    }
-                }
-            
-            return min;
+            for (int i = 1; i < goldList.Count; i++)
+            {
+                int tmp = tmpCount(goldList[i]);
+                minLst.Add(new KeyCharList(tmp, i));
+            }
+            CombSort();
+            minLst.RemoveRange(10, minLst.Count - 10);
         }
-        public RedCharacter CraftRed()
+        //Вычисления списка красных персов в минимальные требованиями к крафту
+        public void CraftRed()
         {
-
-            RedCharacter min = redList[0];
-            
-            tmp = tmpCount(min);
-                        
-                for (int i = 1; i < redList.Count; i++)
-                {
-                    int tmp1 = tmpCount(redList[i]);
-                    if (tmp1 < tmp)
-                    {
-                        min = redList[i];
-                    }
-                }
-           
-            return min;
+            minLst.Clear();
+            for (int i = 0; i < redList.Count; i++)
+            {
+                minLst.Add(new KeyCharList(tmpCount(redList[i]), i));
+            }
+            CombSort();
+            minLst.RemoveRange(10, minLst.Count - 10);
         }
 
 
+        //Функции расчёта к-ва недостающих персов для крафта
         public int tmpCount(PinkCharacter pinkChamp)
         {
             //Флаг проверки наличия 1 реального перса и пропуск 1 итерации.
@@ -95,7 +145,7 @@ namespace Bot
                 int tmp = 5;
 
                 //Айдишник для запоминания
-                int realId=-9;//Для условности даём любое значение
+                int realId = -9;//Для условности даём любое значение
 
                 //Присваиваем всем синим персам переменную для работы
                 FakeCount(0);
@@ -142,7 +192,7 @@ namespace Bot
                         }
                     }
                 }
-                
+
                 //Общий обход рецепта
                 for (int i = 0; i < 5; i++)
                 {
@@ -152,7 +202,7 @@ namespace Bot
                         flag = true;
                         continue;
                     }
-                    
+
                     //Проверяем перса на обобщённость
                     if (blueList[pinkChamp.SсhemeCraft[i]].Id != 0 ||
                        blueList[pinkChamp.SсhemeCraft[i]].Id != 1 ||
@@ -229,7 +279,7 @@ namespace Bot
                 int tmp = 7;
                 int realId = -9;
                 //Присваиваем всем синим персам переменную для работы
-                
+
                 FakeCount(1);
 
                 //Ищем "конкретного" перса в схеме крафта
@@ -323,66 +373,66 @@ namespace Bot
         public int tmpCount(RedCharacter redChamp)
         {
             bool flag = false;
-            
-                int tmp = 5;
-                int realId = -9;               
 
-                FakeCount(3);
+            int tmp = 5;
+            int realId = -9;
 
-                //Ищем "конкретного" перса в схеме крафта
-                foreach (int tmpId in redChamp.SсhemeCraft)
+            FakeCount(3);
+
+            //Ищем "конкретного" перса в схеме крафта
+            foreach (int tmpId in redChamp.SсhemeCraft)
+            {
+                if (tmpId != 0)
                 {
-                    if (tmpId != 0)
+                    realId = tmpId;
+                    if (goldList[tmpId].FakeCount > 0)
                     {
-                        realId = tmpId;
-                        if (goldList[tmpId].FakeCount > 0)
-                        {
-                            //Минусуем фейковое значение САМОГО ПЕРСА
-                            pinkList[tmpId].FakeCount--;
-                            pinkList[0].FakeCount--;
+                        //Минусуем фейковое значение САМОГО ПЕРСА
+                        pinkList[tmpId].FakeCount--;
+                        pinkList[0].FakeCount--;
 
-                            //Минусуем колличество недостающих персов для крафта
-                            tmp--;
-                            flag = false;
-                            break;
-                        }
-                        else
-                        {
-                            flag = true;
-                        }
-                    }
-                }
-
-                for (int i = 0; i < 5; i++)
-                {
-
-                    if (goldList[redChamp.SсhemeCraft[i]].Id == realId && !flag)
-                    {
-                        flag = true;
-                        continue;
-                    }
-
-                    if (goldList[redChamp.SсhemeCraft[i]].Id != 0)
-                    {
-                        if (goldList[redChamp.SсhemeCraft[i]].FakeCount > 0)
-                        {
-                            goldList[redChamp.SсhemeCraft[i]].FakeCount--;
-                            tmp--;
-                            goldList[0].FakeCount--;
-                        }
+                        //Минусуем колличество недостающих персов для крафта
+                        tmp--;
+                        flag = false;
+                        break;
                     }
                     else
                     {
-                        if (goldList[redChamp.SсhemeCraft[i]].FakeCount > 0)
-                        {
-                            goldList[0].FakeCount--;
-                            tmp--;
-                        }
+                        flag = true;
                     }
-
                 }
-                return tmp;
-            
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+
+                if (goldList[redChamp.SсhemeCraft[i]].Id == realId && !flag)
+                {
+                    flag = true;
+                    continue;
+                }
+
+                if (goldList[redChamp.SсhemeCraft[i]].Id != 0)
+                {
+                    if (goldList[redChamp.SсhemeCraft[i]].FakeCount > 0)
+                    {
+                        goldList[redChamp.SсhemeCraft[i]].FakeCount--;
+                        tmp--;
+                        goldList[0].FakeCount--;
+                    }
+                }
+                else
+                {
+                    if (goldList[redChamp.SсhemeCraft[i]].FakeCount > 0)
+                    {
+                        goldList[0].FakeCount--;
+                        tmp--;
+                    }
+                }
+
+            }
+            return tmp;
+
         }
 
         //Функции проверки колличества персов
@@ -399,33 +449,31 @@ namespace Bot
             }
         }
 
+        //Функция вычисления "мнимого" к-ва текующего перса. (Что бы можно было проверить всех персов на крафт не затрагивая главное значение)
         public void FakeCount(int idColor)
         {
-            
             switch (idColor)
-             {
+            {
                 case 0:
                     {
-                        FallBlue(); ; 
+                        FallBlue();
                         for (int i = 0; i < blueList.Count; i++)
                         {
                             blueList[i].FakeCount = blueList[i].Count;
                         }
                         break;
                     }
-
-                   
                 case 1:
                     {
                         FallPink();
-                         for (int i = 0; i < pinkList.Count; i++)
+                        for (int i = 0; i < pinkList.Count; i++)
                         {
                             pinkList[i].FakeCount = pinkList[i].Count;
                         }
                         break;
                     }
                 case 3:
-                    {                        
+                    {
                         for (int i = 0; i < goldList.Count; i++)
                         {
                             goldList[i].FakeCount = goldList[i].Count;
@@ -433,7 +481,7 @@ namespace Bot
                         break;
                     }
             }
-            
+
 
         }
 
@@ -455,7 +503,7 @@ namespace Bot
             {
                 switch (curent.Element)
                 {
-                    case 3: blueList[0].Count+= curent.Count; break;
+                    case 3: blueList[0].Count += curent.Count; break;
                     case 4: blueList[1].Count += curent.Count; break;
                     case 5: blueList[2].Count += curent.Count; break;
                     case 2: blueList[3].Count += curent.Count; break;
@@ -494,7 +542,7 @@ namespace Bot
         public void FallGold()
         {
             goldList[0].Count = 0;
-            for(int i = 1;i<goldList.Count;i++)
+            for (int i = 1; i < goldList.Count; i++)
             {
                 goldList[0].Count += goldList[i].Count;
             }
@@ -503,11 +551,12 @@ namespace Bot
         //Т.к у розовых нет обобщённого перса который хранит общее к-во, то нужно почитать их отдельно
         public void CountAllPink()
         {
-            for(int i =1; i<pinkList.Count;i++)
+            for (int i = 1; i < pinkList.Count; i++)
             {
-                pinkCount+= pinkList[0].Count+ pinkList[1].Count+ pinkList[2].Count+ pinkList[3].Count+ pinkList[4].Count+ pinkList[5].Count;
+                pinkCount += pinkList[0].Count + pinkList[1].Count + pinkList[2].Count + pinkList[3].Count + pinkList[4].Count + pinkList[5].Count;
             }
         }
-       
+
+
     }
 }

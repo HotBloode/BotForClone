@@ -67,6 +67,7 @@ namespace Bot
                     }
                     list = mainForm.goldList.Select(x => (BaseCharacter)x).ToList();
                 }
+
             #region Только отображение
             List<PictureBox> pictureboxList = new List<PictureBox>();
             int y = 0;
